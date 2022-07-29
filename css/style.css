@@ -1,0 +1,133 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+* {
+  font-family: "Montserrat", sans-serif;
+}
+
+@media (max-width: 768px) {
+  .body__index .header-container {
+    background-color: black;
+    z-index: 2;
+  }
+  .body__index .header-container__img {
+    width: 6rem;
+  }
+  .body__index .header-container__img img {
+    width: 100%;
+  }
+  .body__index .header-container__toggle {
+    font-size: 4rem;
+    color: white;
+  }
+  .body__index .header .navbar {
+    position: absolute;
+    z-index: 1;
+    padding: 0;
+    width: 100%;
+    transform: translateY(-28rem);
+    transition: transform 0.5s;
+  }
+  .body__index .header .navbar--show {
+    transform: translateY(7rem);
+  }
+  .body__index .header .navbar-list {
+    width: 100%;
+    list-style: none;
+    margin: 0;
+    padding: 2rem;
+    background-color: black;
+  }
+  .body__index .header .navbar-list li a {
+    text-decoration: none;
+    color: white;
+    font-weight: 700;
+    font-size: 3rem;
+  }
+  .body__index .welcome {
+    background-color: black;
+    border-radius: 1rem;
+  }
+  .body__index .welcome-title {
+    text-transform: uppercase;
+    font-size: 3rem;
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: 3px;
+    color: white;
+    padding: 1rem;
+  }
+  .body__index .sale {
+    padding: 1.5rem 0;
+  }
+  .body__index .sale-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: white;
+    background-color: black;
+    padding: 1rem;
+    border-radius: 1rem;
+  }
+  .body__index .sale-container {
+    width: 100%;
+    overflow: auto;
+  }
+  .body__index .sale-container__item-img {
+    width: 12rem;
+  }
+  .body__index .sale-container__item-img img {
+    width: 100%;
+  }
+  .body__index .sale-container__item-name, .body__index .drinks-container__item-price, .body__index .sale-container__item-price {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    width: 15rem;
+  }
+  .body__index .sale-container__item-price {
+    font-size: 2rem;
+  }
+  .body__index .drinks {
+    padding: 1.5rem 0;
+  }
+  .body__index .drinks-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: white;
+    background-color: black;
+    padding: 1rem;
+    border-radius: 1rem;
+  }
+  .body__index .drinks-container {
+    width: 100%;
+    overflow: auto;
+  }
+  .body__index .drinks-container__item-img {
+    width: 12rem;
+  }
+  .body__index .drinks-container__item-img img {
+    width: 100%;
+  }
+  .body__index .drinks-container__item-name {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    width: 15rem;
+  }
+  .body__index .drinks-container__item-price {
+    font-size: 2rem;
+  }
+  .body__index .drinks-container__item-img {
+    width: 8rem;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

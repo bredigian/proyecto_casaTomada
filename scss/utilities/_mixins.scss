@@ -1,0 +1,41 @@
+@mixin styleAnchor {
+    text-decoration: none;
+    color: white;
+    font-weight: 700;
+}
+@mixin styleTitle{
+    font-size: 3rem;
+    font-weight: 700;
+    color: white;
+    background-color: black;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+@mixin styleSlide{
+    padding: 1.5rem 0;
+    &-title{
+        @include styleTitle;
+    }
+    &-container{
+        width: 100%;
+        overflow: auto;
+        &__item{
+            &-img{
+                width: 12rem;
+                img{
+                    width: 100%;
+                }
+            }
+            &-name{
+                text-align: center;
+                font-size: 1.5rem;
+                font-weight: 700;
+                width: 15rem;
+            }
+            &-price{
+                @extend .sale-container__item-name;
+                font-size: 2rem
+            }
+        }
+    }
+}
