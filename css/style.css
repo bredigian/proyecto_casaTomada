@@ -92,6 +92,19 @@ html {
     font-weight: 700;
     width: 15rem;
   }
+  .body__index .sale-container__item-cod {
+    background-color: black;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 100%;
+  }
+  .body__index .sale-container__item-cod span {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+    width: 100%;
+    text-align: center;
+  }
   .body__index .sale-container__item-price {
     font-size: 2rem;
   }
@@ -122,11 +135,57 @@ html {
     font-weight: 700;
     width: 15rem;
   }
+  .body__index .drinks-container__item-cod {
+    background-color: black;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 100%;
+  }
+  .body__index .drinks-container__item-cod span {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+    width: 100%;
+    text-align: center;
+  }
   .body__index .drinks-container__item-price {
     font-size: 2rem;
   }
   .body__index .drinks-container__item-img {
     width: 8rem;
+  }
+  .body__index .carrito-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: white;
+    background-color: black;
+    padding: 1rem;
+    border-radius: 1rem;
+  }
+  .body__index .carrito-container {
+    width: 100%;
+    height: 300px;
+    border: solid black 0.3rem;
+    border-radius: 1rem;
+    overflow: auto;
+  }
+  .body__index .carrito-container__item {
+    width: 100%;
+  }
+  .body__index .carrito-container__item p {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-align: center;
+  }
+  .body__index .carrito-container__item b {
+    font-size: 2rem;
+    font-weight: 700;
+  }
+  .body__index .carrito-total {
+    color: black;
+    font-size: 3rem;
+    font-weight: 700;
   }
 }
 
