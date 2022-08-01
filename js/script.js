@@ -5,7 +5,7 @@ toggleMenuElement.addEventListener('click', ()=>{
     mainMenuElement.classList.toggle('navbar--show')
 })
 /*------------------ACCESO AL DOM--------------------*/
-const combos=document.getElementsByClassName('sale-container__item')
+/*const combos=document.getElementsByClassName('sale-container__item')
 const nameCombos=document.getElementsByClassName('sale-container__item-name')
 const codCombos=document.getElementsByClassName('sale-container__item-cod__item')
 const priceCombos=document.getElementsByClassName('sale-container__item-price__value')
@@ -31,5 +31,5 @@ while(!salida.toUpperCase().includes('N')){
         alert('Código no válido')
     }
 }
-totalCarrito.innerHTML=`TOTAL $${totalCompra}`
+totalCarrito.innerHTML=`TOTAL $${totalCompra}`*/
 /*---------------------------------------------------------*/

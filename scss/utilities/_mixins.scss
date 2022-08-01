@@ -1,3 +1,43 @@
+@mixin styleHeaderNavBar {
+    &-container{
+        background-color: black;
+        z-index: 2;
+        &__img{
+            width: 6rem;
+            img{
+                width: 100%;
+            }
+        }
+        &__toggle{
+            font-size: 4rem;
+            color: white
+        }
+    }
+    .navbar{
+        position: absolute;
+        z-index: 1;
+        padding: 0;
+        width: 100%;
+        transform: translateY(-28rem);
+        transition: transform .5s;
+        &--show{
+            transform: translateY(7rem);
+        }
+        &-list{
+            width: 100%;
+            list-style: none;
+            margin: 0;
+            padding: 2rem;
+            background-color: black;
+            li{
+                a{
+                    @include styleAnchor;
+                    font-size: 3rem;
+                }
+            }
+        }
+    }
+}
 @mixin styleAnchor {
     text-decoration: none;
     color: white;
@@ -10,6 +50,18 @@
     background-color: black;
     padding: 1rem;
     border-radius: 1rem;
+}
+@mixin styleItemMore {
+    margin: auto;
+    .itemMore-img{
+        width: 5rem;
+        img{
+            width: 100%;
+        }
+    }
+    &-cod{
+        display: none!important;
+    }
 }
 @mixin styleSlide{
     padding: 1.5rem 0;
@@ -48,6 +100,39 @@
             &-price{
                 @extend .sale-container__item-name;
                 font-size: 2rem
+            }
+        }
+        .itemMore{
+            @include styleItemMore;
+        }
+    }
+}
+@mixin styleFooter{
+    background-color: black;
+    height: 300px;
+    &-img{
+        width: 10rem;
+        img{
+            width: 100%;
+        }
+    }
+    &-container{
+        &__title{
+            color: white;
+            font-weight: 700;
+        }
+        &__item{
+            &-icon{
+                i{
+                    color: white;
+                    font-size: 1.5rem
+                }
+            }
+            &-name{
+                a{
+                    @include styleAnchor;
+                    font-size: 1.5rem;
+                }
             }
         }
     }

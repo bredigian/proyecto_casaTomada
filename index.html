@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/a2a3781daf.js" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="shortcut icon" href="./img/logoCasatomada.jpg" type="image/x-icon">
     <link rel="stylesheet" href="css/style.css">
     <title>Casa Tomada - Tienda de Bebidas</title>
 </head>
@@ -22,7 +23,7 @@
         <nav id="navbar" class="navbar main-menu">
             <ul class="navbar-list d-flex flex-column align-items-end">
                 <li><a href="./index.html">INICIO</a></li>
-                <li><a href="#">COMPRAR</a></li>
+                <li><a href="./html/shop.html">COMPRAR</a></li>
                 <li><a href="#">COMBOS</a></li>
                 <li><a href="#">BEBIDAS</a></li>
                 <li><a href="#">CONTACTO</a></li>
@@ -77,11 +78,11 @@
                     <span class="sale-container__item-price__value">1940</span>
                 </div>
             </div>
-            <div class="sale-container__item d-flex flex-column align-items-center gap-4">
-                <div class="sale-container__item-img">
+            <div class="itemMore sale-container__item d-flex flex-column align-items-center gap-4">
+                <div class="sale-container__item-img itemMore-img">
                     <img src="./img/+.png" alt="">
                 </div>
-                <div class="sale-container__item-cod d-flex align-items-center">
+                <div class="itemMore-cod sale-container__item-cod d-flex align-items-center">
                     <span class="sale-container__item-cod__item">4</span>
                 </div>
                 <span class="sale-container__item-name"></span>
@@ -99,46 +100,113 @@
                 <div class="drinks-container__item-img">
                     <img src="./img/bebidas/solo/andesRubia.png" alt="">
                 </div>
+                <div class=" drinks-container__item-cod d-flex align-items-center">
+                    <span class="drinks-container__item-cod__item">1</span>
+                </div>
                 <span class="drinks-container__item-name">Andes Rubia</span>
-                <div class="drinks-container__item-price">$160</div>
+                <div class="drinks-container__item-price">
+                    <span>$</span>
+                    <span class="drinks-container__item-price__value">160</span>
+                </div>
             </div>
             <div class="drinks-container__item d-flex flex-column align-items-center gap-4">
                 <div class="drinks-container__item-img">
                     <img src="./img/bebidas/solo/budweiser.png" alt="">
                 </div>
+                <div class=" drinks-container__item-cod d-flex align-items-center">
+                    <span class="drinks-container__item-cod__item">2</span>
+                </div>
                 <span class="drinks-container__item-name">Budweiser</span>
-                <div class="drinks-container__item-price">$150</div>
+                <div class="drinks-container__item-price">
+                    <span>$</span>
+                    <span class="drinks-container__item-price__value">150</span>
+                </div>
             </div>
             <div class="drinks-container__item d-flex flex-column align-items-center gap-4">
                 <div class="drinks-container__item-img">
                     <img src="./img/bebidas/solo/heineken.jpg" alt="">
                 </div>
+                <div class=" drinks-container__item-cod d-flex align-items-center">
+                    <span class="drinks-container__item-cod__item">3</span>
+                </div>
                 <span class="drinks-container__item-name">Heineken</span>
-                <div class="drinks-container__item-price">$170</div>
+                <div class="drinks-container__item-price">
+                    <span>$</span>
+                    <span class="drinks-container__item-price__value">170</span>
+                </div>
             </div>
             <div class="drinks-container__item d-flex flex-column align-items-center gap-4">
                 <div class="drinks-container__item-img">
                     <img src="./img/bebidas/solo/ginBombay.jpg" alt="">
                 </div>
+                <div class=" drinks-container__item-cod d-flex align-items-center">
+                    <span class="drinks-container__item-cod__item">4</span>
+                </div>
                 <span class="drinks-container__item-name">Gin Bombay</span>
-                <div class="drinks-container__item-price">$1350</div>
+                <div class="drinks-container__item-price">
+                    <span>$</span>
+                    <span class="drinks-container__item-price__value">1360</span>
+                </div>
             </div>
             <div class="drinks-container__item d-flex flex-column align-items-center gap-4">
                 <div class="drinks-container__item-img">
                     <img src="./img/bebidas/solo/jagger.jpg" alt="">
                 </div>
+                <div class="drinks-container__item-cod d-flex align-items-center">
+                    <span class="drinks-container__item-cod__item">5</span>
+                </div>
                 <span class="drinks-container__item-name">Jaggermeifter</span>
-                <div class="drinks-container__item-price">$850</div>
+                <div class="drinks-container__item-price">
+                    <span>$</span>
+                    <span class="drinks-container__item-price__value">850</span>
+                </div>
+            </div>
+            <div class="itemMore drinks-container__item d-flex flex-column align-items-center gap-4">
+                <div class="drinks-container__item-img itemMore-img">
+                    <img src="./img/+.png" alt="">
+                </div>
+                <div class="itemMore-cod drinks-container__item-cod d-flex align-items-center">
+                    <span class="sale-container__item-cod__item"></span>
+                </div>
+                <span class="drinks-container__item-name"></span>
+                <div class="drinks-container__item-price">
+                    <span></span>
+                    <span class="drinks-container__item-price__value"></span>
+                </div>
             </div>
         </div>
     </div>
-    <div class="carrito d-flex flex-column align-items-center p-4 gap-5">
+    <!--<div class="carrito d-flex flex-column align-items-center p-4 gap-5">
         <span class="carrito-title">CARRITO</span>
         <div id="carrito-container" class="carrito-container d-flex flex-column align-items-start p-4">
 
         </div>
         <span id="carrito-total" class="carrito-total"></span>
-    </div>
+    </div>-->
+    <footer class="footer d-flex align-items-center justify-content-around p-5">
+        <div class="footer-img">
+            <img src="./img/logoCasatomada.jpg" alt="Logo Casatomada">
+        </div>
+        <div class="footer-container d-flex flex-column align-items-start gap-4">
+            <h2 class="footer-container__title">CONTACTO</h2>
+            <div class="footer-container___item d-flex flex-row align-items-center gap-3">
+                <div class="footer-container__item-icon">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </div>
+                <div class="footer-container__item-name">
+                    <a href="#">WhatsApp</a>
+                </div>
+            </div>
+            <div class="footer-container___item d-flex flex-row align-items-center gap-3">
+                <div class="footer-container__item-icon">
+                    <i class="fa-brands fa-instagram"></i>
+                </div>
+                <div class="footer-container__item-name">
+                    <a href="#">Instagram</a>
+                </div>
+            </div>
+        </div>
+    </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
     <script src="./js/script.js"></script>
 </body>
