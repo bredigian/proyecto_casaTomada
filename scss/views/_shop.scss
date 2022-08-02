@@ -41,6 +41,7 @@
                             position: absolute;
                             transform: translate(27rem,-7rem);
                             i{
+                                color: black;
                                 font-size: 2rem;
                             }
                         }
@@ -105,7 +106,7 @@
             }
             .cartShopping-btnShowContainer--rotate{
                 width: 3rem;
-                transition: all 1s;
+                transition: all .5s;
                 transform: rotateX(180deg);
             }
             &-container{
@@ -130,11 +131,17 @@
                     color: white;
                     font-weight: 700;
                     letter-spacing: 3px;
+                    text-align: center;
+                    border-top: solid white .15rem;
+                    padding: 1.5rem;
                 }
             }
             .cartShopping-container--show{
                 display: flex!important;
             }
         }
+    }
+    .footer{
+        @include styleFooter;
     }
 }
