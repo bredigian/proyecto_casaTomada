@@ -291,11 +291,13 @@ html {
     font-size: 2rem;
     padding: 0.5rem;
     border-radius: 0.5rem;
+    width: 3rem;
+    height: 3rem;
   }
   .body__shop .shop-title__icon i {
     color: black;
     text-align: center;
-    transform: translateX(-1px);
+    transform: translate(-2px, -4px);
   }
   .body__shop .shop-container__title {
     font-size: 3rem;

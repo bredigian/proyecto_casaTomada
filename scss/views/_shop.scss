@@ -19,10 +19,12 @@
                     font-size: 2rem;
                     padding: .5rem;
                     border-radius: .5rem;
+                    width: 3rem;
+                    height: 3rem;
                     i{
                         color: black;
                         text-align: center;
-                        transform: translateX(-1px)
+                        transform: translate(-2px, -4px)
                     }
                 }
             }
