@@ -380,7 +380,6 @@ html {
   }
   .body__shop .cartShopping-container {
     display: none !important;
-    height: 100px;
     overflow: auto;
   }
   .body__shop .cartShopping-container__items-item .priceItem, .body__shop .cartShopping-container__items-item .nameItem {
@@ -402,6 +401,7 @@ html {
   }
   .body__shop .cartShopping .cartShopping-container--show {
     display: flex !important;
+    height: 100px;
   }
   .footer {
     background-color: black;

@@ -29,6 +29,8 @@ for(let i=0; i<items.length; i++){
     })
 }
 cartShopping_btnShowContainer.addEventListener('click', ()=>{
-    cartShopping_container.classList.toggle('cartShopping-container--show')
-    cartShopping_btnShowContainer.classList.toggle('cartShopping-btnShowContainer--rotate')
+    if(parseInt(counterShopping.innerHTML)!==0){
+        cartShopping_container.classList.toggle('cartShopping-container--show')
+        cartShopping_btnShowContainer.classList.toggle('cartShopping-btnShowContainer--rotate')
+    }
 })
