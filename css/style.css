@@ -275,6 +275,28 @@ html {
     font-weight: 700;
     font-size: 3rem;
   }
+  .body__shop .shop-title {
+    background-color: black;
+    border-radius: 1rem;
+  }
+  .body__shop .shop-title p {
+    font-size: 1.5rem;
+    color: white;
+    font-weight: 700;
+    text-align: center;
+    margin: 0;
+  }
+  .body__shop .shop-title__icon {
+    background-color: white;
+    font-size: 2rem;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+  }
+  .body__shop .shop-title__icon i {
+    color: black;
+    text-align: center;
+    transform: translateX(-1px);
+  }
   .body__shop .shop-container__title {
     font-size: 3rem;
     font-weight: 700;
@@ -289,8 +311,15 @@ html {
   }
   .body__shop .shop-container__items-item {
     height: 200px;
-    border: solid black 0.1rem;
+    border: solid black 0.3rem;
     border-radius: 1rem;
+  }
+  .body__shop .shop-container__items-item__icon {
+    position: absolute;
+    transform: translate(27rem, -7rem);
+  }
+  .body__shop .shop-container__items-item__icon i {
+    font-size: 2rem;
   }
   .body__shop .shop-container__items-item__img {
     width: 8rem;
@@ -298,7 +327,7 @@ html {
   .body__shop .shop-container__items-item__img img {
     width: 100%;
   }
-  .body__shop .shop-container__items-item__info .name, .body__shop .shop-container__items-item__info .price {
+  .body__shop .shop-container__items-item__info-name, .body__shop .shop-container__items-item__info .price {
     font-size: 1.5rem;
     text-align: center;
     font-weight: 700;
@@ -313,6 +342,62 @@ html {
   }
   .body__shop .shop-container__items .drinks-bigImg {
     width: 4rem;
+  }
+  .body__shop .cartShopping {
+    position: sticky;
+    bottom: 1.5rem;
+    background-color: black;
+    border-radius: 1rem;
+  }
+  .body__shop .cartShopping-counter__icon {
+    width: 3rem;
+  }
+  .body__shop .cartShopping-counter__icon i {
+    font-size: 3rem;
+    color: white;
+  }
+  .body__shop .cartShopping-counter__number {
+    width: 3rem;
+  }
+  .body__shop .cartShopping-counter__number .counter {
+    font-size: 3rem;
+    color: white;
+    font-weight: 700;
+  }
+  .body__shop .cartShopping-btnShowContainer {
+    transition: all 1s;
+    width: 3rem;
+  }
+  .body__shop .cartShopping-btnShowContainer i {
+    color: white;
+    font-size: 4rem;
+  }
+  .body__shop .cartShopping .cartShopping-btnShowContainer--rotate {
+    width: 3rem;
+    transition: all 1s;
+    transform: rotateX(180deg);
+  }
+  .body__shop .cartShopping-container {
+    display: none !important;
+    height: 100px;
+    overflow: auto;
+  }
+  .body__shop .cartShopping-container__items-item .priceItem, .body__shop .cartShopping-container__items-item .nameItem {
+    font-size: 1.5rem;
+    color: white;
+    font-weight: 700;
+  }
+  .body__shop .cartShopping-container__items-item .nameItem {
+    margin: 0;
+  }
+  .body__shop .cartShopping-container__total {
+    font-size: 2rem;
+    color: white;
+    font-weight: 700;
+    letter-spacing: 3px;
+  }
+  .body__shop .cartShopping .cartShopping-container--show {
+    display: flex !important;
   }
 }
 

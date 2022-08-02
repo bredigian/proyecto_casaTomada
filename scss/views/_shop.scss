@@ -4,6 +4,28 @@
             @include styleHeaderNavBar;
         }
         .shop{
+            &-title{
+                background-color: black;
+                border-radius: 1rem;
+                p{
+                    font-size: 1.5rem;
+                    color: white;
+                    font-weight: 700;
+                    text-align: center;
+                    margin: 0;
+                }
+                &__icon{
+                    background-color: white;
+                    font-size: 2rem;
+                    padding: .5rem;
+                    border-radius: .5rem;
+                    i{
+                        color: black;
+                        text-align: center;
+                        transform: translateX(-1px)
+                    }
+                }
+            }
             &-container{
                 &__title{
                     @include styleTitle;
@@ -13,8 +35,15 @@
                     margin: 0;
                     &-item{
                         height: 200px;
-                        border: solid black .1rem;
+                        border: solid black .3rem;
                         border-radius: 1rem;
+                        &__icon{
+                            position: absolute;
+                            transform: translate(27rem,-7rem);
+                            i{
+                                font-size: 2rem;
+                            }
+                        }
                         &__img{
                             width: 8rem;
                             img{
@@ -22,14 +51,14 @@
                             }
                         }
                         &__info{
-                            .name{
+                            &-name{
                                 font-size: 1.5rem;
                                 text-align: center;
                                 font-weight: 700;
                                 width: 20rem;
                             }
                             .price{
-                                @extend .name;
+                                @extend .shop-container__items-item__info-name;
                                 width: min-content;
                                 font-size: 2.5rem;
                             }
@@ -42,6 +71,69 @@
                         width: 4rem;
                     }
                 }
+            }
+        }
+        .cartShopping{
+            position: sticky;
+            bottom: 1.5rem;
+            background-color: black;
+            border-radius: 1rem;
+            &-counter{
+                &__icon{
+                    width: 3rem;
+                    i{
+                        font-size: 3rem;
+                        color: white;
+                    }
+                }
+                &__number{
+                    width: 3rem;
+                    .counter{
+                        font-size: 3rem;
+                        color: white;
+                        font-weight: 700;
+                    }
+                }
+            }
+            &-btnShowContainer{
+                transition: all 1s;
+                width: 3rem;
+                i{
+                    color: white;
+                    font-size: 4rem;
+                }
+            }
+            .cartShopping-btnShowContainer--rotate{
+                width: 3rem;
+                transition: all 1s;
+                transform: rotateX(180deg);
+            }
+            &-container{
+                display: none!important;
+                height: 100px;
+                overflow: auto;
+                &__items{
+                    &-item{
+                        .priceItem{
+                            font-size: 1.5rem;
+                            color: white;
+                            font-weight: 700;
+                        }
+                        .nameItem{
+                            @extend .priceItem;
+                            margin: 0;
+                        }
+                    }
+                }
+                &__total{
+                    font-size: 2rem;
+                    color: white;
+                    font-weight: 700;
+                    letter-spacing: 3px;
+                }
+            }
+            .cartShopping-container--show{
+                display: flex!important;
             }
         }
     }
