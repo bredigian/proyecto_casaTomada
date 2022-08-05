@@ -1,0 +1,11 @@
+@keyframes containerTransform{
+    0%{
+        height: inherit;
+    }
+    50%{
+        height: 50px;
+    }
+    100%{
+        height: 100px;
+    }
+}

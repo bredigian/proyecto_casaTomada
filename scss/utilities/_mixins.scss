@@ -18,7 +18,7 @@
         z-index: 1;
         padding: 0;
         width: 100%;
-        transform: translateY(-9rem);
+        transform: translateY(-4rem);
         transition: transform .5s;
         &--show{
             transform: translateY(9rem);
@@ -65,10 +65,19 @@
 }
 @mixin styleSlide{
     padding: 1.5rem 0;
-    &-title{
-        @include styleTitle;
+    &-header{
+        &__title{
+            @include styleTitle;
+        }
+        a{
+            color: black;
+            width: min-content;
+            text-align: center;
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
     }
-    &-container{
+    .items-container{
         width: 100%;
         overflow: auto;
         &__item{
@@ -98,7 +107,7 @@
                 }
             }
             &-price{
-                @extend .sale-container__item-name;
+                @extend .items-container__item-name;
                 font-size: 2rem
             }
         }

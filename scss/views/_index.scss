@@ -21,7 +21,7 @@
         }
         .drinks{
             @include styleSlide;
-            &-container{
+            .items-container{
                 &__item{
                     &-img{
                         width: 8rem;

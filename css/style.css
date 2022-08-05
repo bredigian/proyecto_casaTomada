@@ -13,6 +13,17 @@ html {
   font-family: "Montserrat", sans-serif;
 }
 
+@keyframes containerTransform {
+  0% {
+    height: inherit;
+  }
+  50% {
+    height: 50px;
+  }
+  100% {
+    height: 100px;
+  }
+}
 @media (max-width: 768px) {
   .body__index .header-container {
     background-color: black;
@@ -33,7 +44,7 @@ html {
     z-index: 1;
     padding: 0;
     width: 100%;
-    transform: translateY(-9rem);
+    transform: translateY(-4rem);
     transition: transform 0.5s;
   }
   .body__index .header .navbar--show {
@@ -68,7 +79,7 @@ html {
   .body__index .sale {
     padding: 1.5rem 0;
   }
-  .body__index .sale-title {
+  .body__index .sale-header__title {
     font-size: 3rem;
     font-weight: 700;
     color: white;
@@ -76,54 +87,61 @@ html {
     padding: 1rem;
     border-radius: 1rem;
   }
-  .body__index .sale-container {
+  .body__index .sale-header a {
+    color: black;
+    width: min-content;
+    text-align: center;
+    font-size: 1.25rem;
+    font-weight: 700;
+  }
+  .body__index .sale .items-container {
     width: 100%;
     overflow: auto;
   }
-  .body__index .sale-container__item-img {
+  .body__index .sale .items-container__item-img {
     width: 12rem;
   }
-  .body__index .sale-container__item-img img {
+  .body__index .sale .items-container__item-img img {
     width: 100%;
   }
-  .body__index .sale-container__item-name, .body__index .drinks-container__item-price, .body__index .sale-container__item-price {
+  .body__index .sale .items-container__item-name, .body__index .sale .items-container__item-price {
     text-align: center;
     font-size: 1.5rem;
     font-weight: 700;
     width: 15rem;
   }
-  .body__index .sale-container__item-cod {
+  .body__index .sale .items-container__item-cod {
     background-color: black;
     width: 2.5rem;
     height: 2.5rem;
     border-radius: 100%;
   }
-  .body__index .sale-container__item-cod span {
+  .body__index .sale .items-container__item-cod span {
     font-size: 1.5rem;
     font-weight: 700;
     color: white;
     width: 100%;
     text-align: center;
   }
-  .body__index .sale-container__item-price {
+  .body__index .sale .items-container__item-price {
     font-size: 2rem;
   }
-  .body__index .sale-container .itemMore {
+  .body__index .sale .items-container .itemMore {
     margin: auto;
   }
-  .body__index .sale-container .itemMore .itemMore-img {
+  .body__index .sale .items-container .itemMore .itemMore-img {
     width: 5rem;
   }
-  .body__index .sale-container .itemMore .itemMore-img img {
+  .body__index .sale .items-container .itemMore .itemMore-img img {
     width: 100%;
   }
-  .body__index .sale-container .itemMore-cod {
+  .body__index .sale .items-container .itemMore-cod {
     display: none !important;
   }
   .body__index .drinks {
     padding: 1.5rem 0;
   }
-  .body__index .drinks-title {
+  .body__index .drinks-header__title {
     font-size: 3rem;
     font-weight: 700;
     color: white;
@@ -131,51 +149,58 @@ html {
     padding: 1rem;
     border-radius: 1rem;
   }
-  .body__index .drinks-container {
+  .body__index .drinks-header a {
+    color: black;
+    width: min-content;
+    text-align: center;
+    font-size: 1.25rem;
+    font-weight: 700;
+  }
+  .body__index .drinks .items-container {
     width: 100%;
     overflow: auto;
   }
-  .body__index .drinks-container__item-img {
+  .body__index .drinks .items-container__item-img {
     width: 12rem;
   }
-  .body__index .drinks-container__item-img img {
+  .body__index .drinks .items-container__item-img img {
     width: 100%;
   }
-  .body__index .drinks-container__item-name {
+  .body__index .drinks .items-container__item-name, .body__index .drinks .items-container__item-price {
     text-align: center;
     font-size: 1.5rem;
     font-weight: 700;
     width: 15rem;
   }
-  .body__index .drinks-container__item-cod {
+  .body__index .drinks .items-container__item-cod {
     background-color: black;
     width: 2.5rem;
     height: 2.5rem;
     border-radius: 100%;
   }
-  .body__index .drinks-container__item-cod span {
+  .body__index .drinks .items-container__item-cod span {
     font-size: 1.5rem;
     font-weight: 700;
     color: white;
     width: 100%;
     text-align: center;
   }
-  .body__index .drinks-container__item-price {
+  .body__index .drinks .items-container__item-price {
     font-size: 2rem;
   }
-  .body__index .drinks-container .itemMore {
+  .body__index .drinks .items-container .itemMore {
     margin: auto;
   }
-  .body__index .drinks-container .itemMore .itemMore-img {
+  .body__index .drinks .items-container .itemMore .itemMore-img {
     width: 5rem;
   }
-  .body__index .drinks-container .itemMore .itemMore-img img {
+  .body__index .drinks .items-container .itemMore .itemMore-img img {
     width: 100%;
   }
-  .body__index .drinks-container .itemMore-cod {
+  .body__index .drinks .items-container .itemMore-cod {
     display: none !important;
   }
-  .body__index .drinks-container__item-img {
+  .body__index .drinks .items-container__item-img {
     width: 8rem;
   }
   .body__index .carrito-title {
@@ -256,7 +281,7 @@ html {
     z-index: 1;
     padding: 0;
     width: 100%;
-    transform: translateY(-9rem);
+    transform: translateY(-4rem);
     transition: transform 0.5s;
   }
   .body__shop .header .navbar--show {
@@ -312,31 +337,26 @@ html {
     margin: 0;
   }
   .body__shop .shop-container__items-item {
-    height: 200px;
     border: solid black 0.3rem;
     border-radius: 1rem;
-  }
-  .body__shop .shop-container__items-item__icon {
-    position: absolute;
-    transform: translate(27rem, -7rem);
   }
   .body__shop .shop-container__items-item__icon i {
     color: black;
     font-size: 2rem;
   }
-  .body__shop .shop-container__items-item__img {
+  .body__shop .shop-container__items-item__cont-img {
     width: 8rem;
   }
-  .body__shop .shop-container__items-item__img img {
+  .body__shop .shop-container__items-item__cont-img img {
     width: 100%;
   }
-  .body__shop .shop-container__items-item__info-name, .body__shop .shop-container__items-item__info .price {
+  .body__shop .shop-container__items-item__cont-info__name, .body__shop .shop-container__items-item__cont-info .price {
     font-size: 1.5rem;
     text-align: center;
     font-weight: 700;
-    width: 20rem;
+    width: 15rem;
   }
-  .body__shop .shop-container__items-item__info .price {
+  .body__shop .shop-container__items-item__cont-info .price {
     width: min-content;
     font-size: 2.5rem;
   }
@@ -383,6 +403,10 @@ html {
   .body__shop .cartShopping-container {
     display: none !important;
     overflow: auto;
+  }
+  .body__shop .cartShopping-container__items-item .delete {
+    font-size: 1.5rem;
+    color: white;
   }
   .body__shop .cartShopping-container__items-item .priceItem, .body__shop .cartShopping-container__items-item .nameItem {
     font-size: 1.5rem;

@@ -24,7 +24,6 @@
             <ul class="navbar-list d-flex flex-column align-items-end">
                 <li><a href="./index.html">INICIO</a></li>
                 <li><a href="./html/shop.html">COMPRAR</a></li>
-                <li><a href="#">CONTACTO</a></li>
             </ul>
         </nav>
     </header>
@@ -35,113 +34,21 @@
         </div>
     </div>
     <div class="sale d-flex flex-column w-100 align-items-start gap-5">
-        <span class="sale-title ms-4">COMBOS</span>
-        <div class="sale-container d-flex align-items-end gap-5">
-            <div class="sale-container__item d-flex flex-column align-items-center gap-4">
-                <div class="sale-container__item-img">
-                    <img src="./img/bebidas/combos/fernetCoca.jpg" alt="">
-                </div>
-                <span class="sale-container__item-name">Fernet Branca 1L + Coca Cola 2,25L</span>
-                <div class="sale-container__item-price">
-                    <span>$</span>
-                    <span class="sale-container__item-price__value">2000</span>
-                </div>
-            </div>
-            <div class="sale-container__item d-flex flex-column align-items-center gap-4">
-                <div class="sale-container__item-img">
-                    <img src="./img/bebidas/combos/smirnoffSprite.jpg" alt="">
-                </div>
-                <span class="sale-container__item-name">Smirnoff 750ml + Sprite 2.25L</span>
-                <div class="sale-container__item-price">
-                    <span>$</span>
-                    <span class="sale-container__item-price__value">1850</span>
-                </div>
-            </div>
-            <div class="sale-container__item d-flex flex-column align-items-center gap-4">
-                <div class="sale-container__item-img">
-                    <img src="./img/bebidas/combos/ginTonica.jpg" alt="">
-                </div>
-                <span class="sale-container__item-name">Gin Brighton + Tonica 2.25L</span>
-                <div class="sale-container__item-price">
-                    <span>$</span>
-                    <span class="sale-container__item-price__value">1940</span>
-                </div>
-            </div>
-            <a href="./html/shop.html" class="itemMore sale-container__item d-flex flex-column align-items-center gap-4">
-                <div class="sale-container__item-img itemMore-img">
-                    <img src="./img/+.png" alt="">
-                </div>
-                <span class="sale-container__item-name"></span>
-                <div class="sale-container__item-price">
-                    <span></span>
-                    <span class="sale-container__item-price__value"></span>
-                </div>
-            </a>
+        <div class="sale-header d-flex flex-row align-items-center justify-content-between w-100 p-4">
+            <span class="sale-header__title">COMBOS</span>
+            <a href="./html/shop.html">Mostrar más</a>
+        </div>
+        <div id="saleIndexContainer" class="items-container d-flex align-items-end gap-5">
+
         </div>
     </div>
     <div class="drinks d-flex flex-column w-100 align-items-end gap-5">
-        <span class="drinks-title me-4">BEBIDAS</span>
-        <div class="drinks-container d-flex align-items-end gap-5">
-            <div class="drinks-container__item d-flex flex-column align-items-center gap-4">
-                <div class="drinks-container__item-img">
-                    <img src="./img/bebidas/solo/andesRubia.png" alt="">
-                </div>
-                <span class="drinks-container__item-name">Andes Rubia</span>
-                <div class="drinks-container__item-price">
-                    <span>$</span>
-                    <span class="drinks-container__item-price__value">160</span>
-                </div>
-            </div>
-            <div class="drinks-container__item d-flex flex-column align-items-center gap-4">
-                <div class="drinks-container__item-img">
-                    <img src="./img/bebidas/solo/budweiser.png" alt="">
-                </div>
-                <span class="drinks-container__item-name">Budweiser</span>
-                <div class="drinks-container__item-price">
-                    <span>$</span>
-                    <span class="drinks-container__item-price__value">150</span>
-                </div>
-            </div>
-            <div class="drinks-container__item d-flex flex-column align-items-center gap-4">
-                <div class="drinks-container__item-img">
-                    <img src="./img/bebidas/solo/heineken.jpg" alt="">
-                </div>
-                <span class="drinks-container__item-name">Heineken</span>
-                <div class="drinks-container__item-price">
-                    <span>$</span>
-                    <span class="drinks-container__item-price__value">170</span>
-                </div>
-            </div>
-            <div class="drinks-container__item d-flex flex-column align-items-center gap-4">
-                <div class="drinks-container__item-img">
-                    <img src="./img/bebidas/solo/ginBombay.jpg" alt="">
-                </div>
-                <span class="drinks-container__item-name">Gin Bombay</span>
-                <div class="drinks-container__item-price">
-                    <span>$</span>
-                    <span class="drinks-container__item-price__value">1360</span>
-                </div>
-            </div>
-            <div class="drinks-container__item d-flex flex-column align-items-center gap-4">
-                <div class="drinks-container__item-img">
-                    <img src="./img/bebidas/solo/jagger.jpg" alt="">
-                </div>
-                <span class="drinks-container__item-name">Jaggermeifter</span>
-                <div class="drinks-container__item-price">
-                    <span>$</span>
-                    <span class="drinks-container__item-price__value">850</span>
-                </div>
-            </div>
-            <a href="./html/shop.html"  class="itemMore drinks-container__item d-flex flex-column align-items-center gap-4">
-                <div class="drinks-container__item-img itemMore-img">
-                    <img src="./img/+.png" alt="">
-                </div>
-                <span class="drinks-container__item-name"></span>
-                <div class="drinks-container__item-price">
-                    <span></span>
-                    <span class="drinks-container__item-price__value"></span>
-                </div>
-            </a>
+        <div class="drinks-header d-flex flex-row align-items-center justify-content-between w-100 p-4">
+            <span class="drinks-header__title">BEBIDAS</span>
+            <a href="./html/shop.html">Mostrar más</a>
+        </div>
+        <div id="drinksIndexContainer" class="items-container d-flex align-items-end gap-5">
+        
         </div>
     </div>
     <footer class="footer d-flex align-items-center justify-content-around p-5">
