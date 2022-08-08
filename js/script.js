@@ -59,7 +59,7 @@ const createItemsShopDOM=(array, container)=>{
             <div class="shop-container__items-item__icon">
                 <i class="fa-solid fa-cart-shopping"></i>
             </div>
-            <div class="shop-container__items-item__cont d-flex align-items-center w-100 justify-content-between p-4">
+            <div class="shop-container__items-item__cont d-flex align-items-center w-100 justify-content-between gap-3">
                 <div class="shop-container__items-item__cont-img drinks-bigImg">
                     <img src="../img/bebidas/solo/${element.img}" alt="">
                 </div>
@@ -77,7 +77,7 @@ const createItemsShopDOM=(array, container)=>{
             <div class="shop-container__items-item__icon">
                 <i class="fa-solid fa-cart-shopping"></i>
             </div>
-            <div class="shop-container__items-item__cont d-flex align-items-center w-100 justify-content-between p-4">
+            <div class="shop-container__items-item__cont d-flex align-items-center w-100 justify-content-between gap-3">
                 <div class="shop-container__items-item__cont-img">
                     <img src="../img/bebidas/combos/${element.img}" alt="">
                 </div>
@@ -172,15 +172,13 @@ if(location.href.includes('shop.html')){
     createItemsShopDOM(arrayBebidas, drinksShopContainer)
     
     /*------------------EVENTOS--------------------*/
+    const arrayItemsStorage=JSON.parse(localStorage.getItem('ITEMS'))
     const arrayAllItems=arrayCombos.concat(arrayBebidas)
     let totalCarrito=0
     // ALMACENA ITEMS EN EL STORAGE Y AÑADE EL ITEM EN EL CONTAINER
-    let counterShopping=parseInt(cartShoppingCounter.innerHTML)
     for (let i=0; i<arrayAllItems.length; i++) {
         shoppingCartItem_icon[i].addEventListener('click', () =>{
-            console.log(totalCarrito)
-            counterShopping++
-            cartShoppingCounter.innerHTML=counterShopping
+            cartShoppingCounter.innerHTML=parseInt(cartShoppingCounter.innerHTML)+1
             const itemsStorage=localStorage.getItem('ITEMS')
             let itemsStorageParsed=[]
             if(itemsStorage){
@@ -195,18 +193,18 @@ if(location.href.includes('shop.html')){
     }
 
     // OBTIENE LOS ITEMS ALMACENADOS EN EL STORAGE Y LOS AÑADE AL CONTAINER
-    const arrayItemsStorage=JSON.parse(localStorage.getItem('ITEMS'))
     if(arrayItemsStorage){
         arrayItemsStorage.forEach(element => {
             createItemContainerShoppingCart(element)
             totalCarrito+=element.price
             cartShoppingTotal.innerHTML=`TOTAL $${totalCarrito}`
+            cartShoppingCounter.innerHTML=parseInt(cartShoppingCounter.innerHTML)+1
         });
     }
 
     // ABRE Y CIERRA CONTAINER DE LOS ITEMS SELECCIONADOS
     shoppingCartButtonShowContainer.addEventListener('click', ()=>{
-        if(parseInt(counterShopping.innerHTML)!==0){
+        if(cartShoppingCounter.innerHTML!=='0'){
             shoppingCartContainer.classList.toggle('cartShopping-container--show')
             shoppingCartButtonShowContainer.classList.toggle('cartShopping-btnShowContainer--rotate')
         }
