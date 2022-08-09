@@ -9,6 +9,8 @@ const shoppingCartItem_icon=document.getElementsByClassName('shop-container__ite
 const cartShoppingCounter=document.getElementById('counterShopping')
 const shoppingCartButtonShowContainer=document.getElementById('cartShoppingBtnShowContainer')
 const shoppingCartContainer=document.getElementById('cartShopping-container')
+const shoppingCartCleanButton=document.getElementById('cartShopping-container__clean')
+const paymentContainer=document.getElementById('payment')
 const paymentForm=document.getElementById('paymentForm')
 const paymentButton=document.getElementById('paymentButton')
 
@@ -192,6 +194,9 @@ if(location.href.includes('shop.html')){
             createItemContainerShoppingCart(arrayAllItems[i])
             totalCarrito+=arrayAllItems[i].price
             cartShoppingTotal.innerHTML=`TOTAL $${totalCarrito}`
+            shoppingCartCleanButton.innerHTML=`
+                <button type="submit">VACIAR <i class="fa-solid fa-cart-shopping"></i></button>
+            `
             itemsMessage+=`${arrayAllItems[i].name} $${arrayAllItems[i].price}${`%0A`}`
         })
     }
@@ -203,6 +208,9 @@ if(location.href.includes('shop.html')){
             totalCarrito+=element.price
             cartShoppingTotal.innerHTML=`TOTAL $${totalCarrito}`
             cartShoppingCounter.innerHTML=parseInt(cartShoppingCounter.innerHTML)+1
+            shoppingCartCleanButton.innerHTML=`
+                <button type="submit">VACIAR <i class="fa-solid fa-cart-shopping"></i></button>
+            `
             itemsMessage+=`${element.name} $${element.price}${`%0A`}`
         });
     }
@@ -212,8 +220,11 @@ if(location.href.includes('shop.html')){
         if(cartShoppingCounter.innerHTML!=='0'){
             shoppingCartContainer.classList.toggle('cartShopping-container--show')
             shoppingCartButtonShowContainer.classList.toggle('cartShopping-btnShowContainer--rotate')
+            paymentContainer.classList.toggle('payment--show')
         }
     })
+
+    // MUESTRA O NO EL FORMULARIO PARA GENERAR LA ORDEN DE COMPRA
 
     // GENERA ORDEN DE COMPRA MEDIANTE MENSAJE DE WHATSAPP %0A %20
     paymentForm.addEventListener('submit', (e)=>{
@@ -228,4 +239,11 @@ if(location.href.includes('shop.html')){
         }
         location.href=`https://api.whatsapp.com/send?phone=5492281599471&text=DATOS%20DE%20LA%20ORDEN%20DE%20COMPRA%0ANombre:%20${userData.userName}%0ANumero%20de%20teléfono:%20${userData.userPhone}%0ADirección:%20${userData.userAdress}%0AMétodo%20de%20pago:%20${userData.userPayment}%0ABebidas:%0A${itemsMessage}%0ATOTAL:%20$${totalCarrito}`
     })
+
+    // VACIA EL STORAGE Y REFRESCA LA PAGINA
+    shoppingCartCleanButton.addEventListener('click', ()=>{
+        localStorage.clear()
+        location.reload()
+    })
+
 }

@@ -388,7 +388,7 @@ html {
     font-weight: 700;
   }
   .body__shop .cartShopping-btnShowContainer {
-    transition: all 1s;
+    transition: all 0.4s;
     width: 3rem;
   }
   .body__shop .cartShopping-btnShowContainer i {
@@ -397,7 +397,7 @@ html {
   }
   .body__shop .cartShopping .cartShopping-btnShowContainer--rotate {
     width: 3rem;
-    transition: all 0.5s;
+    transition: all 0.4s;
     transform: rotateX(180deg);
   }
   .body__shop .cartShopping-container {
@@ -425,9 +425,22 @@ html {
     border-top: solid white 0.15rem;
     padding: 1.5rem;
   }
+  .body__shop .cartShopping-container__clean button {
+    padding: 1rem;
+    background-color: transparent;
+    border: solid white 0.15rem;
+    color: white;
+    font-size: 2rem;
+    font-weight: 700;
+    border-radius: 1rem;
+    letter-spacing: 3px;
+  }
   .body__shop .cartShopping .cartShopping-container--show {
     display: flex !important;
     height: 100px;
+  }
+  .payment {
+    display: none !important;
   }
   .payment-title {
     font-size: 2rem;
@@ -477,6 +490,9 @@ html {
   .payment-container__form button .fa-whatsapp {
     font-size: 3rem;
     font-weight: 700;
+  }
+  .payment--show {
+    display: flex !important;
   }
   .footer {
     background-color: black;

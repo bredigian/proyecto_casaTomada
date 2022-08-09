@@ -98,7 +98,7 @@
                 }
             }
             &-btnShowContainer{
-                transition: all 1s;
+                transition: all .4s;
                 width: 3rem;
                 i{
                     color: white;
@@ -107,7 +107,7 @@
             }
             .cartShopping-btnShowContainer--rotate{
                 width: 3rem;
-                transition: all .5s;
+                transition: all .4s;
                 transform: rotateX(180deg);
             }
             &-container{
@@ -139,6 +139,18 @@
                     border-top: solid white .15rem;
                     padding: 1.5rem;
                 }
+                &__clean{
+                    button{
+                        padding: 1rem;
+                        background-color: transparent;
+                        border: solid white .15rem;
+                        color: white;
+                        font-size: 2rem;
+                        font-weight: 700;
+                        border-radius: 1rem;
+                        letter-spacing: 3px;
+                    }
+                }
             }
             .cartShopping-container--show{
                 display: flex!important;
@@ -147,6 +159,7 @@
         }
     }
     .payment{
+        display: none!important;
         &-title{
             font-size: 2rem;
             font-weight: 700;
@@ -200,6 +213,9 @@
                 }
             }
         }
+    }
+    .payment--show{
+        display: flex !important
     }
     .footer{
         @include styleFooter;
