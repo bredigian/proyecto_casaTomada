@@ -429,6 +429,55 @@ html {
     display: flex !important;
     height: 100px;
   }
+  .payment-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: white;
+  }
+  .payment-container {
+    background-color: black;
+    border-radius: 1rem;
+  }
+  .payment-container__form-item__title {
+    color: white;
+    font-size: 1.5rem;
+  }
+  .payment-container__form-item .inputSelect {
+    width: 100%;
+    background-color: transparent;
+    color: white;
+    border: none;
+    border-bottom: solid white 0.2rem;
+    font-size: 1.5rem;
+    outline: none;
+    padding: 0.5rem 0rem;
+  }
+  .payment-container__form-item .inputSelect::placeholder {
+    color: rgb(154, 154, 154);
+  }
+  .payment-container__form-item select {
+    border: none !important;
+  }
+  .payment-container__form-item select option {
+    color: black;
+    font-weight: 700;
+  }
+  .payment-container__form button {
+    border: none;
+    background-color: #25D366;
+    border-radius: 1rem;
+    max-width: 300px;
+    margin: auto;
+  }
+  .payment-container__form button p {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+  .payment-container__form button .fa-whatsapp {
+    font-size: 3rem;
+    font-weight: 700;
+  }
   .footer {
     background-color: black;
     height: 300px;

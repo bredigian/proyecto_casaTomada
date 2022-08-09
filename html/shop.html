@@ -67,6 +67,36 @@
             </div>
         </div>
     </div>
+    <div class="payment d-flex flex-column w-100 gap-4 p-4">
+        <div class="payment-container d-flex flex-column align-items-center w-100 gap-4 p-4">
+            <div class="payment-title">Complete con sus datos</div>
+            <form id="paymentForm" class="payment-container__form d-flex flex-column align-items-start gap-3 w-100" action="#">
+                <div class="payment-container__form-item d-flex flex-column align-items-start gap-2 w-100">
+                    <span class="payment-container__form-item__title">Nombre</span>
+                    <input class="inputSelect" type="text" placeholder="Ingrese su nombre" required>
+                </div>
+                <div class="payment-container__form-item d-flex flex-column align-items-start gap-2 w-100">
+                    <span class="payment-container__form-item__title">Numero de Teléfono</span>
+                    <input class="inputSelect" type="text" placeholder="Ingrese su número" required>
+                </div>
+                <div class="payment-container__form-item d-flex flex-column align-items-start gap-2 w-100">
+                    <span class="payment-container__form-item__title">Direccion</span>
+                    <input class="inputSelect" type="text" placeholder="Ingrese su direccion" required>
+                </div>
+                <div class="payment-container__form-item d-flex flex-column align-items-start gap-2 w-100">
+                    <span class="payment-container__form-item__title">Método de pago</span>
+                    <select class="inputSelect" name="" id="paymentOptions">
+                        <option value="1">Mercado Pago</option>
+                        <option value="2">Efectivo</option>
+                    </select>
+                </div>
+                <button id="paymentButton" class="d-flex w-100 align-items-center justify-content-between p-4" type="submit">
+                    <p>Generar orden de compra</p>
+                    <i class="fa-brands fa-whatsapp"></i>
+                </button>
+            </form>
+        </div>
+    </div>
     <footer class="footer d-flex align-items-center justify-content-around p-5">
         <div class="footer-img">
             <img src="../img/logoCasatomada.jpg" alt="Logo Casatomada">

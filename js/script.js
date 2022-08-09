@@ -9,6 +9,8 @@ const shoppingCartItem_icon=document.getElementsByClassName('shop-container__ite
 const cartShoppingCounter=document.getElementById('counterShopping')
 const shoppingCartButtonShowContainer=document.getElementById('cartShoppingBtnShowContainer')
 const shoppingCartContainer=document.getElementById('cartShopping-container')
+const paymentForm=document.getElementById('paymentForm')
+const paymentButton=document.getElementById('paymentButton')
 
 // FUNCIONES
 const createItemsIndexDOM=(array, container)=>{
@@ -174,6 +176,7 @@ if(location.href.includes('shop.html')){
     /*------------------EVENTOS--------------------*/
     const arrayItemsStorage=JSON.parse(localStorage.getItem('ITEMS'))
     const arrayAllItems=arrayCombos.concat(arrayBebidas)
+    let itemsMessage=''
     let totalCarrito=0
     // ALMACENA ITEMS EN EL STORAGE Y AÑADE EL ITEM EN EL CONTAINER
     for (let i=0; i<arrayAllItems.length; i++) {
@@ -189,6 +192,7 @@ if(location.href.includes('shop.html')){
             createItemContainerShoppingCart(arrayAllItems[i])
             totalCarrito+=arrayAllItems[i].price
             cartShoppingTotal.innerHTML=`TOTAL $${totalCarrito}`
+            itemsMessage+=`${arrayAllItems[i].name} $${arrayAllItems[i].price}${`%0A`}`
         })
     }
 
@@ -199,6 +203,7 @@ if(location.href.includes('shop.html')){
             totalCarrito+=element.price
             cartShoppingTotal.innerHTML=`TOTAL $${totalCarrito}`
             cartShoppingCounter.innerHTML=parseInt(cartShoppingCounter.innerHTML)+1
+            itemsMessage+=`${element.name} $${element.price}${`%0A`}`
         });
     }
 
@@ -208,5 +213,19 @@ if(location.href.includes('shop.html')){
             shoppingCartContainer.classList.toggle('cartShopping-container--show')
             shoppingCartButtonShowContainer.classList.toggle('cartShopping-btnShowContainer--rotate')
         }
+    })
+
+    // GENERA ORDEN DE COMPRA MEDIANTE MENSAJE DE WHATSAPP %0A %20
+    paymentForm.addEventListener('submit', (e)=>{
+        e.preventDefault()
+        const paymentOptions=document.getElementById('paymentOptions')
+        const f=e.target
+        const userData={
+            userName: f[0].value,
+            userPhone: parseInt(f[1].value),
+            userAdress: f[2].value,
+            userPayment: paymentOptions.options[paymentOptions.selectedIndex].text
+        }
+        location.href=`https://api.whatsapp.com/send?phone=5492281684309&text=DATOS%20DE%20LA%20ORDEN%20DE%20COMPRA%0ANombre:%20${userData.userName}%0ANumero%20de%20teléfono:%20${userData.userPhone}%0ADirección:%20${userData.userAdress}%0AMétodo%20de%20pago:%20${userData.userPayment}%0ABebidas:%0A${itemsMessage}%0ATOTAL:%20$${totalCarrito}`
     })
 }
