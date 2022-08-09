@@ -39,9 +39,20 @@
                         border: solid black .3rem;
                         border-radius: 1rem;
                         &__icon{
+                            width: 3rem;
+                            height: 3rem;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
                             i{
+                                border-radius: 1rem;
+                                padding: 1rem;
                                 color: black;
                                 font-size: 2rem;
+                            }
+                            :active{
+                                background-color: black;
+                                color: white;
                             }
                         }
                         &__cont{
