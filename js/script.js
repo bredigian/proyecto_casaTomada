@@ -1,4 +1,6 @@
 // ACCESOS AL DOM
+const saleIndexContainer=document.getElementById('saleIndexContainer')
+const drinksIndexContainer=document.getElementById('drinksIndexContainer')
 const toggleMenuElement=document.getElementById('toggle-menu')
 const mainMenuElement=document.getElementById('navbar')
 const shoppingCartContainerItems=document.getElementById('cartShopping-container__items')
@@ -15,6 +17,8 @@ const paymentForm=document.getElementById('paymentForm')
 const paymentButton=document.getElementById('paymentButton')
 
 // FUNCIONES
+
+// CREA LOS ITEMS EN EL INDEX
 const createItemsIndexDOM=(array, container)=>{
     array.forEach(element => {
         let item=document.createElement('div')
@@ -54,6 +58,7 @@ const createItemsIndexDOM=(array, container)=>{
     })
 }
 
+// CREA LOS ITEMS EN LA SECCION DE COMPRAS
 const createItemsShopDOM=(array, container)=>{
     array.forEach(element => {
         let item=document.createElement('li')
@@ -99,6 +104,7 @@ const createItemsShopDOM=(array, container)=>{
     });
 }
 
+// CREA UN NUEVO ITEM EN EL CARRITO DE COMPRAS
 const createItemContainerShoppingCart=(element)=>{
     const shoppingCartItem=document.createElement('div')
     shoppingCartItem.className='cartShopping-container__items-item d-flex align-items-start justify-content-between p-4 gap-4'
@@ -141,8 +147,6 @@ const arrayBebidas=[
 
 /*----------------INDEX SECTION----------------*/
 if(location.href.includes('index.html')){
-    const saleIndexContainer=document.getElementById('saleIndexContainer')
-    const drinksIndexContainer=document.getElementById('drinksIndexContainer')
     
     createItemsIndexDOM(arrayCombos, saleIndexContainer)
     createItemsIndexDOM(arrayBebidas, drinksIndexContainer)
@@ -180,6 +184,7 @@ if(location.href.includes('shop.html')){
     const arrayAllItems=arrayCombos.concat(arrayBebidas)
     let itemsMessage=''
     let totalCarrito=0
+
     // ALMACENA ITEMS EN EL STORAGE Y AÑADE EL ITEM EN EL CONTAINER
     for (let i=0; i<arrayAllItems.length; i++) {
         shoppingCartItem_icon[i].addEventListener('click', () =>{
@@ -223,8 +228,6 @@ if(location.href.includes('shop.html')){
             paymentContainer.classList.toggle('payment--show')
         }
     })
-
-    // MUESTRA O NO EL FORMULARIO PARA GENERAR LA ORDEN DE COMPRA
 
     // GENERA ORDEN DE COMPRA MEDIANTE MENSAJE DE WHATSAPP %0A %20
     paymentForm.addEventListener('submit', (e)=>{
