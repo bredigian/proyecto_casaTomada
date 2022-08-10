@@ -89,9 +89,12 @@
         .cartShopping{
             position: sticky;
             bottom: 1.5rem;
-            background-color: black;
             border-radius: 1rem;
             &-counter{
+                z-index: 3;
+                height: 80px;
+                background-color: black;
+                border-radius: 1rem;
                 &__icon{
                     width: 3rem;
                     i{
@@ -122,9 +125,14 @@
                 transform: rotateX(180deg);
             }
             &-container{
-                display: none!important;
-                overflow: auto;
+                position: absolute;
+                background-color: black;
+                transition: all .5s;
+                height: 80px;
+                z-index: 2;
+                border-radius: 1rem;
                 &__items{
+                    overflow: auto;
                     &-item{
                         .delete{
                             font-size: 1.5rem;
@@ -141,22 +149,23 @@
                         }
                     }
                 }
-                &__total{
-                    font-size: 2rem;
-                    color: white;
-                    font-weight: 700;
-                    letter-spacing: 3px;
-                    text-align: center;
-                    border-top: solid white .15rem;
-                    padding: 1.5rem;
-                }
-                &__clean{
-                    button{
+                &__info{
+                    padding-top: 0!important;
+                    border-top-left-radius: 1rem;
+                    border-top-right-radius: 1rem;
+                    &-total{
+                        font-size: 2rem;
+                        color: white;
+                        font-weight: 700;
+                        letter-spacing: 3px;
+                        text-align: center;
+                    }
+                    &-clean{
                         padding: 1rem;
                         background-color: transparent;
                         border: solid white .15rem;
                         color: white;
-                        font-size: 2rem;
+                        font-size: 1rem;
                         font-weight: 700;
                         border-radius: 1rem;
                         letter-spacing: 3px;
@@ -164,13 +173,12 @@
                 }
             }
             .cartShopping-container--show{
-                display: flex!important;
-                height: 100px
+                height: 200px;
+                transform: translateY(-12rem);
             }
         }
     }
     .payment{
-        display: none!important;
         &-title{
             font-size: 2rem;
             font-weight: 700;
@@ -214,7 +222,7 @@
                     margin: auto;
                     p{
                         margin: 0;
-                        font-size: 1.5rem;
+                        font-size: 2rem;
                         font-weight: 700;
                     }
                     .fa-whatsapp{
@@ -224,10 +232,17 @@
                 }
             }
         }
+        &-message{
+            p{
+                color: red;
+                font-size: 1.5rem;
+                font-weight: 700;
+            }
+        }
     }
-    .payment--show{
+    /*.payment--show{
         display: flex !important
-    }
+    }*/
     .footer{
         @include styleFooter;
     }

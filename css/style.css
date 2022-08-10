@@ -382,6 +382,11 @@ html {
   .body__shop .cartShopping {
     position: sticky;
     bottom: 1.5rem;
+    border-radius: 1rem;
+  }
+  .body__shop .cartShopping-counter {
+    z-index: 3;
+    height: 80px;
     background-color: black;
     border-radius: 1rem;
   }
@@ -414,7 +419,14 @@ html {
     transform: rotateX(180deg);
   }
   .body__shop .cartShopping-container {
-    display: none !important;
+    position: absolute;
+    background-color: black;
+    transition: all 0.5s;
+    height: 80px;
+    z-index: 2;
+    border-radius: 1rem;
+  }
+  .body__shop .cartShopping-container__items {
     overflow: auto;
   }
   .body__shop .cartShopping-container__items-item .delete {
@@ -429,31 +441,31 @@ html {
   .body__shop .cartShopping-container__items-item .nameItem {
     margin: 0;
   }
-  .body__shop .cartShopping-container__total {
+  .body__shop .cartShopping-container__info {
+    padding-top: 0 !important;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+  }
+  .body__shop .cartShopping-container__info-total {
     font-size: 2rem;
     color: white;
     font-weight: 700;
     letter-spacing: 3px;
     text-align: center;
-    border-top: solid white 0.15rem;
-    padding: 1.5rem;
   }
-  .body__shop .cartShopping-container__clean button {
+  .body__shop .cartShopping-container__info-clean {
     padding: 1rem;
     background-color: transparent;
     border: solid white 0.15rem;
     color: white;
-    font-size: 2rem;
+    font-size: 1rem;
     font-weight: 700;
     border-radius: 1rem;
     letter-spacing: 3px;
   }
   .body__shop .cartShopping .cartShopping-container--show {
-    display: flex !important;
-    height: 100px;
-  }
-  .payment {
-    display: none !important;
+    height: 200px;
+    transform: translateY(-12rem);
   }
   .payment-title {
     font-size: 2rem;
@@ -497,16 +509,21 @@ html {
   }
   .payment-container__form button p {
     margin: 0;
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: 700;
   }
   .payment-container__form button .fa-whatsapp {
     font-size: 3rem;
     font-weight: 700;
   }
-  .payment--show {
-    display: flex !important;
+  .payment-message p {
+    color: red;
+    font-size: 1.5rem;
+    font-weight: 700;
   }
+  /*.payment--show{
+      display: flex !important
+  }*/
   .footer {
     background-color: black;
     height: 300px;

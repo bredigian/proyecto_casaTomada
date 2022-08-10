@@ -4,14 +4,14 @@ const drinksIndexContainer=document.getElementById('drinksIndexContainer')
 const toggleMenuElement=document.getElementById('toggle-menu')
 const mainMenuElement=document.getElementById('navbar')
 const shoppingCartContainerItems=document.getElementById('cartShopping-container__items')
-const cartShoppingTotal=document.getElementById('cartShopping-container__total')
+const shoppingCartTotal=document.getElementById('cartShoppingTotal')
 const combosShopContainer=document.getElementById('combosContainer')
 const drinksShopContainer=document.getElementById('drinksContainer')
 const shoppingCartItem_icon=document.getElementsByClassName('shop-container__items-item__icon')
 const cartShoppingCounter=document.getElementById('counterShopping')
 const shoppingCartButtonShowContainer=document.getElementById('cartShoppingBtnShowContainer')
 const shoppingCartContainer=document.getElementById('cartShopping-container')
-const shoppingCartCleanButton=document.getElementById('cartShopping-container__clean')
+const shoppingCartCleanButton=document.getElementById('cartShoppingClean')
 const paymentContainer=document.getElementById('payment')
 const paymentForm=document.getElementById('paymentForm')
 const paymentButton=document.getElementById('paymentButton')
@@ -198,10 +198,7 @@ if(location.href.includes('shop.html')){
             localStorage.setItem('ITEMS', JSON.stringify(itemsStorageParsed))
             createItemContainerShoppingCart(arrayAllItems[i])
             totalCarrito+=arrayAllItems[i].price
-            cartShoppingTotal.innerHTML=`TOTAL $${totalCarrito}`
-            shoppingCartCleanButton.innerHTML=`
-                <button type="submit">VACIAR <i class="fa-solid fa-cart-shopping"></i></button>
-            `
+            shoppingCartTotal.innerHTML=`TOTAL $${totalCarrito}`
             itemsMessage+=`${arrayAllItems[i].name} $${arrayAllItems[i].price}${`%0A`}`
         })
     }
@@ -211,11 +208,8 @@ if(location.href.includes('shop.html')){
         arrayItemsStorage.forEach(element => {
             createItemContainerShoppingCart(element)
             totalCarrito+=element.price
-            cartShoppingTotal.innerHTML=`TOTAL $${totalCarrito}`
+            shoppingCartTotal.innerHTML=`TOTAL $${totalCarrito}`
             cartShoppingCounter.innerHTML=parseInt(cartShoppingCounter.innerHTML)+1
-            shoppingCartCleanButton.innerHTML=`
-                <button type="submit">VACIAR <i class="fa-solid fa-cart-shopping"></i></button>
-            `
             itemsMessage+=`${element.name} $${element.price}${`%0A`}`
         });
     }
@@ -225,22 +219,33 @@ if(location.href.includes('shop.html')){
         if(cartShoppingCounter.innerHTML!=='0'){
             shoppingCartContainer.classList.toggle('cartShopping-container--show')
             shoppingCartButtonShowContainer.classList.toggle('cartShopping-btnShowContainer--rotate')
-            paymentContainer.classList.toggle('payment--show')
+            // paymentContainer.classList.toggle('payment--show')
         }
     })
 
-    // GENERA ORDEN DE COMPRA MEDIANTE MENSAJE DE WHATSAPP %0A %20
+    
+        // GENERA ORDEN DE COMPRA MEDIANTE MENSAJE DE WHATSAPP %0A %20
     paymentForm.addEventListener('submit', (e)=>{
         e.preventDefault()
-        const paymentOptions=document.getElementById('paymentOptions')
-        const f=e.target
-        const userData={
-            userName: f[0].value,
-            userPhone: parseInt(f[1].value),
-            userAdress: f[2].value,
-            userPayment: paymentOptions.options[paymentOptions.selectedIndex].text
+        if(itemsMessage.length!==0){
+            const paymentOptions=document.getElementById('paymentOptions')
+            const f=e.target
+            const userData={
+                userName: f[0].value,
+                userPhone: parseInt(f[1].value),
+                userAdress: f[2].value,
+                userPayment: paymentOptions.options[paymentOptions.selectedIndex].text
+            }
+            location.href=`https://api.whatsapp.com/send?phone=5492281599471&text=*INFORMACIÓN%20DE%20COMPRA*%0ANombre:%20${userData.userName}%0ANumero%20de%20teléfono:%20${userData.userPhone}%0ADirección:%20${userData.userAdress}%0AMétodo%20de%20pago:%20${userData.userPayment}%0ABebidas:%0A${itemsMessage}%0ATOTAL:%20$${totalCarrito}`
         }
-        location.href=`https://api.whatsapp.com/send?phone=5492281599471&text=DATOS%20DE%20LA%20ORDEN%20DE%20COMPRA%0ANombre:%20${userData.userName}%0ANumero%20de%20teléfono:%20${userData.userPhone}%0ADirección:%20${userData.userAdress}%0AMétodo%20de%20pago:%20${userData.userPayment}%0ABebidas:%0A${itemsMessage}%0ATOTAL:%20$${totalCarrito}`
+        else{
+            const paymentErrorMesagge=document.createElement('div')
+            paymentErrorMesagge.innerHTML=`
+                <p class="m-0">¡El carrito esta vacio!</p>
+            `
+            paymentErrorMesagge.className='payment-message d-flex align-items-center justify-content-center w-100'
+            paymentContainer.append(paymentErrorMesagge)
+        }
     })
 
     // VACIA EL STORAGE Y REFRESCA LA PAGINA
