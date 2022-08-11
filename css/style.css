@@ -25,6 +25,10 @@ html {
   }
 }
 @media (max-width: 768px) {
+  .body__index .header {
+    position: sticky;
+    top: 0;
+  }
   .body__index .header-container {
     background-color: black;
     z-index: 2;
@@ -97,6 +101,9 @@ html {
   .body__index .carousel-inner {
     border: solid black 0.3rem;
     border-radius: 1rem;
+  }
+  .body__index .carousel-inner .carousel-item {
+    max-height: 350px;
   }
   .body__index .carousel-inner .carousel-item .carousel-caption {
     display: flex;
@@ -179,6 +186,10 @@ html {
   }
 }
 @media (max-width: 768px) {
+  .body__shop .header {
+    position: sticky;
+    top: 0;
+  }
   .body__shop .header-container {
     background-color: black;
     z-index: 2;
@@ -239,7 +250,6 @@ html {
   .body__shop .shop-title__icon i {
     color: black;
     text-align: center;
-    transform: translate(-2px, -4px);
   }
   .body__shop .shop-container__title {
     font-size: 3rem;

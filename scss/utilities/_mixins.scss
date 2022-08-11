@@ -1,4 +1,6 @@
 @mixin styleHeaderNavBar {
+    position: sticky;
+    top: 0;
     &-container{
         background-color: black;
         z-index: 2;
@@ -61,59 +63,6 @@
     }
     &-cod{
         display: none!important;
-    }
-}
-@mixin styleSlide{
-    padding: 1.5rem 0;
-    &-header{
-        &__title{
-            @include styleTitle;
-        }
-        a{
-            color: black;
-            width: min-content;
-            text-align: center;
-            font-size: 1.25rem;
-            font-weight: 700;
-        }
-    }
-    .items-container{
-        width: 100%;
-        overflow: auto;
-        &__item{
-            &-img{
-                width: 12rem;
-                img{
-                    width: 100%;
-                }
-            }
-            &-name{
-                text-align: center;
-                font-size: 1.5rem;
-                font-weight: 700;
-                width: 15rem;
-            }
-            &-cod{
-                background-color: black;
-                width: 2.5rem;
-                height: 2.5rem;
-                border-radius: 100%;
-                span{
-                    font-size: 1.5rem;
-                    font-weight: 700;
-                    color: white;
-                    width: 100%;
-                    text-align: center;
-                }
-            }
-            &-price{
-                @extend .items-container__item-name;
-                font-size: 2rem
-            }
-        }
-        .itemMore{
-            @include styleItemMore;
-        }
     }
 }
 @mixin styleFooter{
