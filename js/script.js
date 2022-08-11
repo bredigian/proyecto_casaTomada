@@ -20,42 +20,33 @@ const paymentButton=document.getElementById('paymentButton')
 
 // CREA LOS ITEMS EN EL INDEX
 const createItemsIndexDOM=(array, container)=>{
-    array.forEach(element => {
+    for(let i=0; i<array.length; i++){
         let item=document.createElement('div')
-        if(container==saleIndexContainer){
-            item.innerHTML=`
-            <div class="items-container__item d-flex flex-column align-items-center gap-4">
-                <div class="items-container__item-img">
-                    <img src="./img/bebidas/combos/${element.img}" alt="">
-                </div>
-                <span class="items-container__item-name">${element.name}</span>
-                <div class="items-container__item-price">
-                    <span>$</span>
-                    <span class="items-container__item-price__value">${element.price}</span>
-                </div>
-            </div>
-            `
+        if(i!==0){
+            item.className='carousel-item'
         } else{
+            item.className='carousel-item active'
+        }
+        if(container==saleIndexContainer){
             item.innerHTML=`
-            <div class="items-container__item d-flex flex-column align-items-center gap-4">
-                <div class="items-container__item-img">
-                    <img src="./img/bebidas/solo/${element.img}" alt="">
-                </div>
-                <span class="items-container__item-name">${element.name}</span>
-                <div class="items-container__item-price">
-                    <span>$</span>
-                    <span class="items-container__item-price__value">${element.price}</span>
-                </div>
+            <img src="./img/bebidas/carousel/${array[i].img}" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-md-block">
+                <h5>${array[i].name}</h5>
+                <p>$${array[i].price}</p>
             </div>
             `
-        }
-        item.className='items-container__item d-flex flex-column align-items-center gap-4'
-        if(container==saleIndexContainer){
             saleIndexContainer.appendChild(item)
         } else{
+            item.innerHTML=`
+            <img src="./img/bebidas/carousel/${array[i].img}" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-md-block">
+                <h5>${array[i].name}</h5>
+                <p>$${array[i].price}</p>
+            </div>
+            `
             drinksIndexContainer.appendChild(item)
         }
-    })
+    }
 }
 
 // CREA LOS ITEMS EN LA SECCION DE COMPRAS
@@ -131,18 +122,17 @@ class Item{
 
 // COMBOS
 const arrayCombos=[
-    new Item('c1', 'fernetCoca.jpg', 'Fernet 1L + Coca Coca 2.25L', 2000),
-    new Item('c2', 'smirnoffSprite.jpg', 'Smirnoff 750ml + Sprite 2.25L', 1700),
-    new Item('c3', 'ginTonica.jpg', 'Gin Brighton 750ml + Tónica 1,5L', 1900),
+    new Item('c1', 'fernetCoca.png', 'Fernet 1L + Coca Coca 2.25L', 2000),
+    new Item('c2', 'smirnoffSprite.png', 'Smirnoff 750ml + Sprite 2.25L', 1700),
+    new Item('c3', 'bombaySchweepes.png', 'Gin Bombay + Schweepes 2,25L', 1900),
 ]
 
 // BEBIDAS
 const arrayBebidas=[
     new Item('d1','andesRubia.png', 'Andes Rubia', 170),
-    new Item('d2','budweiser.png', 'Budweiser', 160),
-    new Item('d3','heineken.jpg', 'Heineken', 180),
-    new Item('d4','ginBombay.jpg', 'Gin Bombay', 1400),
-    new Item('d5','fernetBranca.png', 'Fernet B. 750ml', 1400),
+    new Item('d2','ginBrighton.png', 'Gin Brighton', 1400),
+    new Item('d3','smirnoffRaspberry.png', 'Vodka Smirnoff Raspberry', 1400),
+    new Item('d5','absolut.png', 'Vodka Absolut', 1400),
 ]
 
 /*----------------INDEX SECTION----------------*/
@@ -161,21 +151,22 @@ if(location.href.includes('shop.html')){
         new Item('d8','andesRosa.png', 'Andes Ipa Roja', 170),
         new Item('d9','andesVendimia.png', 'Andes Vendimia 2022', 170),
         new Item('d10','andesVerde.png', 'Andes Ipa Andina', 170),
-        new Item('d11','budweiserBotella.jpg', 'Budweiser 750ml', 230),
+        new Item('d11','budweiserBotella.png', 'Budweiser 750ml', 230),
         new Item('d12','fernetBranca.png', 'Fernet Branca 1L', 1700),
         new Item('d13','fernetBuhero.png', 'Fernet Buhero Negro 750ml', 1250),
-        new Item('d14','ginBeefeater.jpg', 'Gin Beefeater', 1400),
-        new Item('d15','ginbrighton.jpg', 'Gin Brighton', 1400),
-        new Item('d16','ginGordon.jpg', 'Gin Gordon', 1400),
-        new Item('d17','jagger.jpg', 'Jaggermeifter', 1400),
-        new Item('d18','smirnoff.jpg', 'Vodka Smirnoff', 1400),
+        new Item('d14','ginBeefeater.png', 'Gin Beefeater', 1400),
+        new Item('d15','budweiserLata.png', 'Budweiser', 160),
+        new Item('d16','ginGordon.png', 'Gin Gordon', 1400),
+        new Item('d17','jaggermeifter.png', 'Jaggermeifter', 1400),
+        new Item('d18','smirnoff.png', 'Vodka Smirnoff', 1400),
         new Item('d19','smirnoffApple.png', 'Vodka Smirnoff Apple', 1400),
-        new Item('d20','smirnoffCitric.jpg', 'Vodka Smirnoff Citric', 1400),
+        new Item('d20','smirnoffCitric.png', 'Vodka Smirnoff Citric', 1400),
         new Item('d21','smirnoffWatermelon.png', 'Vodka Smirnoff Watermelon', 1400),
-        new Item('d22','smirnoffRaspberry.png', 'Vodka Smirnoff Raspberry', 1400),
-        new Item('d23','absolut.png', 'Vodka Absolut', 1400),
+        new Item('d22','heinekenLata.png', 'Heineken', 180),
+        new Item('d23','fernetBranca.png', 'Fernet B. 750ml', 1400),
+        new Item('d24','ginBombay.png', 'Gin Bombay', 1400),
     )
-    
+
     createItemsShopDOM(arrayCombos, combosShopContainer)
     createItemsShopDOM(arrayBebidas, drinksShopContainer)
     
@@ -216,11 +207,8 @@ if(location.href.includes('shop.html')){
 
     // ABRE Y CIERRA CONTAINER DE LOS ITEMS SELECCIONADOS
     shoppingCartButtonShowContainer.addEventListener('click', ()=>{
-        if(cartShoppingCounter.innerHTML!=='0'){
-            shoppingCartContainer.classList.toggle('cartShopping-container--show')
-            shoppingCartButtonShowContainer.classList.toggle('cartShopping-btnShowContainer--rotate')
-            // paymentContainer.classList.toggle('payment--show')
-        }
+        shoppingCartContainer.classList.toggle('cartShopping-container--show')
+        shoppingCartButtonShowContainer.classList.toggle('cartShopping-btnShowContainer--rotate')
     })
 
     

@@ -16,16 +16,50 @@
                 padding: 1rem;
             }
         }
-        .sale{
-            @include styleSlide;
+        .sale, .drinks{
+            &-header{
+                &__title{
+                    @include styleTitle;
+                }
+                a{
+                    color: black;
+                    width: min-content;
+                    text-align: center;
+                    font-size: 1.25rem;
+                    font-weight: 700;
+                }
+            }
         }
-        .drinks{
-            @include styleSlide;
-            .items-container{
-                &__item{
-                    &-img{
-                        width: 8rem;
+        .carousel{
+            margin: 1.5rem;
+            &-inner{
+                border: solid black .3rem;
+                border-radius: 1rem;
+                .carousel-item{
+                    .carousel-caption{
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 1rem;
+                        background-color: rgba($color: #000000, $alpha: .8);
+                        border-radius: 1rem;
+                        padding: 1rem!important;
+                        h5{
+                            font-size: 1.25rem;
+                            font-weight: 700;
+                            margin: 0!important;
+                        }
+                        p{
+                            margin: 0!important;
+                            font-weight: 700;
+                            font-size: 1.5rem;
+                        }
                     }
+                }
+            }
+            &-control-prev, &-control-next{
+                &-icon{
+                    filter: invert(100%);
                 }
             }
         }
