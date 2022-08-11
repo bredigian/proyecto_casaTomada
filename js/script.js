@@ -1,3 +1,7 @@
+//VARIABLES 
+const phoneNumberWhatsapp=5492281599471
+const userInstagram='https://www.instagram.com/casatomada_bebidas'
+
 // ACCESOS AL DOM
 const saleIndexContainer=document.getElementById('saleIndexContainer')
 const drinksIndexContainer=document.getElementById('drinksIndexContainer')
@@ -15,6 +19,8 @@ const shoppingCartCleanButton=document.getElementById('cartShoppingClean')
 const paymentContainer=document.getElementById('payment')
 const paymentForm=document.getElementById('paymentForm')
 const paymentButton=document.getElementById('paymentButton')
+const footerLinkToInstagram=document.getElementById('linkToInstagram')
+const footerLinkToWhatsApp=document.getElementById('linkToWhatsApp')
 
 // FUNCIONES
 
@@ -226,7 +232,7 @@ if(location.href.includes('shop.html')){
                 userAdress: f[2].value,
                 userPayment: paymentOptions.options[paymentOptions.selectedIndex].text
             }
-            location.href=`https://api.whatsapp.com/send?phone=5492281599471&text=*INFORMACIÓN%20DE%20COMPRA*%0ANombre:%20${userData.userName}%0ANumero%20de%20teléfono:%20${userData.userPhone}%0ADirección:%20${userData.userAdress}%0AMétodo%20de%20pago:%20${userData.userPayment}%0ABebidas:%0A${itemsMessage}%0ATOTAL:%20$${totalCarrito}`
+            location.href=`https://api.whatsapp.com/send?phone=${phoneNumberWhatsapp}&text=*INFORMACIÓN%20DE%20COMPRA*%0ANombre:%20${userData.userName}%0ANumero%20de%20teléfono:%20${userData.userPhone}%0ADirección:%20${userData.userAdress}%0AMétodo%20de%20pago:%20${userData.userPayment}%0ABebidas:%0A${itemsMessage}%0ATOTAL:%20$${totalCarrito}`
         }
         else{
             const paymentErrorMesagge=document.createElement('div')
@@ -245,3 +251,7 @@ if(location.href.includes('shop.html')){
     })
 
 }
+
+// LINKEA PERFIL DE INSTAGRAM Y NUMERO DE WHATSAPP EN EL FOOTER
+footerLinkToInstagram.setAttribute('href', 'https://www.instagram.com')
+footerLinkToWhatsApp.setAttribute('href', `https://api.whatsapp.com/send?phone=${phoneNumberWhatsapp}`)

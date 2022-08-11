@@ -204,9 +204,11 @@
                     }
                     .inputSelect::placeholder{
                         color: rgb(154, 154, 154);
+                        padding-left: 4px;
                     }
                     select{
                         border: none !important;
+                        color: rgb(154, 154, 154) !important;
                         option{
                             color: black;
                             font-weight: 700;

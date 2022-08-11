@@ -421,9 +421,11 @@ html {
   }
   .payment-container__form-item .inputSelect::placeholder {
     color: rgb(154, 154, 154);
+    padding-left: 4px;
   }
   .payment-container__form-item select {
     border: none !important;
+    color: rgb(154, 154, 154) !important;
   }
   .payment-container__form-item select option {
     color: black;
