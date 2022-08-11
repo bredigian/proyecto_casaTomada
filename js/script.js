@@ -124,7 +124,7 @@ class Item{
 const arrayCombos=[
     new Item('c1', 'fernetCoca.png', 'Fernet 1L + Coca Coca 2.25L', 2000),
     new Item('c2', 'smirnoffSprite.png', 'Smirnoff 750ml + Sprite 2.25L', 1700),
-    new Item('c3', 'bombaySchweepes.png', 'Gin Bombay + Schweepes 2,25L', 1900),
+    new Item('c3', 'bombaySchweepes.png', 'Gin Bombay + Schweepes 2.25L', 1900),
 ]
 
 // BEBIDAS
@@ -163,9 +163,11 @@ if(location.href.includes('shop.html')){
         new Item('d20','smirnoffCitric.png', 'Vodka Smirnoff Citric', 1400),
         new Item('d21','smirnoffWatermelon.png', 'Vodka Smirnoff Watermelon', 1400),
         new Item('d22','heinekenLata.png', 'Heineken', 180),
-        new Item('d23','fernetBranca.png', 'Fernet B. 750ml', 1400),
+        new Item('d23','fernetBranca.png', 'Fernet Branca 750ml', 1400),
         new Item('d24','ginBombay.png', 'Gin Bombay', 1400),
     )
+    
+    arrayBebidas.sort((a, b) => a.name.localeCompare(b.name));
 
     createItemsShopDOM(arrayCombos, combosShopContainer)
     createItemsShopDOM(arrayBebidas, drinksShopContainer)

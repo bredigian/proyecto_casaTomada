@@ -28,6 +28,7 @@ html {
   .body__index .header {
     position: sticky;
     top: 0;
+    z-index: 2;
   }
   .body__index .header-container {
     background-color: black;
@@ -189,6 +190,7 @@ html {
   .body__shop .header {
     position: sticky;
     top: 0;
+    z-index: 2;
   }
   .body__shop .header-container {
     background-color: black;
