@@ -63,7 +63,7 @@ const createItemsShopDOM=(array, container)=>{
         if(array==arrayBebidas){
             item.innerHTML=`
             <div class="shop-container__items-item__icon">
-                <i class="fa-solid fa-cart-shopping"></i>
+                <img src="../img/icons/shopping-cart-add.svg">
             </div>
             <div class="shop-container__items-item__cont d-flex align-items-center w-100 justify-content-between gap-3">
                 <div class="shop-container__items-item__cont-img drinks-bigImg">
@@ -81,7 +81,7 @@ const createItemsShopDOM=(array, container)=>{
         } else{
             item.innerHTML=`
             <div class="shop-container__items-item__icon">
-                <i class="fa-solid fa-cart-shopping"></i>
+                <img src="../img/icons/shopping-cart-add.svg">
             </div>
             <div class="shop-container__items-item__cont d-flex align-items-center w-100 justify-content-between gap-3">
                 <div class="shop-container__items-item__cont-img">

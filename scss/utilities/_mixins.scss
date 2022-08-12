@@ -12,8 +12,10 @@
             }
         }
         &__toggle{
-            font-size: 4rem;
-            color: white
+            img{
+                width: 4rem;
+                filter: invert(100%);
+            }
         }
     }
     .navbar{
@@ -82,9 +84,9 @@
         }
         &__item{
             &-icon{
-                i{
-                    color: white;
-                    font-size: 1.5rem
+                img{
+                    width: 2rem;
+                    filter: invert(100%)
                 }
             }
             &-name{

@@ -40,9 +40,9 @@ html {
   .body__index .header-container__img img {
     width: 100%;
   }
-  .body__index .header-container__toggle {
-    font-size: 4rem;
-    color: white;
+  .body__index .header-container__toggle img {
+    width: 4rem;
+    filter: invert(100%);
   }
   .body__index .header .navbar {
     position: absolute;
@@ -175,9 +175,9 @@ html {
     color: white;
     font-weight: 700;
   }
-  .body__index .footer-container__item-icon i {
-    color: white;
-    font-size: 1.5rem;
+  .body__index .footer-container__item-icon img {
+    width: 2rem;
+    filter: invert(100%);
   }
   .body__index .footer-container__item-name a {
     text-decoration: none;
@@ -202,9 +202,9 @@ html {
   .body__shop .header-container__img img {
     width: 100%;
   }
-  .body__shop .header-container__toggle {
-    font-size: 4rem;
-    color: white;
+  .body__shop .header-container__toggle img {
+    width: 4rem;
+    filter: invert(100%);
   }
   .body__shop .header .navbar {
     position: absolute;
@@ -241,17 +241,9 @@ html {
     text-align: center;
     margin: 0;
   }
-  .body__shop .shop-title__icon {
-    background-color: white;
-    font-size: 2rem;
-    padding: 0.5rem;
-    border-radius: 0.5rem;
+  .body__shop .shop-title__icon img {
     width: 3rem;
-    height: 3rem;
-  }
-  .body__shop .shop-title__icon i {
-    color: black;
-    text-align: center;
+    filter: invert(100%);
   }
   .body__shop .shop-container__title {
     font-size: 3rem;
@@ -276,15 +268,12 @@ html {
     align-items: center;
     justify-content: center;
   }
-  .body__shop .shop-container__items-item__icon i {
-    border-radius: 1rem;
-    padding: 1rem;
-    color: black;
-    font-size: 2rem;
+  .body__shop .shop-container__items-item__icon img {
+    width: 3rem;
+    transition: all 0.3s;
   }
-  .body__shop .shop-container__items-item__icon :active {
-    background-color: black;
-    color: white;
+  .body__shop .shop-container__items-item__icon img:active {
+    transform: translateY(-8px);
   }
   .body__shop .shop-container__items-item__cont-img {
     width: 8rem;
@@ -319,12 +308,9 @@ html {
     background-color: black;
     border-radius: 1rem;
   }
-  .body__shop .cartShopping-counter__icon {
+  .body__shop .cartShopping-counter__icon img {
     width: 3rem;
-  }
-  .body__shop .cartShopping-counter__icon i {
-    font-size: 3rem;
-    color: white;
+    filter: invert(100%);
   }
   .body__shop .cartShopping-counter__number {
     width: 3rem;
@@ -336,11 +322,10 @@ html {
   }
   .body__shop .cartShopping-btnShowContainer {
     transition: all 0.4s;
-    width: 3rem;
   }
-  .body__shop .cartShopping-btnShowContainer i {
-    color: white;
-    font-size: 4rem;
+  .body__shop .cartShopping-btnShowContainer img {
+    width: 3rem;
+    filter: invert(100%);
   }
   .body__shop .cartShopping .cartShopping-btnShowContainer--rotate {
     width: 3rem;
@@ -391,6 +376,10 @@ html {
     font-weight: 700;
     border-radius: 1rem;
     letter-spacing: 3px;
+  }
+  .body__shop .cartShopping-container__info-clean img {
+    width: 2rem;
+    filter: invert(100%);
   }
   .body__shop .cartShopping .cartShopping-container--show {
     height: 200px;
@@ -443,9 +432,8 @@ html {
     font-size: 2rem;
     font-weight: 700;
   }
-  .payment-container__form button .fa-whatsapp {
-    font-size: 3rem;
-    font-weight: 700;
+  .payment-container__form button img {
+    width: 3rem;
   }
   .payment-message p {
     color: red;
@@ -469,9 +457,9 @@ html {
     color: white;
     font-weight: 700;
   }
-  .footer-container__item-icon i {
-    color: white;
-    font-size: 1.5rem;
+  .footer-container__item-icon img {
+    width: 2rem;
+    filter: invert(100%);
   }
   .footer-container__item-name a {
     text-decoration: none;
