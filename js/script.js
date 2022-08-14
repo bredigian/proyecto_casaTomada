@@ -63,8 +63,8 @@ const createItemsShopDOM=(array, container)=>{
     array.forEach(element => {
         let item=document.createElement('li')
         item.className='shop-container__items-item d-flex flex-column align-items-end w-100 h-100 p-4'
-        if(array==arrayBebidas){
-            item.innerHTML=`
+        array==arrayBebidas ?
+        item.innerHTML=`
             <div class="shop-container__items-item__icon d-flex justify-content-end align-items-center gap-4 w-100">
                 <div class="shop-container__items-item__icon-cant d-flex align-items-center justify-content-around">                  
                     <div class="shop-container__items-item__icon-cant__incDec less">-</div>
@@ -88,8 +88,8 @@ const createItemsShopDOM=(array, container)=>{
                 </div>
             </div>
             `
-        } else{
-            item.innerHTML=`
+        :
+        item.innerHTML=`
             <div class="shop-container__items-item__icon d-flex justify-content-end align-items-center gap-4 w-100">
                 <div class="shop-container__items-item__icon-cant d-flex align-items-center justify-content-around">            
                     <div class="shop-container__items-item__icon-cant__incDec less">-</div>
@@ -113,7 +113,6 @@ const createItemsShopDOM=(array, container)=>{
                 </div>
             </div>
             `
-        }
         container.appendChild(item)
     });
 }
