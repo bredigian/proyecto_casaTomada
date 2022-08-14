@@ -38,17 +38,28 @@
                         border: solid black .2rem;
                         border-radius: 1rem;
                         &__icon{
-                            width: 3rem;
-                            height: 3rem;
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
-                            img{
-                                width: 3rem;
-                                transition: all .3s;
+                            &-cant{
+                                background-color: black;
+                                color: white;
+                                padding: .5rem 1rem;
+                                border-radius: 1rem;
+                                font-size: 2rem;
+                                font-weight: 700;
+                                width: 10rem;
                             }
-                            img:active{
-                                transform: translateY(-8px);
+                            &-img{
+                                width: 3rem;
+                                height: 3rem;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                img{
+                                    width: 3rem;
+                                    transition: all .3s;
+                                }
+                                img:active{
+                                    transform: translateY(-8px);
+                                }
                             }
                         }
                         &__cont{
@@ -148,7 +159,7 @@
                     border-top-left-radius: 1rem;
                     border-top-right-radius: 1rem;
                     &-total{
-                        font-size: 2rem;
+                        font-size: 1.75rem;
                         color: white;
                         font-weight: 700;
                         letter-spacing: 3px;

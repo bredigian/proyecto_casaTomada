@@ -11,7 +11,7 @@ const shoppingCartContainerItems=document.getElementById('cartShopping-container
 const shoppingCartTotal=document.getElementById('cartShoppingTotal')
 const combosShopContainer=document.getElementById('combosContainer')
 const drinksShopContainer=document.getElementById('drinksContainer')
-const shoppingCartItem_icon=document.getElementsByClassName('shop-container__items-item__icon')
+const shoppingCartItem_icon=document.getElementsByClassName('shop-container__items-item__icon-img')
 const cartShoppingCounter=document.getElementById('counterShopping')
 const shoppingCartButtonShowContainer=document.getElementById('cartShoppingBtnShowContainer')
 const shoppingCartContainer=document.getElementById('cartShopping-container')
@@ -21,6 +21,9 @@ const paymentForm=document.getElementById('paymentForm')
 const paymentButton=document.getElementById('paymentButton')
 const footerLinkToInstagram=document.getElementById('linkToInstagram')
 const footerLinkToWhatsApp=document.getElementById('linkToWhatsApp')
+const itemCounter=document.getElementsByClassName('shop-container__items-item__icon-cant__counter')
+const incItem=document.getElementsByClassName('more')
+const decItem=document.getElementsByClassName('less')
 
 // FUNCIONES
 
@@ -62,8 +65,15 @@ const createItemsShopDOM=(array, container)=>{
         item.className='shop-container__items-item d-flex flex-column align-items-end w-100 h-100 p-4'
         if(array==arrayBebidas){
             item.innerHTML=`
-            <div class="shop-container__items-item__icon">
-                <img src="../img/icons/shopping-cart-add.svg">
+            <div class="shop-container__items-item__icon d-flex justify-content-end align-items-center gap-4 w-100">
+                <div class="shop-container__items-item__icon-cant d-flex align-items-center justify-content-around">                  
+                    <div class="shop-container__items-item__icon-cant__incDec less">-</div>
+                    <span class="shop-container__items-item__icon-cant__counter">1</span>
+                    <div class="shop-container__items-item__icon-cant__incDec more">+</div>
+                </div>
+                <div class="shop-container__items-item__icon-img">
+                    <img src="../img/icons/shopping-cart-add.svg">
+                </div>
             </div>
             <div class="shop-container__items-item__cont d-flex align-items-center w-100 justify-content-between gap-3">
                 <div class="shop-container__items-item__cont-img drinks-bigImg">
@@ -80,8 +90,15 @@ const createItemsShopDOM=(array, container)=>{
             `
         } else{
             item.innerHTML=`
-            <div class="shop-container__items-item__icon">
-                <img src="../img/icons/shopping-cart-add.svg">
+            <div class="shop-container__items-item__icon d-flex justify-content-end align-items-center gap-4 w-100">
+                <div class="shop-container__items-item__icon-cant d-flex align-items-center justify-content-around">            
+                    <div class="shop-container__items-item__icon-cant__incDec less">-</div>
+                    <span class="shop-container__items-item__icon-cant__counter">1</span>
+                    <div class="shop-container__items-item__icon-cant__incDec more">+</div>
+                </div>
+                <div class="shop-container__items-item__icon-img">
+                    <img src="../img/icons/shopping-cart-add.svg">
+                </div>
             </div>
             <div class="shop-container__items-item__cont d-flex align-items-center w-100 justify-content-between gap-3">
                 <div class="shop-container__items-item__cont-img">
@@ -187,18 +204,31 @@ if(location.href.includes('shop.html')){
     // ALMACENA ITEMS EN EL STORAGE Y AÑADE EL ITEM EN EL CONTAINER
     for (let i=0; i<arrayAllItems.length; i++) {
         shoppingCartItem_icon[i].addEventListener('click', () =>{
-            cartShoppingCounter.innerHTML=parseInt(cartShoppingCounter.innerHTML)+1
-            const itemsStorage=localStorage.getItem('ITEMS')
-            let itemsStorageParsed=[]
-            if(itemsStorage){
-                itemsStorageParsed=JSON.parse(itemsStorage)
+            const cantItems=itemCounter[i].innerHTML
+            for(let ci=0; ci<cantItems; ci++){
+                cartShoppingCounter.innerHTML=parseInt(cartShoppingCounter.innerHTML)+1
+                const itemsStorage=localStorage.getItem('ITEMS')
+                let itemsStorageParsed=[]
+                if(itemsStorage){
+                    itemsStorageParsed=JSON.parse(itemsStorage)
+                }
+                itemsStorageParsed.push(arrayAllItems[i])
+                localStorage.setItem('ITEMS', JSON.stringify(itemsStorageParsed))
+                createItemContainerShoppingCart(arrayAllItems[i])
+                totalCarrito+=arrayAllItems[i].price
+                shoppingCartTotal.innerHTML=`TOTAL $${totalCarrito}`
+                itemsMessage+=`${arrayAllItems[i].name} $${arrayAllItems[i].price}${`%0A`}`
             }
-            itemsStorageParsed.push(arrayAllItems[i])
-            localStorage.setItem('ITEMS', JSON.stringify(itemsStorageParsed))
-            createItemContainerShoppingCart(arrayAllItems[i])
-            totalCarrito+=arrayAllItems[i].price
-            shoppingCartTotal.innerHTML=`TOTAL $${totalCarrito}`
-            itemsMessage+=`${arrayAllItems[i].name} $${arrayAllItems[i].price}${`%0A`}`
+        })
+        incItem[i].addEventListener('click', ()=>{
+            let countItem=parseInt(itemCounter[i].innerHTML) + 1
+            itemCounter[i].innerHTML=countItem
+        })
+        decItem[i].addEventListener('click', ()=>{
+            if(itemCounter[i].innerHTML>'1'){
+                let countItem=parseInt(itemCounter[i].innerHTML) -1
+                itemCounter[i].innerHTML=countItem
+            }
         })
     }
 
@@ -220,7 +250,7 @@ if(location.href.includes('shop.html')){
     })
 
     
-        // GENERA ORDEN DE COMPRA MEDIANTE MENSAJE DE WHATSAPP %0A %20
+    // GENERA ORDEN DE COMPRA MEDIANTE MENSAJE DE WHATSAPP
     paymentForm.addEventListener('submit', (e)=>{
         e.preventDefault()
         if(itemsMessage.length!==0){
