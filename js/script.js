@@ -31,11 +31,7 @@ const decItem=document.getElementsByClassName('less')
 const createItemsIndexDOM=(array, container)=>{
     for(let i=0; i<array.length; i++){
         let item=document.createElement('div')
-        if(i!==0){
-            item.className='carousel-item'
-        } else{
-            item.className='carousel-item active'
-        }
+        i!==0 ? item.className='carousel-item' : item.className='carousel-item active'
         if(container==saleIndexContainer){
             item.innerHTML=`
             <img src="./img/bebidas/carousel/${array[i].img}" class="d-block w-100" alt="...">
