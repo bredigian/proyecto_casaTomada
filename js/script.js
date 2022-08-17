@@ -214,6 +214,15 @@ if(location.href.includes('shop.html')){
                 shoppingCartTotal.innerHTML=`TOTAL $${totalCarrito}`
                 itemsMessage+=`${arrayAllItems[i].name} $${arrayAllItems[i].price}${`%0A`}`
             }
+            Toastify({
+                text: "Añadido con éxito",
+                duration: 2500,
+                style:{
+                    background: "green",
+                    boxShadow: "none",
+                    fontWeight: "bold",
+                }
+                }).showToast();
         })
         incItem[i].addEventListener('click', ()=>{
             let countItem=parseInt(itemCounter[i].innerHTML) + 1
@@ -257,24 +266,58 @@ if(location.href.includes('shop.html')){
                 userAdress: f[2].value,
                 userPayment: paymentOptions.options[paymentOptions.selectedIndex].text
             }
-            location.href=`https://api.whatsapp.com/send?phone=${phoneNumberWhatsapp}&text=*INFORMACIÓN%20DE%20COMPRA*%0ANombre:%20${userData.userName}%0ANumero%20de%20teléfono:%20${userData.userPhone}%0ADirección:%20${userData.userAdress}%0AMétodo%20de%20pago:%20${userData.userPayment}%0ABebidas:%0A${itemsMessage}%0ATOTAL:%20$${totalCarrito}`
+            if(!userData.userName || !userData.userAdress || !userData.userPhone){
+                Toastify({
+                    text: "Ingrese sus datos correctamente, por favor.",
+                    duration: 2500,
+                    style:{
+                        background: "yellow",
+                        color: "black",
+                        fontWeight: "bold",
+                        boxShadow: "none"
+                    }
+                }).showToast()
+            } else{
+                location.href=`https://api.whatsapp.com/send?phone=${phoneNumberWhatsapp}&text=*INFORMACIÓN%20DE%20COMPRA*%0ANombre:%20${userData.userName}%0ANumero%20de%20teléfono:%20${userData.userPhone}%0ADirección:%20${userData.userAdress}%0AMétodo%20de%20pago:%20${userData.userPayment}%0ABebidas:%0A${itemsMessage}%0ATOTAL:%20$${totalCarrito}`
+            }
         }
         else{
-            const paymentErrorMesagge=document.createElement('div')
-            paymentErrorMesagge.innerHTML=`
-                <p class="m-0">¡El carrito esta vacio!</p>
-            `
-            paymentErrorMesagge.className='payment-message d-flex align-items-center justify-content-center w-100'
-            paymentContainer.append(paymentErrorMesagge)
+            Toastify({
+                text: "¡El carrito esta vacio!",
+                duration: 2500, 
+                style:{
+                    background: "red",
+                    boxShadow: "none",
+                    fontWeight: "bold"
+                }
+
+            }).showToast()
         }
     })
 
     // VACIA EL STORAGE Y REFRESCA LA PAGINA
     shoppingCartCleanButton.addEventListener('click', ()=>{
-        localStorage.clear()
-        location.reload()
+        Swal.fire({
+            title: '¿Esta seguro de limpiar el carrito?',
+            icon: 'warning',
+            iconColor: 'black',
+            showCancelButton: true,
+            confirmButtonText: 'Si, limpiar.',
+            cancelButtonText: 'No',
+            buttonsStyling: false
+        }).then((result)=>{
+            if(result.isConfirmed){
+                localStorage.clear()
+                Swal.fire({
+                    title: 'El carrito ha sido limpiado con éxito',
+                    icon: 'success',
+                    iconColor: 'black',
+                    confirmButtonText: '<a href="../html/shop.html">OK</a>',
+                    buttonsStyling: false
+                })
+            }
+        })
     })
-
 }
 
 // LINKEA PERFIL DE INSTAGRAM Y NUMERO DE WHATSAPP EN EL FOOTER

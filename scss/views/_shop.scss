@@ -15,12 +15,6 @@
                     margin: 0;
                 }
                 &__icon{
-                    // background-color: white;
-                    // font-size: 2rem;
-                    // padding: .5rem;
-                    // border-radius: .5rem;
-                    // width: 4rem;
-                    // height: 4rem;
                     img{
                         width: 3rem;
                         filter: invert(100%)
@@ -65,6 +59,7 @@
                         &__cont{
                             &-img{
                                 width: 8rem;
+                                margin-left: 2rem;
                                 img{
                                     width: 100%;
                                 }
@@ -186,6 +181,27 @@
                 transform: translateY(-12rem);
             }
         }
+        .swal2-confirm{
+            font-size: 1.25rem;
+            border: none;
+            border-radius: .5rem;
+            background-color: black;
+            color: white;
+            font-weight: 700;
+            padding: 1rem;
+            a{
+                text-decoration: none;
+                color: white;
+                font-weight: 700;
+            }
+        }
+        .swal2-cancel{
+            @extend .swal2-confirm;
+            background-color: white;
+            color: black;
+            border: solid black .1rem;
+            margin-left: 2rem;
+        }
     }
     .payment{
         &-title{
@@ -242,17 +258,7 @@
                 }
             }
         }
-        &-message{
-            p{
-                color: red;
-                font-size: 1.5rem;
-                font-weight: 700;
-            }
-        }
     }
-    /*.payment--show{
-        display: flex !important
-    }*/
     .footer{
         @include styleFooter;
     }
