@@ -221,6 +221,7 @@ if(location.href.includes('shop.html')){
                     background: "green",
                     boxShadow: "none",
                     fontWeight: "bold",
+                    marginTop: "1rem"
                 }
                 }).showToast();
         })
@@ -274,7 +275,8 @@ if(location.href.includes('shop.html')){
                         background: "yellow",
                         color: "black",
                         fontWeight: "bold",
-                        boxShadow: "none"
+                        boxShadow: "none",
+                        marginTop: "1rem"
                     }
                 }).showToast()
             } else{
@@ -288,7 +290,8 @@ if(location.href.includes('shop.html')){
                 style:{
                     background: "red",
                     boxShadow: "none",
-                    fontWeight: "bold"
+                    fontWeight: "bold",
+                    marginTop: "1rem"
                 }
 
             }).showToast()
