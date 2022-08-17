@@ -256,6 +256,7 @@ html {
   .body__shop .shop-container__items {
     padding: 0;
     margin: 0;
+    padding: 0 1rem;
   }
   .body__shop .shop-container__items-item {
     border: solid black 0.2rem;
@@ -301,11 +302,35 @@ html {
     width: min-content;
     font-size: 2.5rem;
   }
-  .body__shop .shop-container__items .drinks-img {
+  .body__shop .shop-container .drinks-img {
     width: 6rem;
   }
-  .body__shop .shop-container__items .drinks-bigImg {
+  .body__shop .shop-container .drinks-bigImg {
     width: 4rem;
+  }
+  .body__shop .shop-container .carousel {
+    width: 100%;
+  }
+  .body__shop .shop-container .carousel-control-next, .body__shop .shop-container .carousel-control-prev {
+    filter: invert(100%);
+    top: 1rem !important;
+    bottom: initial !important;
+  }
+  .body__shop .shop-container .carousel-inner .carousel-item {
+    padding: 0 1rem;
+  }
+  .body__shop .shop-container .carousel-inner .carousel-item .typeTitle {
+    color: white;
+    background-color: black;
+    width: min-content;
+    margin: auto;
+    font-size: 1.5rem;
+    font-weight: 700;
+    padding: 1rem;
+    border-radius: 1rem;
+  }
+  .body__shop .shop-container .carousel-inner .carousel-item .shop-container__items-item {
+    margin-top: 3rem;
   }
   .body__shop .cartShopping {
     position: sticky;

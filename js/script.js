@@ -54,37 +54,11 @@ const createItemsIndexDOM=(array, container)=>{
     }
 }
 
-// CREA LOS ITEMS EN LA SECCION DE COMPRAS
-const createItemsShopDOM=(array, container)=>{
-    array.forEach(element => {
+// CREA LOS ITEMS COMBOS EN EL SHOP
+const createItemsCombosShopDOM=()=>{
+    arrayCombos.forEach(element =>{
         let item=document.createElement('li')
         item.className='shop-container__items-item d-flex flex-column align-items-end w-100 h-100 p-4'
-        array==arrayBebidas ?
-        item.innerHTML=`
-            <div class="shop-container__items-item__icon d-flex justify-content-end align-items-center gap-4 w-100">
-                <div class="shop-container__items-item__icon-cant d-flex align-items-center justify-content-around">                  
-                    <div class="shop-container__items-item__icon-cant__incDec less">-</div>
-                    <span class="shop-container__items-item__icon-cant__counter">1</span>
-                    <div class="shop-container__items-item__icon-cant__incDec more">+</div>
-                </div>
-                <div class="shop-container__items-item__icon-img">
-                    <img src="../img/icons/shopping-cart-add.svg">
-                </div>
-            </div>
-            <div class="shop-container__items-item__cont d-flex align-items-center w-100 justify-content-between gap-3">
-                <div class="shop-container__items-item__cont-img drinks-bigImg">
-                    <img src="../img/bebidas/solo/${element.img}" alt="">
-                </div>
-                <div class="shop-container__items-item__cont-info d-flex flex-column align-items-center gap-3">
-                    <span class="shop-container__items-item__cont-info__name">${element.name}</span>
-                    <div class="price d-flex align-items-center">
-                        <span>$</span>
-                        <span class="price-num">${element.price}</span>
-                    </div>
-                </div>
-            </div>
-            `
-        :
         item.innerHTML=`
             <div class="shop-container__items-item__icon d-flex justify-content-end align-items-center gap-4 w-100">
                 <div class="shop-container__items-item__icon-cant d-flex align-items-center justify-content-around">            
@@ -109,8 +83,52 @@ const createItemsShopDOM=(array, container)=>{
                 </div>
             </div>
             `
-        container.appendChild(item)
-    });
+        combosShopContainer.appendChild(item)
+    })
+}
+
+// CREA LOS ITEMS DE BEBIDAS EN EL SHOP
+const createItemsDrinksShopDOM=()=>{
+    for(let i=1; i<typeItem.length; i++){
+        let carouselItem=document.createElement('div')
+        carouselItem.className='carousel-item w-100'
+        i==1 && carouselItem.classList.add('active')
+        carouselItem.innerHTML=`
+            <div class="typeTitle">${typeItem[i].toLocaleUpperCase()}</div>
+        `
+        for(let b=0; b<arrayBebidas.length; b++){
+            if(arrayBebidas[b].type==typeItem[i]){
+                let item=document.createElement('div')
+                item.className='shop-container__items-item d-flex flex-column align-items-end w-100 p-4'
+                item.innerHTML=`
+                <div class="shop-container__items-item__icon d-flex justify-content-end align-items-center gap-4 w-100">
+                    <div class="shop-container__items-item__icon-cant d-flex align-items-center justify-content-around">            
+                        <div class="shop-container__items-item__icon-cant__incDec less">-</div>
+                        <span class="shop-container__items-item__icon-cant__counter">1</span>
+                        <div class="shop-container__items-item__icon-cant__incDec more">+</div>
+                    </div>
+                    <div class="shop-container__items-item__icon-img">
+                        <img src="../img/icons/shopping-cart-add.svg">
+                    </div>
+                </div>
+                <div class="shop-container__items-item__cont d-flex align-items-center w-100 justify-content-between gap-3">
+                    <div class="shop-container__items-item__cont-img drinks-bigImg">
+                        <img src="../img/bebidas/solo/${arrayBebidas[b].img}" alt="">
+                    </div>
+                    <div class="shop-container__items-item__cont-info d-flex flex-column align-items-center gap-3">
+                        <span class="shop-container__items-item__cont-info__name">${arrayBebidas[b].name}</span>
+                        <div class="price d-flex align-items-center">
+                            <span>$</span>
+                            <span class="price-num">${arrayBebidas[b].price}</span>
+                        </div>
+                    </div>
+                </div>
+                `
+                carouselItem.appendChild(item)
+            }
+        }
+        drinksShopContainer.appendChild(carouselItem)
+    }
 }
 
 // CREA UN NUEVO ITEM EN EL CARRITO DE COMPRAS
@@ -130,27 +148,31 @@ toggleMenuElement.addEventListener('click', ()=>{
 })
 
 class Item{
-    constructor(id, img, name, price){
+    constructor(id, img, type, name, price){
         this.id=id
         this.img=img
+        this.type=type
         this.name=name
         this.price=price
     }
 }
 
+// TIPOS DE BEBIDAS
+const typeItem=['Combos', 'Cervezas', 'Aperitivos']
+
 // COMBOS
 const arrayCombos=[
-    new Item('c1', 'fernetCoca.png', 'Fernet 1L + Coca Coca 2.25L', 2000),
-    new Item('c2', 'smirnoffSprite.png', 'Smirnoff 750ml + Sprite 2.25L', 1700),
-    new Item('c3', 'bombaySchweepes.png', 'Gin Bombay + Schweepes 2.25L', 1900),
+    new Item('c1', 'fernetCoca.png', `${typeItem[0]}`, 'Fernet 1L + Coca Coca 2.25L', 2000),
+    new Item('c2', 'smirnoffSprite.png', `${typeItem[0]}`, 'Smirnoff 750ml + Sprite 2.25L', 1700),
+    new Item('c3', 'bombaySchweepes.png', `${typeItem[0]}`, 'Gin Bombay + Schweepes 2.25L', 1900),
 ]
 
 // BEBIDAS
 const arrayBebidas=[
-    new Item('d1','andesRubia.png', 'Andes Rubia', 170),
-    new Item('d2','ginBrighton.png', 'Gin Brighton', 1400),
-    new Item('d3','smirnoffRaspberry.png', 'Vodka Smirnoff Raspberry', 1400),
-    new Item('d5','absolut.png', 'Vodka Absolut', 1400),
+    new Item('d1','andesRubia.png', `${typeItem[1]}`, 'Andes Rubia', 170),
+    new Item('d2','ginBrighton.png', `${typeItem[2]}`, 'Gin Brighton', 1400),
+    new Item('d3','smirnoffRaspberry.png', `${typeItem[2]}`, 'Vodka Smirnoff Raspberry', 1400),
+    new Item('d5','absolut.png', `${typeItem[2]}`, 'Vodka Absolut', 1400),
 ]
 
 /*----------------INDEX SECTION----------------*/
@@ -164,31 +186,31 @@ if(location.href.includes('index.html')){
 if(location.href.includes('shop.html')){
 
     arrayBebidas.push(
-        new Item('d6','andesRoja.png', 'Andes Roja', 170),
-        new Item('d7','andesNegra.png', 'Andes Negra', 170),
-        new Item('d8','andesRosa.png', 'Andes Ipa Roja', 170),
-        new Item('d9','andesVendimia.png', 'Andes Vendimia 2022', 170),
-        new Item('d10','andesVerde.png', 'Andes Ipa Andina', 170),
-        new Item('d11','budweiserBotella.png', 'Budweiser 750ml', 230),
-        new Item('d12','fernetBranca.png', 'Fernet Branca 1L', 1700),
-        new Item('d13','fernetBuhero.png', 'Fernet Buhero Negro 750ml', 1250),
-        new Item('d14','ginBeefeater.png', 'Gin Beefeater', 1400),
-        new Item('d15','budweiserLata.png', 'Budweiser', 160),
-        new Item('d16','ginGordon.png', 'Gin Gordon', 1400),
-        new Item('d17','jaggermeifter.png', 'Jaggermeifter', 1400),
-        new Item('d18','smirnoff.png', 'Vodka Smirnoff', 1400),
-        new Item('d19','smirnoffApple.png', 'Vodka Smirnoff Apple', 1400),
-        new Item('d20','smirnoffCitric.png', 'Vodka Smirnoff Citric', 1400),
-        new Item('d21','smirnoffWatermelon.png', 'Vodka Smirnoff Watermelon', 1400),
-        new Item('d22','heinekenLata.png', 'Heineken', 180),
-        new Item('d23','fernetBranca.png', 'Fernet Branca 750ml', 1400),
-        new Item('d24','ginBombay.png', 'Gin Bombay', 1400),
+        new Item('d6','andesRoja.png', `${typeItem[1]}`, 'Andes Roja', 170),
+        new Item('d7','andesNegra.png', `${typeItem[1]}`, 'Andes Negra', 170),
+        new Item('d8','andesRosa.png', `${typeItem[1]}`, 'Andes Ipa Roja', 170),
+        new Item('d9','andesVendimia.png', `${typeItem[1]}`, 'Andes Vendimia 2022', 170),
+        new Item('d10','andesVerde.png', `${typeItem[1]}`, 'Andes Ipa Andina', 170),
+        new Item('d11','budweiserBotella.png', `${typeItem[1]}`, 'Budweiser 750ml', 230),
+        new Item('d12','fernetBranca.png', `${typeItem[2]}`, 'Fernet Branca 1L', 1700),
+        new Item('d13','fernetBuhero.png', `${typeItem[2]}`, 'Fernet Buhero Negro 750ml', 1250),
+        new Item('d14','ginBeefeater.png', `${typeItem[2]}`, 'Gin Beefeater', 1400),
+        new Item('d15','budweiserLata.png', `${typeItem[1]}`, 'Budweiser', 160),
+        new Item('d16','ginGordon.png', `${typeItem[2]}`, 'Gin Gordon', 1400),
+        new Item('d17','jaggermeifter.png', `${typeItem[2]}`, 'Jaggermeifter', 1400),
+        new Item('d18','smirnoff.png', `${typeItem[2]}`, 'Vodka Smirnoff', 1400),
+        new Item('d19','smirnoffApple.png', `${typeItem[2]}`, 'Vodka Smirnoff Apple', 1400),
+        new Item('d20','smirnoffCitric.png', `${typeItem[2]}`, 'Vodka Smirnoff Citric', 1400),
+        new Item('d21','smirnoffWatermelon.png', `${typeItem[2]}`, 'Vodka Smirnoff Watermelon', 1400),
+        new Item('d22','heinekenLata.png', `${typeItem[1]}`, 'Heineken', 180),
+        new Item('d23','fernetBranca.png', `${typeItem[2]}`, 'Fernet Branca 750ml', 1400),
+        new Item('d24','ginBombay.png', `${typeItem[2]}`, 'Gin Bombay', 1400),
     )
     
     arrayBebidas.sort((a, b) => a.name.localeCompare(b.name));
 
-    createItemsShopDOM(arrayCombos, combosShopContainer)
-    createItemsShopDOM(arrayBebidas, drinksShopContainer)
+    createItemsCombosShopDOM()
+    createItemsDrinksShopDOM()
     
     /*------------------EVENTOS--------------------*/
     const arrayItemsStorage=JSON.parse(localStorage.getItem('ITEMS'))

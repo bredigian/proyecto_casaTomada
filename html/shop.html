@@ -43,9 +43,19 @@
         </div>
         <div class="shop-container d-flex flex-column align-items-center gap-5">
             <h2 class="shop-container__title">BEBIDAS</h2>
-            <ul id="drinksContainer" class="shop-container__items w-100 d-flex flex-column align-items-center gap-5">
-                
-            </ul>
+            <div id="carouselButtons" class="carousel slide" data-bs-ride="false">
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselButtons" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselButtons" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+                <div id="drinksContainer" class="carousel-inner">
+    
+                </div>
+            </div>
         </div>
     </div>
     <div id="payment" class="payment d-flex flex-column w-100 gap-4 p-4">

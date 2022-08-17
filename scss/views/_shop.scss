@@ -28,6 +28,7 @@
                 &__items{
                     padding: 0;
                     margin: 0;
+                    padding: 0 1rem;
                     &-item{
                         border: solid black .2rem;
                         border-radius: 1rem;
@@ -79,11 +80,37 @@
                             }
                         }
                     }
-                    .drinks-img{
-                        width: 6rem;
+                }
+                .drinks-img{
+                    width: 6rem;
+                }
+                .drinks-bigImg{
+                    width: 4rem;
+                }
+                .carousel{
+                    width: 100%;
+                    &-control-next, &-control-prev{
+                        filter: invert(100%);
+                        top: 1rem!important;
+                        bottom: initial!important;
                     }
-                    .drinks-bigImg{
-                        width: 4rem;
+                    &-inner{
+                        .carousel-item{
+                            padding: 0 1rem;
+                            .typeTitle{
+                                color: white;
+                                background-color: black;
+                                width: min-content;
+                                margin: auto;
+                                font-size: 1.5rem;
+                                font-weight: 700;
+                                padding: 1rem;
+                                border-radius: 1rem;
+                            }
+                            .shop-container__items-item{
+                                margin-top: 3rem;
+                            }
+                        }
                     }
                 }
             }
