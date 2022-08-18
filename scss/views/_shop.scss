@@ -30,8 +30,7 @@
                     margin: 0;
                     padding: 0 1rem;
                     &-item{
-                        border: solid black .2rem;
-                        border-radius: 1rem;
+                        border-bottom: solid rgb(190, 190, 190) .1rem;
                         &__icon{
                             &-cant{
                                 background-color: black;
@@ -80,6 +79,9 @@
                             }
                         }
                     }
+                }
+                .shop-container__items-item:last-child{
+                    border-bottom: none;
                 }
                 .drinks-img{
                     width: 6rem;
