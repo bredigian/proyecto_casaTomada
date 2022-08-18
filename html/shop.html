@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="../css/bootstrap.css">
     <link rel="shortcut icon" href="../img/logoCasatomada.jpg" type="image/x-icon">
     <link rel="stylesheet" href="../css/style.css">
-
     <title>Comprar - Casa Tomada</title>
 </head>
 <body class="body__shop">
@@ -43,7 +42,7 @@
         </div>
         <div class="shop-container d-flex flex-column align-items-center gap-5">
             <h2 class="shop-container__title">BEBIDAS</h2>
-            <div id="carouselButtons" class="carousel slide" data-bs-ride="false">
+            <div id="carouselButtons" class="carousel slide carousel-dark" data-bs-ride="false">
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselButtons" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Previous</span>
@@ -58,35 +57,8 @@
             </div>
         </div>
     </div>
-    <div id="payment" class="payment d-flex flex-column w-100 gap-4 p-4">
-        <div class="payment-container d-flex flex-column align-items-center w-100 gap-4 p-4">
-            <div class="payment-title">Complete con sus datos</div>
-            <form id="paymentForm" class="payment-container__form d-flex flex-column align-items-start gap-4 w-100" action="#">
-                <div class="payment-container__form-item d-flex flex-column align-items-start gap-2 w-100">
-                    <span class="payment-container__form-item__title">Nombre</span>
-                    <input class="inputSelect" type="text" placeholder="Ingrese su nombre">
-                </div>
-                <div class="payment-container__form-item d-flex flex-column align-items-start gap-2 w-100">
-                    <span class="payment-container__form-item__title">Numero de Teléfono</span>
-                    <input id="phoneNumber" class="inputSelect" type="tel" placeholder="Ingrese su número">
-                </div>
-                <div class="payment-container__form-item d-flex flex-column align-items-start gap-2 w-100">
-                    <span class="payment-container__form-item__title">Direccion</span>
-                    <input class="inputSelect" type="text" placeholder="Ingrese su direccion">
-                </div>
-                <div class="payment-container__form-item d-flex flex-column align-items-start gap-2 w-100">
-                    <span class="payment-container__form-item__title">Método de pago</span>
-                    <select class="inputSelect" name="" id="paymentOptions">
-                        <option value="1">Mercado Pago</option>
-                        <option value="2">Efectivo</option>
-                    </select>
-                </div>
-                <button id="paymentButton" class="d-flex w-100 align-items-center justify-content-around p-4" type="submit">
-                    <p>GENERAR COMPRA</p>
-                    <img src="../img/icons/whatsapp.svg" alt="">
-                </button>
-            </form>
-        </div>
+    <div class="nextToPay w-100 d-flex justify-content-center p-4">
+        <button id="toPay" class="d-flex flex-column align-items-center gap-3"><img src="../img/icons/shopping-cart-check.svg" alt="">FINALIZAR</button>
     </div>
     <div id="cartShopping" class="cartShopping d-flex flex-column align-items-center justify-content-around m-4">
         <div class="cartShopping-counter d-flex align-items-center justify-content-between w-100 ps-4 pe-4">
@@ -109,6 +81,7 @@
 
             </div>
         </div>
+        
     </div>
     <footer class="footer d-flex align-items-center justify-content-around p-5">
         <div class="footer-img">

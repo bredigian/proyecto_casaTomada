@@ -90,7 +90,6 @@
                 .carousel{
                     width: 100%;
                     &-control-next, &-control-prev{
-                        filter: invert(100%);
                         top: 1rem!important;
                         bottom: initial!important;
                     }
@@ -230,59 +229,14 @@
             margin-left: 2rem;
         }
     }
-    .payment{
-        &-title{
+    .nextToPay{
+        button{
             font-size: 2rem;
             font-weight: 700;
-            color: white;
-        }
-        &-container{
-            background-color: black;
-            border-radius: 1rem;
-            &__form{
-                &-item{
-                    &__title{
-                        color: white;
-                        font-size: 1.5rem;
-                    }
-                    .inputSelect{
-                        width: 100%;
-                        background-color: transparent;
-                        color: white;
-                        border: none;
-                        border-bottom: solid white .2rem;
-                        font-size: 1.5rem;
-                        outline: none;
-                        padding: .5rem 0rem;
-                    }
-                    .inputSelect::placeholder{
-                        color: rgb(154, 154, 154);
-                        padding-left: 4px;
-                    }
-                    select{
-                        border: none !important;
-                        color: rgb(154, 154, 154) !important;
-                        option{
-                            color: black;
-                            font-weight: 700;
-                        }
-                    }
-                }
-                button{
-                    border: none;
-                    background-color: $colorWhatsapp;
-                    border-radius: 1rem;
-                    max-width: 300px;
-                    margin: auto;
-                    p{
-                        margin: 0;
-                        font-size: 2rem;
-                        font-weight: 700;
-                    }
-                    img{
-                        width: 3rem;
-                    }
-                }
+            background-color: transparent;
+            border: none;
+            img{
+                width: 3rem;
             }
         }
     }

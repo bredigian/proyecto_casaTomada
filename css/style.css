@@ -312,7 +312,6 @@ html {
     width: 100%;
   }
   .body__shop .shop-container .carousel-control-next, .body__shop .shop-container .carousel-control-prev {
-    filter: invert(100%);
     top: 1rem !important;
     bottom: initial !important;
   }
@@ -440,54 +439,13 @@ html {
     border: solid black 0.1rem;
     margin-left: 2rem;
   }
-  .payment-title {
+  .nextToPay button {
     font-size: 2rem;
     font-weight: 700;
-    color: white;
-  }
-  .payment-container {
-    background-color: black;
-    border-radius: 1rem;
-  }
-  .payment-container__form-item__title {
-    color: white;
-    font-size: 1.5rem;
-  }
-  .payment-container__form-item .inputSelect {
-    width: 100%;
     background-color: transparent;
-    color: white;
     border: none;
-    border-bottom: solid white 0.2rem;
-    font-size: 1.5rem;
-    outline: none;
-    padding: 0.5rem 0rem;
   }
-  .payment-container__form-item .inputSelect::placeholder {
-    color: rgb(154, 154, 154);
-    padding-left: 4px;
-  }
-  .payment-container__form-item select {
-    border: none !important;
-    color: rgb(154, 154, 154) !important;
-  }
-  .payment-container__form-item select option {
-    color: black;
-    font-weight: 700;
-  }
-  .payment-container__form button {
-    border: none;
-    background-color: #25D366;
-    border-radius: 1rem;
-    max-width: 300px;
-    margin: auto;
-  }
-  .payment-container__form button p {
-    margin: 0;
-    font-size: 2rem;
-    font-weight: 700;
-  }
-  .payment-container__form button img {
+  .nextToPay button img {
     width: 3rem;
   }
   .footer {
@@ -509,6 +467,136 @@ html {
     filter: invert(100%);
   }
   .footer-container__item-name a {
+    text-decoration: none;
+    color: white;
+    font-weight: 700;
+    font-size: 1.5rem;
+  }
+}
+@media (max-width: 768px) {
+  .body__payment .header {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+  }
+  .body__payment .header-container {
+    background-color: black;
+    z-index: 2;
+  }
+  .body__payment .header-container__img {
+    width: 6rem;
+  }
+  .body__payment .header-container__img img {
+    width: 100%;
+  }
+  .body__payment .header-container__toggle img {
+    width: 4rem;
+    filter: invert(100%);
+  }
+  .body__payment .header .navbar {
+    position: absolute;
+    z-index: 1;
+    padding: 0;
+    width: 100%;
+    transform: translateY(-4rem);
+    transition: transform 0.5s;
+  }
+  .body__payment .header .navbar--show {
+    transform: translateY(9rem);
+  }
+  .body__payment .header .navbar-list {
+    width: 100%;
+    list-style: none;
+    margin: 0;
+    padding: 2rem;
+    background-color: black;
+  }
+  .body__payment .header .navbar-list li a {
+    text-decoration: none;
+    color: white;
+    font-weight: 700;
+    font-size: 3rem;
+  }
+  .body__payment .backToShop button {
+    border: none;
+    background-color: transparent;
+    padding: 1rem;
+    font-size: 2rem;
+    font-weight: 700;
+  }
+  .body__payment .backToShop button img {
+    width: 3rem;
+    transform: rotateY(180deg);
+  }
+  .body__payment .payment-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: black;
+  }
+  .body__payment .payment-container {
+    border-radius: 1rem;
+  }
+  .body__payment .payment-container__form-item__title {
+    color: black;
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+  .body__payment .payment-container__form-item .inputSelect {
+    width: 100%;
+    background-color: transparent;
+    color: black;
+    border: none;
+    border-bottom: solid black 0.2rem;
+    font-size: 1.5rem;
+    outline: none;
+    padding: 0.5rem 0rem;
+  }
+  .body__payment .payment-container__form-item .inputSelect::placeholder {
+    color: #252525;
+    padding-left: 4px;
+  }
+  .body__payment .payment-container__form-item select {
+    border: none !important;
+    color: #252525 !important;
+  }
+  .body__payment .payment-container__form-item select option {
+    color: black;
+    font-weight: 700;
+  }
+  .body__payment .payment-container__form button {
+    border: solid black 0.3rem;
+    background-color: #25D366;
+    border-radius: 1rem;
+    max-width: 300px;
+    margin: auto;
+  }
+  .body__payment .payment-container__form button p {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 700;
+  }
+  .body__payment .payment-container__form button img {
+    width: 3rem;
+  }
+  .body__payment .footer {
+    background-color: black;
+    height: 300px;
+  }
+  .body__payment .footer-img {
+    width: 10rem;
+  }
+  .body__payment .footer-img img {
+    width: 100%;
+  }
+  .body__payment .footer-container__title {
+    color: white;
+    font-weight: 700;
+  }
+  .body__payment .footer-container__item-icon img {
+    width: 2rem;
+    filter: invert(100%);
+  }
+  .body__payment .footer-container__item-name a {
     text-decoration: none;
     color: white;
     font-weight: 700;

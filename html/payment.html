@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../node_modules/toastify-js/src/toastify.css">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="shortcut icon" href="../img/logoCasatomada.jpg" type="image/x-icon">
+    <title>Compra - Casa Tomada</title>
+</head>
+<body class="body__payment">
+    <header class="header d-flex flex-column align-items-center w-100">
+        <div class="header-container d-flex w-100 justify-content-between align-items-center p-4">
+            <div class="header-container__img">
+                <img src="../img/logoCasatomada.jpg" alt="">
+            </div>
+            <div id="toggle-menu" class="header-container__toggle toggle-menu">
+                <img src="../img/icons/menu-burger.svg" alt="">
+            </div>
+        </div>
+        <nav id="navbar" class="navbar main-menu">
+            <ul class="navbar-list d-flex flex-column align-items-end">
+                <li><a href="../index.html">INICIO</a></li>
+                <li><a href="./shop.html">COMPRAR</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="backToShop d-flex justify-content-center w-100 p-4">
+        <button id="toShop" class="d-flex flex-column align-items-center"><img src="../img/icons/arrow-small-right.svg">VOLVER</button>
+    </div>
+    <div id="payment" class="payment d-flex flex-column w-100 gap-4 p-4"> 
+        <div class="payment-container d-flex flex-column align-items-center w-100 gap-4 p-4">
+            <div class="payment-title">Complete con sus datos</div>
+            <form id="paymentForm" class="payment-container__form d-flex flex-column align-items-start gap-4 w-100" action="#">
+                <div class="payment-container__form-item d-flex flex-column align-items-start gap-2 w-100">
+                    <span class="payment-container__form-item__title">Nombre</span>
+                    <input class="inputSelect" type="text" placeholder="Ingrese su nombre">
+                </div>
+                <div class="payment-container__form-item d-flex flex-column align-items-start gap-2 w-100">
+                    <span class="payment-container__form-item__title">Número de Teléfono</span>
+                    <input id="phoneNumber" class="inputSelect" type="tel" placeholder="Ingrese su número">
+                </div>
+                <div class="payment-container__form-item d-flex flex-column align-items-start gap-2 w-100">
+                    <span class="payment-container__form-item__title">Dirección</span>
+                    <input class="inputSelect" type="text" placeholder="Ingrese su direccion">
+                </div>
+                <div class="payment-container__form-item d-flex flex-column align-items-start gap-2 w-100">
+                    <span class="payment-container__form-item__title">Método de pago</span>
+                    <select class="inputSelect" name="" id="paymentOptions">
+                        <option value="1">Mercado Pago</option>
+                        <option value="2">Efectivo</option>
+                    </select>
+                </div>
+                <button id="paymentButton" class="d-flex w-100 align-items-center justify-content-around p-4" type="submit">
+                    <p>GENERAR COMPRA</p>
+                    <img src="../img/icons/whatsapp.svg" alt="">
+                </button>
+            </form>
+        </div>
+    </div>
+    <footer class="footer d-flex align-items-center justify-content-around p-5">
+        <div class="footer-img">
+            <img src="../img/logoCasatomada.jpg" alt="Logo Casatomada">
+        </div>
+        <div class="footer-container d-flex flex-column align-items-start gap-4">
+            <h2 class="footer-container__title">CONTACTO</h2>
+            <div class="footer-container___item d-flex flex-row align-items-center gap-3">
+                <div class="footer-container__item-icon">
+                    <img src="../img/icons/whatsapp.svg" alt="">
+                </div>
+                <div class="footer-container__item-name">
+                    <a href="#" id="linkToWhatsApp" target="_blank">WhatsApp</a>
+                </div>
+            </div>
+            <div class="footer-container___item d-flex flex-row align-items-center gap-3">
+                <div class="footer-container__item-icon">
+                    <img src="../img/icons/instagram.svg" alt="">
+                </div>
+                <div class="footer-container__item-name">
+                    <a href="#" id="linkToInstagram" target="_blank">Instagram</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="../js/bootstrap.js"></script>
+    <script src="../js/script.js"></script>
+    <script src="../node_modules/sweetalert2/dist/sweetalert2.all.js"></script>
+    <script src="../node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
+    <script src="../node_modules/sweetalert2/dist/sweetalert2.js"></script>
+    <script src="../node_modules/sweetalert2/dist/sweetalert2.min.js"></script>
+    <script src="../node_modules/toastify-js/src/toastify.js"></script>
+</body>
+</html>
