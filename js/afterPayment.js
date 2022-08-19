@@ -1,3 +1,3 @@
 setInterval(()=>{
     location.href='./shop.html'
-}, 4000)
+}, 10000)
