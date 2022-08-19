@@ -1,5 +1,4 @@
-// PRELOADER INDEX
-createPreloader(bodiesWithPreloader, '..')
+// PRELOADER SHOP
 hidePreloader(bodiesWithPreloader)
 
 arrayBebidas.push(

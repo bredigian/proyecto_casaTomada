@@ -41,7 +41,7 @@ html {
   }
   .body__index .loader--hide {
     transform: translateX(-100%);
-    transition: transform 1.5s ease-out;
+    transition: transform 1s ease-out;
   }
   .body__index .header {
     position: sticky;
@@ -221,7 +221,7 @@ html {
   }
   .body__shop .loader--hide {
     transform: translateX(-100%);
-    transition: transform 1.5s ease-out;
+    transition: transform 1s ease-out;
   }
   .body__shop .header {
     position: sticky;

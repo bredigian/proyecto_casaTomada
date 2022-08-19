@@ -1,16 +1,4 @@
 // FUNCIONES
-// PRELOADER SITE
-const createPreloader=(nameBody,  ruteImg)=>{
-    const preloader=document.createElement('div')
-    preloader.className='loader d-flex justify-content-center align-items-center'
-    preloader.setAttribute('id', 'loader')
-    preloader.innerHTML=`
-        <div class="loader__img">
-            <img src="${ruteImg}/img/logoCasatomada.jpg" alt="">
-        </div>
-    `
-    nameBody.prepend(preloader)
-}
 
 // HIDE PRELOADER
 const hidePreloader=(body)=>{
