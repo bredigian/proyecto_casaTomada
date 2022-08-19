@@ -1,6 +1,3 @@
-if(!localStorage.length){
-    location.href='./shop.html'
-}
 let storedItems=localStorage.getItem('ITEMS') 
 storedItems=JSON.parse(storedItems)
 for(let i=0; i<storedItems.length; i++){
@@ -31,7 +28,11 @@ paymentForm.addEventListener('submit', (e)=>{
                 }
             }).showToast()
         } else{
-            location.href=`https://api.whatsapp.com/send?phone=${phoneNumberWhatsapp}&text=*CASA%20TOMADA*%0A*INFORMACIÓN%20DE%20COMPRA*%0ANombre:%20${userData.userName}%0ANumero%20de%20teléfono:%20${userData.userPhone}%0ADirección:%20${userData.userAdress}%0AProductos%20seleccionados:%0A${messageItems}%0AMétodo%20de%20pago:%20${userData.userPayment}%0ATOTAL:%20$${totalShoppingCart}`
+            window.open(`https://api.whatsapp.com/send?phone=${phoneNumberWhatsapp}&text=*CASA%20TOMADA*%0A*INFORMACIÓN%20DE%20COMPRA*%0ANombre:%20${userData.userName}%0ANumero%20de%20teléfono:%20${userData.userPhone}%0ADirección:%20${userData.userAdress}%0AProductos%20seleccionados:%0A${messageItems}%0AMétodo%20de%20pago:%20${userData.userPayment}%0ATOTAL:%20$${totalShoppingCart}`, '_blank')
+            // 
+            if(window.open){
+                location.href='./afterPayment.html'
+            }
             localStorage.clear()
         }
 })

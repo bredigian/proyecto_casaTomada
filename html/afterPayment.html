@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../node_modules/toastify-js/src/toastify.css">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="shortcut icon" href="../img/logoCasatomada.jpg" type="image/x-icon">
+    <title>¡Gracias! - Casa Tomada</title>
+</head>
+<body>
+    <body class="body__afterPayment">
+        <header class="header d-flex flex-column align-items-center w-100">
+            <div class="header-container d-flex w-100 justify-content-between align-items-center p-4">
+                <div class="header-container__img">
+                    <img src="../img/logoCasatomada.jpg" alt="">
+                </div>
+                <div id="toggle-menu" class="header-container__toggle toggle-menu">
+                    <img src="../img/icons/menu-burger.svg" alt="">
+                </div>
+            </div>
+            <nav id="navbar" class="navbar main-menu">
+                <ul class="navbar-list d-flex flex-column align-items-end">
+                    <li><a href="../index.html">INICIO</a></li>
+                    <li><a href="./shop.html">COMPRAR</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="thanks d-flex flex-column align-items-center justify-content-center w-100 gap-5 p-4">
+            <div class="thanks-img">
+                <img src="../img/icons/check-free-icon-font.svg" alt="">
+            </div>
+            <div class="thanks-title">
+                <h1>¡Gracias por la compra!</h1>
+            </div>
+            <div class="thanks-subtitle">
+                <p>En unos segundos sera redirigido a la sección de Compras</p>
+            </div>
+        </div>
+        <footer class="footer d-flex align-items-center justify-content-around p-5">
+            <div class="footer-img">
+                <img src="../img/logoCasatomada.jpg" alt="Logo Casatomada">
+            </div>
+            <div class="footer-container d-flex flex-column align-items-start gap-4">
+                <h2 class="footer-container__title">CONTACTO</h2>
+                <div class="footer-container___item d-flex flex-row align-items-center gap-3">
+                    <div class="footer-container__item-icon">
+                        <img src="../img/icons/whatsapp.svg" alt="">
+                    </div>
+                    <div class="footer-container__item-name">
+                        <a href="#" id="linkToWhatsApp" target="_blank">WhatsApp</a>
+                    </div>
+                </div>
+                <div class="footer-container___item d-flex flex-row align-items-center gap-3">
+                    <div class="footer-container__item-icon">
+                        <img src="../img/icons/instagram.svg" alt="">
+                    </div>
+                    <div class="footer-container__item-name">
+                        <a href="#" id="linkToInstagram" target="_blank">Instagram</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <script src="../js/bootstrap.js"></script>
+        <script type="module" src="../js/script.js"></script>
+        <script src="../js/afterPayment.js"></script>
+        <script src="../js/accessToDom.js"></script>
+        <script src="../js/variables.js"></script>
+</body>
+</html>

@@ -12,9 +12,9 @@ const typeItem=['Combos', 'Cervezas', 'Aperitivos']
 
 // COMBOS
 const arrayCombos=[
-    new Item('fernetCoca.png', `${typeItem[0]}`, 'Fernet 1L + Coca Coca 2.25L', 2000),
-    new Item('smirnoffSprite.png', `${typeItem[0]}`, 'Smirnoff 750ml + Sprite 2.25L', 1700),
-    new Item('bombaySchweepes.png', `${typeItem[0]}`, 'Gin Bombay + Schweepes 2.25L', 1900),
+    new Item('fernetCoca.png', `${typeItem[0]}`, 'Fernet 1L - Coca Coca 2.25L', 2000),
+    new Item('smirnoffSprite.png', `${typeItem[0]}`, 'Smirnoff 750ml - Sprite 2.25L', 1700),
+    new Item('bombaySchweepes.png', `${typeItem[0]}`, 'Gin Bombay - Schweepes 2.25L', 1900),
 ]
 
 // BEBIDAS
