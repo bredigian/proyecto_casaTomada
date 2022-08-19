@@ -1,4 +1,24 @@
 // FUNCIONES
+// PRELOADER SITE
+const createPreloader=(nameBody,  ruteImg)=>{
+    const preloader=document.createElement('div')
+    preloader.className='loader d-flex justify-content-center align-items-center'
+    preloader.setAttribute('id', 'loader')
+    preloader.innerHTML=`
+        <div class="loader__img">
+            <img src="${ruteImg}/img/logoCasatomada.jpg" alt="">
+        </div>
+    `
+    nameBody.prepend(preloader)
+}
+
+// HIDE PRELOADER
+const hidePreloader=(body)=>{
+    setTimeout(()=>{
+        loader.classList.toggle('loader--hide')
+        body.style.overflow='auto'
+    }, 1000)
+}
 
 // CREA LOS ITEMS EN EL INDEX
 const createItemsIndexDOM=(array, container)=>{

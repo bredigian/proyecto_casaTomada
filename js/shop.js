@@ -1,3 +1,7 @@
+// PRELOADER INDEX
+createPreloader(bodiesWithPreloader, '..')
+hidePreloader(bodiesWithPreloader)
+
 arrayBebidas.push(
     new Item('andesRoja.png', `${typeItem[1]}`, 'Andes Roja', 170),
     new Item('andesNegra.png', `${typeItem[1]}`, 'Andes Negra', 170),

@@ -31,7 +31,7 @@ paymentForm.addEventListener('submit', (e)=>{
                 }
             }).showToast()
         } else{
-            location.href=`https://api.whatsapp.com/send?phone=${phoneNumberWhatsapp}&text=*INFORMACIÓN%20DE%20COMPRA*%0ANombre:%20${userData.userName}%0ANumero%20de%20teléfono:%20${userData.userPhone}%0ADirección:%20${userData.userAdress}%0AMétodo%20de%20pago:%20${userData.userPayment}%0ABebidas:%0A${messageItems}%0ATOTAL:%20$${totalShoppingCart}`
+            location.href=`https://api.whatsapp.com/send?phone=${phoneNumberWhatsapp}&text=*INFORMACIÓN%20DE%20COMPRA*%0ANombre:%20${userData.userName}%0ANumero%20de%20teléfono:%20${userData.userPhone}%0ADirección:%20${userData.userAdress}%0ABebidas:%0A${messageItems}%0AMétodo%20de%20pago:%20${userData.userPayment}%0ATOTAL:%20$${totalShoppingCart}`
         }
     localStorage.clear()
 })

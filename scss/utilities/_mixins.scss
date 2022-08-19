@@ -98,3 +98,23 @@
         }
     }
 }
+@mixin preloader{
+    overflow: hidden;
+    .loader{
+        position: absolute;
+        background-color: black;
+        z-index: 5;
+        width: 100%;
+        height: 100%;
+        &__img{
+            img{
+                width: 10rem;
+                height: 10rem;
+            }
+        }
+    }
+}
+@mixin hidePreloader{
+    transform: translateX(-100%);
+    transition: transform 1.5s ease-out
+}

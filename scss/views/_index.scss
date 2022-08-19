@@ -1,5 +1,9 @@
 @media(max-width: 768px){
     .body__index{
+        @include preloader;
+        .loader--hide{
+            @include hidePreloader
+        }
         .header{
             @include styleHeaderNavBar;
         }
