@@ -31,9 +31,9 @@ paymentForm.addEventListener('submit', (e)=>{
                 }
             }).showToast()
         } else{
-            location.href=`https://api.whatsapp.com/send?phone=${phoneNumberWhatsapp}&text=*INFORMACIÓN%20DE%20COMPRA*%0ANombre:%20${userData.userName}%0ANumero%20de%20teléfono:%20${userData.userPhone}%0ADirección:%20${userData.userAdress}%0ABebidas:%0A${messageItems}%0AMétodo%20de%20pago:%20${userData.userPayment}%0ATOTAL:%20$${totalShoppingCart}`
+            location.href=`https://api.whatsapp.com/send?phone=${phoneNumberWhatsapp}&text=*CASA%20TOMADA*%0A*INFORMACIÓN%20DE%20COMPRA*%0ANombre:%20${userData.userName}%0ANumero%20de%20teléfono:%20${userData.userPhone}%0ADirección:%20${userData.userAdress}%0AProductos%20seleccionados:%0A${messageItems}%0AMétodo%20de%20pago:%20${userData.userPayment}%0ATOTAL:%20$${totalShoppingCart}`
+            localStorage.clear()
         }
-    localStorage.clear()
 })
 buttonBackToShop.addEventListener('click', ()=>{
     location.href='./shop.html'
