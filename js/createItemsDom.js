@@ -13,7 +13,7 @@ const createCombosIndex=async()=>{
     const resp=await fetch("allItems.json")
     const data=await resp.json()
     const dataFilter=data.filter(item=>item.type=="Combos")
-    for(let i=0; i<data.length; i++){
+    for(let i=0; i<dataFilter.length; i++){
         let item=document.createElement('div')
         i==0 ? item.className='carousel-item active' : item.className='carousel-item'
         item.setAttribute('data-bs-interval', 3500)
