@@ -37,8 +37,6 @@
         .carousel{
             margin: 1.5rem;
             &-inner{
-                border: solid black .3rem;
-                border-radius: 1rem;
                 .carousel-item{
                     max-height: 350px;
                     .carousel-caption{

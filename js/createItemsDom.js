@@ -9,29 +9,41 @@ const hidePreloader=(body)=>{
 }
 
 // CREA LOS ITEMS EN EL INDEX
-const createItemsIndexDOM=(array, container)=>{
-    for(let i=0; i<array.length; i++){
+const createCombosIndex=async()=>{
+    const resp=await fetch("allItems.json")
+    const data=await resp.json()
+    const dataFilter=data.filter(item=>item.type=="Combos")
+    for(let i=0; i<data.length; i++){
         let item=document.createElement('div')
-        i!==0 ? item.className='carousel-item' : item.className='carousel-item active'
-        if(container==saleIndexContainer){
-            item.innerHTML=`
-            <img src="./img/bebidas/carousel/${array[i].img}" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-md-block">
-                <h5>${array[i].name}</h5>
-                <p>$${array[i].price}</p>
-            </div>
-            `
-            saleIndexContainer.appendChild(item)
-        } else{
-            item.innerHTML=`
-            <img src="./img/bebidas/carousel/${array[i].img}" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-md-block">
-                <h5>${array[i].name}</h5>
-                <p>$${array[i].price}</p>
-            </div>
-            `
-            drinksIndexContainer.appendChild(item)
-        }
+        i==0 ? item.className='carousel-item active' : item.className='carousel-item'
+        item.setAttribute('data-bs-interval', 3500)
+        item.innerHTML=`
+        <img src="./img/bebidas/carousel/${data[i].img}" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-md-block">
+            <h5>${data[i].name}</h5>
+            <p>$${data[i].price}</p>
+        </div>
+        `
+        saleIndexContainer.appendChild(item)
+    }
+}
+
+const createDrinksIndex=async()=>{
+    const resp=await fetch("allItems.json")
+    const data=await resp.json()
+    const dataFilter=data.filter(item=>item.type!=="Combos")
+    for(let i=0; i<dataFilter.length; i++){
+        let item=document.createElement('div')
+        i==0 ? item.className='carousel-item active' : item.className='carousel-item'
+        item.setAttribute('data-bs-interval', 3500)
+        item.innerHTML=`
+        <img src="./img/bebidas/carousel/${dataFilter[i].img}" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-md-block">
+            <h5>${dataFilter[i].name}</h5>
+            <p>$${dataFilter[i].price}</p>
+        </div>
+        `
+        drinksIndexContainer.appendChild(item)
     }
 }
 
@@ -62,34 +74,33 @@ const itemContent=(item, element, folderImg, classImg)=>{
     `
 }
 
+
 // CREA LOS ITEMS COMBOS EN EL SHOP
-const createItemsCombosShopDOM=(array)=>{
-    array.forEach(element =>{
-        let item=document.createElement('li')
-        item.className='shop-container__items-item d-flex flex-column align-items-end w-100 p-4'
-        itemContent(item, element, 'combos')
-        combosShopContainer.append(item)
-    })
-}
+
+const typeItem=['Combos', 'Cervezas', 'Aperitivos']
+typeItem.sort()
 
 // CREA LOS ITEMS DE BEBIDAS EN EL SHOP
-const createItemsDrinksShopDOM=(array)=>{
-    for(let i=1; i<typeItem.length; i++){
+const createItemsShop=async()=>{
+    for(let i=0; i<typeItem.length; i++){
         let carouselItem=document.createElement('div')
         carouselItem.className='carousel-item w-100'
-        i==1 && carouselItem.classList.add('active')
+        i==0 && carouselItem.classList.add('active')
         carouselItem.innerHTML=`
             <div class="typeTitle">${typeItem[i].toLocaleUpperCase()}</div>
         `
-        for(let b=0; b<array.length; b++){
-            if(array[b].type==typeItem[i]){
+        const resp=await fetch("../allItems.json")
+        const data=await resp.json()
+        const dataOrder=data.sort((a, b)=>a.name.localeCompare(b.name))
+        dataOrder.forEach(element => {
+            if(element.type==typeItem[i]){
                 let item=document.createElement('div')
                 item.className='shop-container__items-item d-flex flex-column align-items-end w-100 p-4'
-                itemContent(item, array[b], 'solo', 'drinks-bigImg')
+                element.type!=='Combos' ? itemContent(item, element, 'solo', 'drinks-bigImg') : itemContent(item, element, 'combos')
                 carouselItem.append(item)
             }
-        }
-        drinksShopContainer.append(carouselItem)
+        });
+        allDrinksContainer.append(carouselItem)
     }
 }
 
