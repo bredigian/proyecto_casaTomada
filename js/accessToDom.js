@@ -1,6 +1,8 @@
 // ACCESOS AL DOM
 const bodiesWithPreloader=document.getElementById('bodyWithPreloader')
 const preLoader=document.getElementById('loader')
+const typeItemsContainer=document.getElementById('typeItemsContainer')
+const typeItemsContainerItems=document.getElementsByClassName('typeItems-container__item')
 const saleIndexContainer=document.getElementById('saleIndexContainer')
 const drinksIndexContainer=document.getElementById('drinksIndexContainer')
 const toggleMenuElement=document.getElementById('toggle-menu')

@@ -4,14 +4,15 @@ hidePreloader(bodiesWithPreloader)
 
 // const arrayBebidasOrderName=arrayBebidas.sort((a, b) => a.name.localeCompare(b.name));
 // arrayBebidasOrderName.sort((a, b) =>b.type.localeCompare(a.type))
-
-createItemsShop()
+setTimeout(()=>{
+    createItemsShop()
+}, 500)
 
 /*------------------EVENTOS--------------------*/
 const arrayItemsStorage=JSON.parse(localStorage.getItem('ITEMS'))
 
 setTimeout(()=>{
-    arrayItems.sort((a, b)=>a.type.localeCompare(b.type))
+    arrayItems.sort((a, b)=>a.c[2].v.localeCompare(b.c[2].v))
 }, 500)
 
 // ALMACENA ITEMS EN EL STORAGE Y AÑADE EL ITEM EN EL CONTAINER
@@ -29,9 +30,9 @@ setTimeout(()=>{
                 itemsStorageParsed.push(arrayItems[i])
                 localStorage.setItem('ITEMS', JSON.stringify(itemsStorageParsed))
                 createItemContainerShoppingCart(arrayItems[i])
-                totalCarrito+=arrayItems[i].price
+                totalCarrito+=arrayItems[i].c[1].v
                 shoppingCartTotal.innerHTML=`TOTAL $${totalCarrito}`
-                itemsMessage+=`${arrayItems[i].name} $${arrayItems[i].price}${`%0A`}`
+                itemsMessage+=`${arrayItems[i].c[0].v} $${arrayItems[i].c[1].v}${`%0A`}`
             }
             Toastify({
                 text: "Añadido con éxito",
@@ -60,10 +61,10 @@ setTimeout(()=>{
 if(arrayItemsStorage){
     arrayItemsStorage.forEach(element => {
         createItemContainerShoppingCart(element)
-        totalCarrito+=element.price
+        totalCarrito+=element.c[1].v
         shoppingCartTotal.innerHTML=`TOTAL $${totalCarrito}`
         cartShoppingCounter.innerHTML=parseInt(cartShoppingCounter.innerHTML)+1
-        itemsMessage+=`${element.name} $${element.price}${`%0A`}`
+        itemsMessage+=`${element.c[0].v} $${element.c[1].v}${`%0A`}`
     });
 }
 

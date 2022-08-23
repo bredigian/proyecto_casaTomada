@@ -11,7 +11,7 @@
 </head>
 <body id="bodyWithPreloader" class="body__index">
     <div id="loader" class="loader d-flex justify-content-center align-items-center">
-        <div class="loader__img">{
+        <div class="loader__img">
             <img src="./img/logoCasatomada.jpg" alt="">
         </div>
     </div>
@@ -37,10 +37,13 @@
             <img src="./img/logoCasatomada.jpg" alt="">
         </div>
     </div>
-    <div class="sale d-flex flex-column w-100 align-items-start gap-2">
-        <div class="sale-header d-flex flex-row align-items-center justify-content-between w-100 p-4">
-            <span class="sale-header__title">COMBOS</span>
-            <a href="./html/shop.html">Mostrar más</a>
+    <div class="typeItems d-flex flex-column align-items-center w-100 gap-5 p-4">
+        <h1 class="typeItems-title">TIPOS DE BEBIDAS</h1>
+        <div id="typeItemsContainer" class="typeItems-container d-flex align-items-center gap-3"></div>
+    </div>
+    <div class="sale d-flex flex-column w-100 align-items-center gap-2">
+        <div class="sale-header d-flex flex-row align-items-center justify-content-center w-100 p-4">
+            <span class="sale-header__title">Llevate el combo prearmado que quieras...</span>
         </div>
         <div id="carouselExampleCaptions1" class="carousel slide" data-bs-ride="carousel">
             <div id="saleIndexContainer" class="carousel-inner">
@@ -56,10 +59,9 @@
             </button>
         </div>
     </div>
-    <div class="drinks d-flex flex-column w-100 align-items-end gap-2">
-        <div class="drinks-header d-flex flex-row align-items-center justify-content-between w-100 p-4">
-            <span class="drinks-header__title">BEBIDAS</span>
-            <a href="./html/shop.html">Mostrar más</a>
+    <div class="drinks d-flex flex-column w-100 align-items-center gap-2">
+        <div class="drinks-header d-flex flex-row align-items-center justify-content-center w-100 p-4">
+            <span class="drinks-header__title">O armalo como a vos te ocurra!</span>
         </div>
         <div id="carouselExampleCaptions2" class="carousel slide" data-bs-ride="carousel">
             <div id="drinksIndexContainer" class="carousel-inner">

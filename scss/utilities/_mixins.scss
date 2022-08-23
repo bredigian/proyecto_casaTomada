@@ -49,12 +49,13 @@
     font-weight: 700;
 }
 @mixin styleTitle{
-    font-size: 3rem;
+    font-size: 1.5rem;
     font-weight: 700;
-    color: white;
     background-color: black;
+    color: white;
     padding: 1rem;
     border-radius: 1rem;
+    text-align: center;
 }
 @mixin styleItemMore {
     margin: auto;

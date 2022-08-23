@@ -20,23 +20,50 @@
                 padding: 1rem;
             }
         }
+        .typeItems{
+            &-title{
+                padding: 1.5rem;
+                margin: 0;
+                color: white;
+                background-color: black;
+                padding: 1rem;
+                border-radius: 1rem;
+                font-weight: 700;
+            }
+            &-container{
+                width: 100%;
+                overflow-x: auto;
+                &__item{
+                    background-color: black;
+                    border-radius: 1rem;
+                    max-width: 88px;
+                    &-img{
+                        width: 4rem;
+                        img{
+                            width: 100%;
+                        }
+                    }
+                    &-name{
+                        margin: 0;
+                        color: white;
+                        font-weight: 700;
+                        font-size: 1.25rem  
+                    }
+                }
+            }
+        }
         .sale, .drinks{
             &-header{
                 &__title{
                     @include styleTitle;
-                }
-                a{
-                    color: black;
-                    width: min-content;
-                    text-align: center;
-                    font-size: 1.25rem;
-                    font-weight: 700;
                 }
             }
         }
         .carousel{
             margin: 1.5rem;
             &-inner{
+                border: solid rgb(190, 190, 190) .2rem;
+                border-radius: 1rem;
                 .carousel-item{
                     max-height: 350px;
                     .carousel-caption{
@@ -98,6 +125,136 @@
         }
         .footer{
             @include styleFooter;
+        }
+    }
+}
+
+@media(min-width: 769px){
+    .body__index{
+        .loader{
+            display: none!important;
+        }
+        .header{
+            position: sticky;
+            top: 0;
+            z-index: 5;
+            flex-direction: row!important;
+            justify-content: space-around;
+            background-color: black;
+            padding: 1rem;
+            &-container{
+                width: min-content!important;
+                &__img{
+                    width: 8rem;
+                    img{
+                        width: 100%;
+                    }
+                }
+                .toggle-menu{
+                    display: none!important;
+                }
+            }
+            .navbar{
+                 &-list{
+                    flex-direction: row!important;
+                    gap: 3rem;
+                    margin: 0;
+                    li{
+                        a{
+                            text-decoration: none;
+                            color: white;
+                            font-size: 2rem;
+                            font-weight: 700;
+                        }
+                    }
+                 }
+            }
+        }
+        .welcome{
+            background-color: black;
+            padding: 2rem!important;
+            border-radius: 1rem;
+            max-width: 900px;
+            margin: 1.5rem!important;
+            &-title{
+                color: white;
+                font-weight: 700;
+                text-transform: uppercase;
+            }
+        }
+        .sale, .drinks{
+            &-header{
+                &__title{
+                    font-size: 3rem;
+                    font-weight: 700;
+                    background-color: black;
+                    color: white;
+                    padding: 1rem;
+                    border-radius: 1rem;
+                }
+                a{
+                    color: black;
+                    font-weight: 700;
+                    font-size: 1.5rem;
+                }
+            }
+        }
+        .carousel{
+            width: 50%!important;
+            &-inner{
+                .carousel-item{
+                    .carousel-caption{
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 1rem;
+                        background-color: rgba($color: #000000, $alpha: .8);
+                        border-radius: 1rem;
+                        padding: 1rem!important;
+                        h5{
+                            font-size: 1.25rem;
+                            font-weight: 700;
+                            margin: 0!important;
+                        }
+                        p{
+                            margin: 0!important;
+                            font-weight: 700;
+                            font-size: 1.5rem;
+                        }
+                    }
+                }
+            }
+        }
+        .footer{
+            background-color: black;
+            padding: 5rem!important;
+            &-img{
+                width: 8rem;
+                img{
+                    width: 100%;
+                }
+            }
+            &-container{
+                &__title{
+                    color: white;
+                    font-weight: 700;
+                }
+                &__item{
+                    &-icon{
+                        img{
+                            width: 2rem;
+                            filter: invert(100%);
+                        }
+                    }
+                    &-name{
+                        a{
+                            text-decoration: none;
+                            color: white;
+                            font-weight: 700;
+                        }
+                    }
+                }
+            }
         }
     }
 }
