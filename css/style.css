@@ -115,7 +115,7 @@ html {
   .body__index .typeItems-container__item {
     background-color: black;
     border-radius: 1rem;
-    max-width: 88px;
+    min-width: 88px !important;
   }
   .body__index .typeItems-container__item-img {
     width: 4rem;

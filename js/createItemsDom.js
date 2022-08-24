@@ -49,7 +49,7 @@ const createDrinksIndex=()=>{
         if(arrayItems[i].nameImg!=='#'){
             let item=document.createElement('div')
             i==0 ? item.className='carousel-item active' : item.className='carousel-item'
-            item.setAttribute('data-bs-interval', 500000)
+            item.setAttribute('data-bs-interval', 3500)
             item.innerHTML=`
             <img src="./img/bebidas/carousel/${dataFilter[i].nameImg}" class="d-block w-100" alt="...">
             <div class="carousel-caption d-md-block">

@@ -36,7 +36,7 @@
                 &__item{
                     background-color: black;
                     border-radius: 1rem;
-                    max-width: 88px;
+                    min-width: 88px!important;
                     &-img{
                         width: 4rem;
                         img{
