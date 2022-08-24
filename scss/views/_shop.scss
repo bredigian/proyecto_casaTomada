@@ -67,6 +67,25 @@
                                 img{
                                     width: 100%;
                                 }
+                                .spinner{
+                                    height: 161px;
+                                    &-item{
+                                        border: solid black .4rem;
+                                        width: 3.6rem!important;
+                                        height: 3.6rem;
+                                        border-radius: 50%;
+                                        border-left-color: transparent;
+                                        animation: spin 1s linear infinite;
+                                    }
+                                    @keyframes spin{
+                                        0%{
+                                            transform: rotate(0deg);
+                                        }
+                                        100%{
+                                            transform: rotate(360deg);
+                                        }
+                                    }
+                                }
                             }
                             &-info{
                                 &__name{

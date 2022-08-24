@@ -12,7 +12,7 @@ setTimeout(()=>{
 setTimeout(()=>{
     for(let i=0; i<typeItemsContainerItems.length; i++){
         typeItemsContainerItems[i].addEventListener('click', ()=>{
-            location.href='./html/shop.html#'
+            location.href='./html/shop.html'
         })
     }
 }, 750)

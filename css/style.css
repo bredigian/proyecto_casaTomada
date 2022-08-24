@@ -460,6 +460,25 @@ html {
   .body__shop .shop-container__items-item__cont-img img {
     width: 100%;
   }
+  .body__shop .shop-container__items-item__cont-img .spinner {
+    height: 161px;
+  }
+  .body__shop .shop-container__items-item__cont-img .spinner-item {
+    border: solid black 0.4rem;
+    width: 3.6rem !important;
+    height: 3.6rem;
+    border-radius: 50%;
+    border-left-color: transparent;
+    animation: spin 1s linear infinite;
+  }
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
   .body__shop .shop-container__items-item__cont-info__name, .body__shop .shop-container__items-item__cont-info .price {
     font-size: 1.5rem;
     text-align: center;

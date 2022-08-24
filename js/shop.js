@@ -12,7 +12,7 @@ setTimeout(()=>{
 const arrayItemsStorage=JSON.parse(localStorage.getItem('ITEMS'))
 
 setTimeout(()=>{
-    arrayItems.sort((a, b)=>a.c[2].v.localeCompare(b.c[2].v))
+    arrayItems.sort((a, b)=>a.type.localeCompare(b.type))
 }, 500)
 
 // ALMACENA ITEMS EN EL STORAGE Y AÑADE EL ITEM EN EL CONTAINER
@@ -30,9 +30,9 @@ setTimeout(()=>{
                 itemsStorageParsed.push(arrayItems[i])
                 localStorage.setItem('ITEMS', JSON.stringify(itemsStorageParsed))
                 createItemContainerShoppingCart(arrayItems[i])
-                totalCarrito+=arrayItems[i].c[1].v
+                totalCarrito+=arrayItems[i].price
                 shoppingCartTotal.innerHTML=`TOTAL $${totalCarrito}`
-                itemsMessage+=`${arrayItems[i].c[0].v} $${arrayItems[i].c[1].v}${`%0A`}`
+                itemsMessage+=`${arrayItems[i].name} $${arrayItems[i].price}${`%0A`}`
             }
             Toastify({
                 text: "Añadido con éxito",
@@ -57,14 +57,15 @@ setTimeout(()=>{
         })
     }
 }, 750)
+
 // OBTIENE LOS ITEMS ALMACENADOS EN EL STORAGE Y LOS AÑADE AL CONTAINER
 if(arrayItemsStorage){
     arrayItemsStorage.forEach(element => {
         createItemContainerShoppingCart(element)
-        totalCarrito+=element.c[1].v
+        totalCarrito+=element.price
         shoppingCartTotal.innerHTML=`TOTAL $${totalCarrito}`
         cartShoppingCounter.innerHTML=parseInt(cartShoppingCounter.innerHTML)+1
-        itemsMessage+=`${element.c[0].v} $${element.c[1].v}${`%0A`}`
+        itemsMessage+=`${element.name} $${element.price}${`%0A`}`
     });
 }
 
