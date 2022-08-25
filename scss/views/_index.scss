@@ -131,61 +131,71 @@
 
 @media(min-width: 769px){
     .body__index{
-        .loader{
-            display: none!important;
+        user-select: none;
+        @include preloader;
+        .loader--hide{
+            @include hidePreloader
         }
         .header{
-            position: sticky;
-            top: 0;
-            z-index: 5;
-            flex-direction: row!important;
-            justify-content: space-around;
-            background-color: black;
-            padding: 1rem;
-            &-container{
-                width: min-content!important;
-                &__img{
-                    width: 8rem;
-                    img{
-                        width: 100%;
-                    }
-                }
-                .toggle-menu{
-                    display: none!important;
-                }
-            }
-            .navbar{
-                 &-list{
-                    flex-direction: row!important;
-                    gap: 3rem;
-                    margin: 0;
-                    li{
-                        a{
-                            text-decoration: none;
-                            color: white;
-                            font-size: 2rem;
-                            font-weight: 700;
-                        }
-                    }
-                 }
-            }
+            @include styleHeaderNavBar
         }
         .welcome{
             background-color: black;
             padding: 2rem!important;
             border-radius: 1rem;
-            max-width: 900px;
-            margin: 1.5rem!important;
+            margin: 5rem!important;
+            flex-direction: row!important;
+            justify-content: space-evenly!important;
             &-title{
+                font-size: 5rem;
                 color: white;
                 font-weight: 700;
                 text-transform: uppercase;
+                letter-spacing: 5px;
             }
         }
+        .typeItems{
+            padding: 5rem !important;
+            &-title{
+                background-color: black;
+                padding: 1rem;
+                border-radius: 1rem;
+                color: white;
+                font-size: 2.5rem;
+                font-weight: 700;
+            }
+            &-container{
+                &__item{
+                    background-color: black;
+                    width: 110px;
+                    height: 110px;
+                    border-radius: 1rem;
+                    transition: all .2s;
+                    &-img{
+                        width: 5rem;
+                        img{
+                            width: 100%
+                        }
+                    }
+                    &-name{
+                        color: white;
+                        font-size: 1.25rem;
+                        font-weight: 700;
+                        margin: 0;
+                    }
+                }
+            }
+        }
+        .typeItems-container__item:hover{
+            background-color: #b21925;
+            cursor: pointer;
+        }
         .sale, .drinks{
+            margin: 5rem 0 !important;
+            gap: 5rem !important;
             &-header{
                 &__title{
-                    font-size: 3rem;
+                    font-size: 2.5rem;
                     font-weight: 700;
                     background-color: black;
                     color: white;
@@ -198,63 +208,47 @@
                     font-size: 1.5rem;
                 }
             }
-        }
-        .carousel{
-            width: 50%!important;
-            &-inner{
-                .carousel-item{
-                    .carousel-caption{
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        gap: 1rem;
-                        background-color: rgba($color: #000000, $alpha: .8);
-                        border-radius: 1rem;
-                        padding: 1rem!important;
-                        h5{
-                            font-size: 1.25rem;
-                            font-weight: 700;
-                            margin: 0!important;
-                        }
-                        p{
-                            margin: 0!important;
-                            font-weight: 700;
-                            font-size: 1.5rem;
+            .carousel{
+                width: 50%!important;
+                max-width: 600px !important;
+                &-inner{
+                    .carousel-item{
+                        .carousel-caption{
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            gap: 1rem;
+                            background-color: rgba($color: #000000, $alpha: .8);
+                            border-radius: 1rem;
+                            padding: 1rem!important;
+                            h5{
+                                font-size: 1.25rem;
+                                font-weight: 700;
+                                margin: 0!important;
+                            }
+                            p{
+                                margin: 0!important;
+                                font-weight: 700;
+                                font-size: 1.5rem;
+                            }
                         }
                     }
                 }
+                &-control-prev, &-control-next{
+                    &-icon{
+                        filter: invert(100%);
+                    }
+                }
             }
+        }
+        .sale-header{
+            justify-content: start !important;
+        }
+        .drinks-header{
+            justify-content: end !important;
         }
         .footer{
-            background-color: black;
-            padding: 5rem!important;
-            &-img{
-                width: 8rem;
-                img{
-                    width: 100%;
-                }
-            }
-            &-container{
-                &__title{
-                    color: white;
-                    font-weight: 700;
-                }
-                &__item{
-                    &-icon{
-                        img{
-                            width: 2rem;
-                            filter: invert(100%);
-                        }
-                    }
-                    &-name{
-                        a{
-                            text-decoration: none;
-                            color: white;
-                            font-weight: 700;
-                        }
-                    }
-                }
-            }
+            @include styleFooter
         }
     }
 }

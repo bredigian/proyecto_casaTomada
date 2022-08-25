@@ -1,16 +1,11 @@
 // PRELOADER SHOP
 hidePreloader(bodiesWithPreloader)
 
-
-// const arrayBebidasOrderName=arrayBebidas.sort((a, b) => a.name.localeCompare(b.name));
-// arrayBebidasOrderName.sort((a, b) =>b.type.localeCompare(a.type))
 setTimeout(()=>{
     createItemsShop()
 }, 500)
 
 /*------------------EVENTOS--------------------*/
-const arrayItemsStorage=JSON.parse(localStorage.getItem('ITEMS'))
-
 setTimeout(()=>{
     arrayItems.sort((a, b)=>a.type.localeCompare(b.type))
 }, 500)
@@ -59,6 +54,7 @@ setTimeout(()=>{
 }, 750)
 
 // OBTIENE LOS ITEMS ALMACENADOS EN EL STORAGE Y LOS AÑADE AL CONTAINER
+const arrayItemsStorage=JSON.parse(localStorage.getItem('ITEMS'))
 if(arrayItemsStorage){
     arrayItemsStorage.forEach(element => {
         createItemContainerShoppingCart(element)
@@ -99,6 +95,7 @@ shoppingCartCleanButton.addEventListener('click', ()=>{
     })
 })
 
+// ACCEDE A LA SECCION PARA REALIZAR LA ORDEN
 buttonToPay.addEventListener('click', ()=>{
     if(cartShoppingCounter.innerHTML!=='0'){
         location.href='./payment.html'
