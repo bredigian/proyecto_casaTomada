@@ -281,6 +281,9 @@
 @media(min-width: 769px){
     .body__shop{
         user-select: none;
+        &::-webkit-scrollbar{
+            display: none;
+        }
         @include preloader;
         .loader--hide{
             @include hidePreloader

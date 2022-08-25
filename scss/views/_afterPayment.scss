@@ -1,4 +1,8 @@
 .body__afterPayment{
+    user-select: none;
+    &::-webkit-scrollbar{
+        display: none;
+    }
     .header{
         @include styleHeaderNavBar;
     }

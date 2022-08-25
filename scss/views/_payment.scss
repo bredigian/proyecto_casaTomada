@@ -79,6 +79,10 @@
 }
 @media(min-width: 769px){
     .body__payment{
+        user-select: none;
+        &::-webkit-scrollbar{
+            display: none;
+        }
         .header{
             @include styleHeaderNavBar
         }

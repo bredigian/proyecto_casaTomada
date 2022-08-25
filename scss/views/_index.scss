@@ -131,6 +131,9 @@
 
 @media(min-width: 769px){
     .body__index{
+        &::-webkit-scrollbar{
+            display: none;
+        }
         user-select: none;
         @include preloader;
         .loader--hide{
