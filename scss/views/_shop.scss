@@ -62,30 +62,14 @@
                     }
                     &__cont{
                         &-img{
-                            width: 8rem;
+                            width: 10rem;
                             margin-left: 2rem;
                             img{
                                 width: 100%;
                             }
-                            .spinner{
-                                height: 161px;
-                                &-item{
-                                    border: solid black .4rem;
-                                    width: 3.6rem!important;
-                                    height: 3.6rem;
-                                    border-radius: 50%;
-                                    border-left-color: transparent;
-                                    animation: spin 1s linear infinite;
-                                }
-                                @keyframes spin{
-                                    0%{
-                                        transform: rotate(0deg);
-                                    }
-                                    100%{
-                                        transform: rotate(360deg);
-                                    }
-                                }
-                            }
+                        }
+                        .noImg{
+                           @include styleNoImg
                         }
                         &-info{
                             &__name{
@@ -364,26 +348,10 @@
                             img{
                                 width: 100%;
                             }
-                            .spinner{
-                                height: 161px;
-                                &-item{
-                                    border: solid black .4rem;
-                                    width: 3.6rem!important;
-                                    height: 3.6rem;
-                                    border-radius: 50%;
-                                    border-left-color: transparent;
-                                    animation: spin 1s linear infinite;
-                                }
-                                @keyframes spin{
-                                    0%{
-                                        transform: rotate(0deg);
-                                    }
-                                    100%{
-                                        transform: rotate(360deg);
-                                    }
-                                }
-                            }
                         }
+                        .noImg{
+                            @include styleNoImg
+                         }
                         &-info{
                             &__name{
                                 font-size: 1.5rem;
@@ -488,6 +456,9 @@
             border-radius: 1rem;
             &__items{
                 overflow: auto;
+                &::-webkit-scrollbar{
+                    display: none;
+                }
                 &-item{
                     .delete{
                         font-size: 1.5rem;

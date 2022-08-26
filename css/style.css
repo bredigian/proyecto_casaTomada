@@ -763,30 +763,24 @@ html {
     transform: translateY(-8px);
   }
   .body__shop .shop-container__items-item__cont-img {
-    width: 8rem;
+    width: 10rem;
     margin-left: 2rem;
   }
   .body__shop .shop-container__items-item__cont-img img {
     width: 100%;
   }
-  .body__shop .shop-container__items-item__cont-img .spinner {
-    height: 161px;
+  .body__shop .shop-container__items-item__cont .noImg {
+    background-color: black;
+    padding: 1rem;
+    border-radius: 1rem;
+    font-size: 1.5rem;
+    width: 10rem;
+    height: 15rem;
   }
-  .body__shop .shop-container__items-item__cont-img .spinner-item {
-    border: solid black 0.4rem;
-    width: 3.6rem !important;
-    height: 3.6rem;
-    border-radius: 50%;
-    border-left-color: transparent;
-    animation: spin 1s linear infinite;
-  }
-  @keyframes spin {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
+  .body__shop .shop-container__items-item__cont .noImg p {
+    color: white;
+    font-weight: 700;
+    text-align: center;
   }
   .body__shop .shop-container__items-item__cont-info__name {
     font-size: 1.5rem;
@@ -1206,24 +1200,18 @@ html {
   .shop-container__items-item__cont-img img {
     width: 100%;
   }
-  .shop-container__items-item__cont-img .spinner {
-    height: 161px;
+  .shop-container__items-item__cont .noImg {
+    background-color: black;
+    padding: 1rem;
+    border-radius: 1rem;
+    font-size: 1.5rem;
+    width: 10rem;
+    height: 15rem;
   }
-  .shop-container__items-item__cont-img .spinner-item {
-    border: solid black 0.4rem;
-    width: 3.6rem !important;
-    height: 3.6rem;
-    border-radius: 50%;
-    border-left-color: transparent;
-    animation: spin 1s linear infinite;
-  }
-  @keyframes spin {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
+  .shop-container__items-item__cont .noImg p {
+    color: white;
+    font-weight: 700;
+    text-align: center;
   }
   .shop-container__items-item__cont-info__name {
     font-size: 1.5rem;
@@ -1322,6 +1310,9 @@ html {
   }
   .cartShopping-container__items {
     overflow: auto;
+  }
+  .cartShopping-container__items::-webkit-scrollbar {
+    display: none;
   }
   .cartShopping-container__items-item .delete {
     font-size: 1.5rem;

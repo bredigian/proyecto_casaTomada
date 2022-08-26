@@ -62,7 +62,7 @@ const itemContentShop=(item, element, folderImg, classImg)=>{
     item.className='shop-container__items-item d-flex flex-column align-items-end w-100 p-4'
     if(element.nameImg!=="#"){
         item.innerHTML=`
-            <div class="shop-container__items-item__icon d-flex justify-content-end align-items-center gap-4 w-100">
+            <div class="shop-container__items-item__icon d-flex justify-content-end align-items-center gap-4 w-100">         
                 <div class="shop-container__items-item__icon-cant d-flex align-items-center justify-content-around">            
                     <div class="shop-container__items-item__icon-cant__incDec less">-</div>
                     <span class="shop-container__items-item__icon-cant__counter">1</span>
@@ -98,11 +98,7 @@ const itemContentShop=(item, element, folderImg, classImg)=>{
                 </div>
             </div>
             <div class="shop-container__items-item__cont d-flex align-items-center w-100 justify-content-between gap-3">
-                <div class="shop-container__items-item__cont-img ${classImg}">
-                    <div class="spinner d-flex justify-content-center align-items-center">
-                        <div class="spinner-item"></div>
-                    </div>
-                </div>
+                <div class="noImg d-flex align-items-center"><p>Imagen no disponible</p></div>
                 <div class="shop-container__items-item__cont-info d-flex flex-column align-items-center gap-3">
                     <span class="shop-container__items-item__cont-info__name">${element.name}</span>
                     <div class="price d-flex align-items-center">
