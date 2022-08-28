@@ -24,7 +24,8 @@ const createTypesBebidasIndex=()=>{
 }
 
 // CREA LOS ITEMS EN EL INDEX
-const itemContentIndex=(item, dataFilter, i)=>{
+const itemCarouselContent=(item, dataFilter, i, carousel)=>{
+    i==0 ? item.className='carousel-item active' : item.className='carousel-item'
     item.setAttribute('data-bs-interval', 3500)
     item.innerHTML=`
         <img src="./img/bebidas/carousel/${dataFilter[i].nameImg}.webp" class="d-block w-100" alt="...">
@@ -33,15 +34,29 @@ const itemContentIndex=(item, dataFilter, i)=>{
             <p>$${dataFilter[i].price}</p>
         </div>
     `
+    carousel.appendChild(item)
+}
+const itemContainerContent=(item, nameC, folderImg, dataFilter, i, container)=>{
+    item.className=`${nameC}__item d-flex flex-column align-items-center gap-3 p-4`
+    item.innerHTML=`
+        <div class="${nameC}__item-img">
+            <img src='./img/bebidas/${folderImg}/${dataFilter[i].nameImg}.webp'>
+        </div>
+        <div class="${nameC}__item-description d-flex flex-column align-items-center gap-2">
+            <p class="name m-0">${dataFilter[i].name}</p>
+            <p class="price m-0">$${dataFilter[i].price}</p>
+        </div>
+    `
+    container.appendChild(item)
 }
 const createCombosIndex=()=>{
     const dataFilter=arrayItems.filter(item=>item.type=="Combos")
     for(let i=0; i<dataFilter.length; i++){
         if(arrayItems[i].nameImg!=="#"){
-            let item=document.createElement('div')
-            i==0 ? item.className='carousel-item active' : item.className='carousel-item'
-            itemContentIndex(item, dataFilter, i)
-            saleIndexContainer.appendChild(item)
+            let itemCarousel=document.createElement('div')
+            let itemContainer=document.createElement('div')
+            itemCarouselContent(itemCarousel, dataFilter, i, combosIndexCarousel)
+            itemContainerContent(itemContainer, "combos-container", "combos", dataFilter, i, combosContainerIndex)
         }
     }
 }
@@ -49,10 +64,10 @@ const createDrinksIndex=()=>{
     const dataFilter=arrayItems.filter(item=>item.type!=="Combos")
     for(let i=0; i<dataFilter.length; i++){
         if(arrayItems[i].nameImg!=='#'){
-            let item=document.createElement('div')
-            i==0 ? item.className='carousel-item active' : item.className='carousel-item'
-            itemContentIndex(item, dataFilter, i)
-            drinksIndexContainer.appendChild(item)
+            let itemCarousel=document.createElement('div')
+            let itemContainer=document.createElement('div')
+            itemCarouselContent(itemCarousel, dataFilter, i, drinksIndexCarousel)
+            itemContainerContent(itemContainer, "drinks-container", "solo", dataFilter, i, drinksContainerIndex)
         }
     }
 }
