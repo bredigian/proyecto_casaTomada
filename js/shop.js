@@ -71,28 +71,42 @@ shoppingCartButtonShowContainer.addEventListener('click', ()=>{
     shoppingCartButtonShowContainer.classList.toggle('cartShopping-btnShowContainer--rotate')
 })
 
-// VACIA EL STORAGE Y REFRESCA LA PAGINA
+// VACIA EL STORAGE
 shoppingCartCleanButton.addEventListener('click', ()=>{
-    Swal.fire({
-        title: '¿Esta seguro de limpiar el carrito?',
-        icon: 'warning',
-        iconColor: 'black',
-        showCancelButton: true,
-        confirmButtonText: 'Si, limpiar.',
-        cancelButtonText: 'No',
-        buttonsStyling: false
-    }).then((result)=>{
-        if(result.isConfirmed){
-            localStorage.clear()
-            Swal.fire({
-                title: 'El carrito ha sido limpiado con éxito',
-                icon: 'success',
-                iconColor: 'black',
-                confirmButtonText: '<a href="../html/shop.html">OK</a>',
-                buttonsStyling: false
-            })
-        }
-    })
+    if(cartShoppingCounter.innerHTML!=='0'){
+        Swal.fire({
+            title: '¿Esta seguro de limpiar el carrito?',
+            icon: 'warning',
+            iconColor: 'black',
+            showCancelButton: true,
+            confirmButtonText: 'Si, limpiar.',
+            cancelButtonText: 'No',
+            buttonsStyling: false
+        }).then((result)=>{
+            if(result.isConfirmed){
+                localStorage.clear()
+                Swal.fire({
+                    title: 'El carrito ha sido limpiado con éxito',
+                    icon: 'success',
+                    iconColor: 'black',
+                    buttonsStyling: false
+                })
+                cartShoppingCounter.innerHTML='0'
+                shoppingCartTotal.innerHTML='TOTAL $0'
+                shoppingCartContainerItems.innerHTML=''
+                shoppingCartContainer.classList.toggle('cartShopping-container--show')
+                shoppingCartButtonShowContainer.classList.toggle('cartShopping-btnShowContainer--rotate')
+            }
+        })
+    } else{
+        Swal.fire({
+            title: 'No es posible limpiar el carrito porque esta vacío.',
+            icon: 'error',
+            iconColor: 'black',
+            buttonText: 'OK',
+            buttonsStyling: false
+        })
+    }
 })
 
 // ACCEDE A LA SECCION PARA REALIZAR LA ORDEN
