@@ -150,6 +150,12 @@ html {
     color: white;
     padding: 1rem;
   }
+  .body__index .welcome-img {
+    width: 10rem;
+  }
+  .body__index .welcome-img img {
+    width: 100%;
+  }
 }
 @media (max-width: 768px) {
   .body__index .typeItems {
@@ -425,6 +431,12 @@ html {
     text-transform: uppercase;
     letter-spacing: 5px;
   }
+  .body__index .welcome-img {
+    width: 15rem;
+  }
+  .body__index .welcome-img img {
+    width: 100%;
+  }
 }
 @media (min-width: 769px) {
   .body__index .typeItems {
@@ -484,7 +496,14 @@ html {
   }
   .body__index .combos-container, .body__index .drinks-container {
     overflow-x: auto;
-    gap: 1rem;
+    gap: 3rem;
+    height: 600px;
+    align-items: center;
+  }
+  .body__index .combos-container__item, .body__index .drinks-container__item {
+    border-radius: 1rem;
+    height: 503px;
+    box-shadow: 4px 4px 29px 0px rgba(0, 0, 0, 0.6);
   }
   .body__index .combos-container__item-img, .body__index .drinks-container__item-img {
     width: 10rem;

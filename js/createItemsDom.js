@@ -37,7 +37,7 @@ const itemCarouselContent=(item, dataFilter, i, carousel)=>{
     carousel.appendChild(item)
 }
 const itemContainerContent=(item, nameC, folderImg, dataFilter, i, container)=>{
-    item.className=`${nameC}__item d-flex flex-column align-items-center gap-3 p-4`
+    item.className=`${nameC}__item d-flex flex-column align-items-center justify-content-end gap-3 p-4`
     item.innerHTML=`
         <div class="${nameC}__item-img">
             <img src='./img/bebidas/${folderImg}/${dataFilter[i].nameImg}.webp'>
