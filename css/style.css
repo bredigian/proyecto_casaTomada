@@ -879,16 +879,10 @@ html {
     overflow: auto;
   }
   .body__shop .cartShopping-container__items-item .counterItem {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     margin: 0;
     font-size: 1.5rem;
-    color: black;
-    background-color: white;
-    border-radius: 100%;
-    width: 2.5rem;
-    height: 2.5rem;
+    font-weight: 700;
+    color: white;
   }
   .body__shop .cartShopping-container__items-item .container-priceItem .signMoney, .body__shop .cartShopping-container__items-item .container-priceItem .priceItem {
     font-size: 1.5rem;
