@@ -85,6 +85,7 @@ shoppingCartCleanButton.addEventListener('click', ()=>{
         }).then((result)=>{
             if(result.isConfirmed){
                 localStorage.clear()
+                totalCarrito=0
                 Swal.fire({
                     title: 'El carrito ha sido limpiado con éxito',
                     icon: 'success',

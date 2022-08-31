@@ -170,20 +170,31 @@
             &__items{
                 overflow: auto;
                 &-item{
-                    .delete{
+                    .counterItem{
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        margin: 0;
                         font-size: 1.5rem;
-                        color: white;
+                        color: black;
+                        background-color: white;
+                        border-radius: 100%;
+                        width: 2.5rem;
+                        height: 2.5rem;
                     }
-                    .priceItem{
-                        font-size: 1.5rem;
-                        color: white;
-                        font-weight: 700;
+                    .container-priceItem{
+                        .signMoney, .priceItem{
+                            font-size: 1.5rem;
+                            color: white;
+                            font-weight: 700;
+                        }
                     }
                     .nameItem{
                         font-size: 1.5rem;
                         color: white;
                         font-weight: 700;
                         margin: 0;
+                        flex-grow: 1;
                     }
                 }
             }
@@ -459,20 +470,31 @@
                     display: none;
                 }
                 &-item{
-                    .delete{
-                        font-size: 1.5rem;
-                        color: white;
+                    .counterItem{
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        margin: 0;
+                        font-size: 1.75rem;
+                        color: black;
+                        background-color: white;
+                        border-radius: 100%;
+                        width: 2.75rem;
+                        height: 2.75rem;
                     }
-                    .priceItem{
-                        font-size: 2rem;
-                        color: white;
-                        font-weight: 700;
+                    .container-priceItem{
+                        .signMoney, .priceItem{
+                            font-size: 1.75rem;
+                            color: white;
+                            font-weight: 700;
+                        }
                     }
                     .nameItem{
-                        font-size: 1.5rem;
+                        font-size: 1.75rem;
                         color: white;
                         font-weight: 700;
                         margin: 0;
+                        flex-grow: 1;
                     }
                 }
             }

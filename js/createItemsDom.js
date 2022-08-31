@@ -40,7 +40,7 @@ const itemContainerContent=(item, nameC, folderImg, dataFilter, i, container)=>{
     item.className=`${nameC}__item d-flex flex-column align-items-center justify-content-end gap-3 p-4`
     item.innerHTML=`
         <div class="${nameC}__item-img">
-            <img src='./img/bebidas/${folderImg}/${dataFilter[i].nameImg}.webp'>
+            <img src='./img/bebidas/${folderImg}/${dataFilter[i].nameImg}.png'>
         </div>
         <div class="${nameC}__item-description d-flex flex-column align-items-center gap-2">
             <p class="name m-0">${dataFilter[i].name}</p>
@@ -89,7 +89,7 @@ const itemContentShop=(item, element, folderImg, classImg)=>{
             </div>
             <div class="shop-container__items-item__cont d-flex align-items-center w-100 justify-content-between gap-3">
                 <div class="shop-container__items-item__cont-img ${classImg}">
-                    <img src="../img/bebidas/${folderImg}/${element.nameImg}.webp" alt="">
+                    <img src="../img/bebidas/${folderImg}/${element.nameImg}.png" alt="">
                 </div>
                 <div class="shop-container__items-item__cont-info d-flex flex-column align-items-center gap-3">
                     <span class="shop-container__items-item__cont-info__name">${element.name}</span>
@@ -149,10 +149,37 @@ const createItemsShop=()=>{
 // CREA UN NUEVO ITEM EN EL CARRITO DE COMPRAS
 const createItemContainerShoppingCart=(element)=>{
     const shoppingCartItem=document.createElement('div')
-    shoppingCartItem.className='cartShopping-container__items-item d-flex align-items-start justify-content-between p-4 gap-4'
+    shoppingCartItem.className='cartShopping-container__items-item d-flex align-items-center justify-content-between p-4 gap-4'
     shoppingCartItem.innerHTML=`
+        <b class="counterItem">1</b>
         <p class="nameItem">${element.name}</p>
-        <b class="priceItem">$${element.price}</b>
+        <div class="container-priceItem d-flex align-items-center gap-2">
+            <b class="signMoney">$</b>
+            <b class="priceItem">${element.price}</b>
+        </div>
     `
-    shoppingCartContainerItems.append(shoppingCartItem)
+    if(arrayItemsShoppingCartContainer.length==0){
+        shoppingCartContainerItems.appendChild(shoppingCartItem)
+    } else{
+        let append=false;
+        let i=0;
+        while(i<arrayItemsShoppingCartContainer.length && !append){
+            if(shoppingCartItem.children[1].innerHTML===arrayItemsShoppingCartContainer[i].children[1].innerHTML){
+                arrayItemsShoppingCartContainer[i].innerHTML=`
+                    <b class="counterItem">${parseInt(arrayItemsShoppingCartContainer[i].children[0].innerHTML)+1}</b>
+                    <p class="nameItem">${element.name}</p>
+                    <div class="container-priceItem d-flex align-items-center gap-2">
+                        <b class="signMoney">$</b>
+                        <b class="priceItem">${parseInt(arrayItemsShoppingCartContainer[i].children[2].children[1].innerHTML)+element.price}</b>
+                    </div>
+                `
+                append=true
+            }
+            i++ 
+        }
+        if(!append){
+            shoppingCartContainerItems.appendChild(shoppingCartItem)
+            append=true
+        }
+    }
 }
