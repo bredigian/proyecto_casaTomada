@@ -600,6 +600,7 @@ html {
 }
 @media (max-width: 768px) {
   .body__shop {
+    padding: 0 !important;
     overflow: hidden;
   }
   .body__shop .loader {
@@ -878,11 +879,21 @@ html {
   .body__shop .cartShopping-container__items {
     overflow: auto;
   }
-  .body__shop .cartShopping-container__items-item .counterItem {
+  .body__shop .cartShopping-container__items-item .container-counterItem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    padding: 1rem;
+    height: 2.5rem;
+    width: 2.5rem;
+    border-radius: 100%;
+  }
+  .body__shop .cartShopping-container__items-item .container-counterItem .counterItem {
     margin: 0;
     font-size: 1.5rem;
     font-weight: 700;
-    color: white;
+    color: black;
   }
   .body__shop .cartShopping-container__items-item .container-priceItem .signMoney, .body__shop .cartShopping-container__items-item .container-priceItem .priceItem {
     font-size: 1.5rem;
@@ -1022,6 +1033,7 @@ html {
 }
 @media (min-width: 769px) {
   .body__shop {
+    padding: 0 !important;
     user-select: none;
     overflow: hidden;
   }
@@ -1320,17 +1332,21 @@ html {
   .cartShopping-container__items::-webkit-scrollbar {
     display: none;
   }
-  .cartShopping-container__items-item .counterItem {
+  .cartShopping-container__items-item .container-counterItem {
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: white;
+    padding: 1rem;
+    height: 2.75rem;
+    width: 2.75rem;
+    border-radius: 100%;
+  }
+  .cartShopping-container__items-item .container-counterItem .counterItem {
     margin: 0;
     font-size: 1.75rem;
+    font-weight: 700;
     color: black;
-    background-color: white;
-    border-radius: 100%;
-    width: 2.75rem;
-    height: 2.75rem;
   }
   .cartShopping-container__items-item .container-priceItem .signMoney, .cartShopping-container__items-item .container-priceItem .priceItem {
     font-size: 1.75rem;
@@ -1382,6 +1398,7 @@ html {
     border-radius: 0.5rem;
     background-color: black;
     color: white;
+    border: solid black 0.1rem;
     font-weight: 700;
     padding: 1rem;
   }
@@ -1413,6 +1430,65 @@ html {
   }
   .nextToPay button img {
     width: 3rem;
+  }
+}
+@media (min-width: 769px) {
+  .payment-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: black;
+  }
+  .payment-container {
+    border-radius: 1rem;
+    max-width: 600px;
+    margin: auto;
+  }
+  .payment-container__form-item__title {
+    color: black;
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+  .payment-container__form-item .inputSelect {
+    width: 100%;
+    background-color: transparent;
+    color: black;
+    border: none;
+    border-bottom: solid black 0.2rem;
+    font-size: 1.5rem;
+    outline: none;
+    padding: 0.5rem 0rem;
+  }
+  .payment-container__form-item .inputSelect::placeholder {
+    color: #252525;
+    padding-left: 4px;
+  }
+  .payment-container__form-item select {
+    border: none !important;
+    color: #252525 !important;
+  }
+  .payment-container__form-item select option {
+    color: black;
+    font-weight: 700;
+  }
+  .payment-container__form .button-back {
+    background-color: transparent;
+    border: solid black 0.3rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    border-radius: 1rem;
+  }
+  .payment-container__form .button-pay {
+    border: solid black 0.3rem;
+    background-color: #25D366;
+    border-radius: 1rem;
+  }
+  .payment-container__form .button-pay p {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+  .payment-container__form .button-pay img {
+    width: 1.75rem;
   }
 }
 @media (min-width: 769px) and (max-width: 768px) {

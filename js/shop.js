@@ -27,7 +27,6 @@ setTimeout(()=>{
                 createItemContainerShoppingCart(arrayItems[i])
                 totalCarrito+=arrayItems[i].price
                 shoppingCartTotal.innerHTML=`TOTAL $${totalCarrito}`
-                itemsMessage+=`${arrayItems[i].name} $${arrayItems[i].price}${`%0A`}`
             }
             Toastify({
                 text: "Añadido con éxito",
@@ -61,7 +60,6 @@ if(arrayItemsStorage){
         totalCarrito+=element.price
         shoppingCartTotal.innerHTML=`TOTAL $${totalCarrito}`
         cartShoppingCounter.innerHTML=parseInt(cartShoppingCounter.innerHTML)+1
-        itemsMessage+=`${element.name} $${element.price}${`%0A`}`
     });
 }
 

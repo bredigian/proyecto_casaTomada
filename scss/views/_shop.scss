@@ -1,5 +1,6 @@
 @media(max-width: 768px){
     .body__shop{
+        padding: 0 !important;
         @include preloader;
         .loader--hide{
             @include hidePreloader
@@ -170,11 +171,21 @@
             &__items{
                 overflow: auto;
                 &-item{
-                    .counterItem{
-                        margin: 0;
-                        font-size: 1.5rem;
-                        font-weight: 700;
-                        color: white;
+                    .container-counterItem{
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        background-color: white;
+                        padding: 1rem;
+                        height: 2.5rem;
+                        width: 2.5rem;
+                        border-radius: 100%;
+                        .counterItem{
+                            margin: 0;
+                            font-size: 1.5rem;
+                            font-weight: 700;
+                            color: black;
+                        }
                     }
                     .container-priceItem{
                         .signMoney, .priceItem{
@@ -269,6 +280,7 @@
 
 @media(min-width: 769px){
     .body__shop{
+        padding: 0 !important;
         user-select: none;
         &::-webkit-scrollbar{
             display: none;
@@ -464,17 +476,21 @@
                     display: none;
                 }
                 &-item{
-                    .counterItem{
+                    .container-counterItem{
                         display: flex;
                         align-items: center;
                         justify-content: center;
-                        margin: 0;
-                        font-size: 1.75rem;
-                        color: black;
                         background-color: white;
-                        border-radius: 100%;
-                        width: 2.75rem;
+                        padding: 1rem;
                         height: 2.75rem;
+                        width: 2.75rem;
+                        border-radius: 100%;
+                        .counterItem{
+                            margin: 0;
+                            font-size: 1.75rem;
+                            font-weight: 700;
+                            color: black;
+                        }
                     }
                     .container-priceItem{
                         .signMoney, .priceItem{
@@ -538,6 +554,69 @@
             border: none;
             img{
                 width: 3rem;
+            }
+        }
+    }
+    .payment{
+        &-title{
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: black;
+        }
+        &-container{
+            border-radius: 1rem;
+            max-width: 600px;
+            margin: auto;
+            &__form{
+                &-item{
+                    &__title{
+                        color: black;
+                        font-size: 1.5rem;
+                        font-weight: 700;
+                    }
+                    .inputSelect{
+                        width: 100%;
+                        background-color: transparent;
+                        color: black;
+                        border: none;
+                        border-bottom: solid black .2rem;
+                        font-size: 1.5rem;
+                        outline: none;
+                        padding: .5rem 0rem;
+                    }
+                    .inputSelect::placeholder{
+                        color: #252525;
+                        padding-left: 4px;
+                    }
+                    select{
+                        border: none !important;
+                        color: #252525!important;
+                        option{
+                            color: black;
+                            font-weight: 700;
+                        }
+                    }
+                }
+                .button-back{
+                    background-color: transparent;
+                    border: solid black .3rem;
+                    font-size: 1.5rem;
+                    font-weight: 700;
+                    border-radius: 1rem;
+                }
+                .button-pay{
+                    border: solid black .3rem;
+                    background-color: $colorWhatsapp;
+                    border-radius: 1rem;
+                    p{
+                        margin: 0;
+                        font-size: 1.5rem;
+                        font-weight: 700;
+                    }
+                    img{
+                        width: 1.75rem;
+                    }
+                }
             }
         }
     }

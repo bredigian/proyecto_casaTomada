@@ -151,7 +151,9 @@ const createItemContainerShoppingCart=(element)=>{
     const shoppingCartItem=document.createElement('div')
     shoppingCartItem.className='cartShopping-container__items-item d-flex align-items-center justify-content-between p-4 gap-4'
     shoppingCartItem.innerHTML=`
-        <b class="counterItem">1</b>
+        <div class="container-counterItem">
+            <b class="counterItem">1</b>
+        </div>
         <p class="nameItem">${element.name}</p>
         <div class="container-priceItem d-flex align-items-center gap-2">
             <b class="signMoney">$</b>
@@ -166,7 +168,9 @@ const createItemContainerShoppingCart=(element)=>{
         while(i<arrayItemsShoppingCartContainer.length && !append){
             if(shoppingCartItem.children[1].innerHTML===arrayItemsShoppingCartContainer[i].children[1].innerHTML){
                 arrayItemsShoppingCartContainer[i].innerHTML=`
-                    <b class="counterItem">${parseInt(arrayItemsShoppingCartContainer[i].children[0].innerHTML)+1}</b>
+                    <div class="container-counterItem">
+                        <b class="counterItem">${parseInt(arrayItemsShoppingCartContainer[i].children[0].firstElementChild.innerHTML)+1}</b>
+                    </div>
                     <p class="nameItem">${element.name}</p>
                     <div class="container-priceItem d-flex align-items-center gap-2">
                         <b class="signMoney">$</b>
