@@ -1432,65 +1432,6 @@ html {
     width: 3rem;
   }
 }
-@media (min-width: 769px) {
-  .payment-title {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: black;
-  }
-  .payment-container {
-    border-radius: 1rem;
-    max-width: 600px;
-    margin: auto;
-  }
-  .payment-container__form-item__title {
-    color: black;
-    font-size: 1.5rem;
-    font-weight: 700;
-  }
-  .payment-container__form-item .inputSelect {
-    width: 100%;
-    background-color: transparent;
-    color: black;
-    border: none;
-    border-bottom: solid black 0.2rem;
-    font-size: 1.5rem;
-    outline: none;
-    padding: 0.5rem 0rem;
-  }
-  .payment-container__form-item .inputSelect::placeholder {
-    color: #252525;
-    padding-left: 4px;
-  }
-  .payment-container__form-item select {
-    border: none !important;
-    color: #252525 !important;
-  }
-  .payment-container__form-item select option {
-    color: black;
-    font-weight: 700;
-  }
-  .payment-container__form .button-back {
-    background-color: transparent;
-    border: solid black 0.3rem;
-    font-size: 1.5rem;
-    font-weight: 700;
-    border-radius: 1rem;
-  }
-  .payment-container__form .button-pay {
-    border: solid black 0.3rem;
-    background-color: #25D366;
-    border-radius: 1rem;
-  }
-  .payment-container__form .button-pay p {
-    margin: 0;
-    font-size: 1.5rem;
-    font-weight: 700;
-  }
-  .payment-container__form .button-pay img {
-    width: 1.75rem;
-  }
-}
 @media (min-width: 769px) and (max-width: 768px) {
   .footer {
     background-color: black;
@@ -1654,6 +1595,11 @@ html {
     font-size: 1.5rem;
     font-weight: 700;
   }
+  .body__payment .payment-container__form-item__radioOptions-option {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: black;
+  }
   .body__payment .payment-container__form-item .inputSelect {
     width: 100%;
     background-color: transparent;
@@ -1675,6 +1621,12 @@ html {
   .body__payment .payment-container__form-item select option {
     color: black;
     font-weight: 700;
+  }
+  .body__payment .payment-container__form .adressInput--hide {
+    display: none !important;
+  }
+  .body__payment .payment-container__form .adressInput--show {
+    display: flex !important;
   }
   .body__payment .payment-container__form button {
     border: solid black 0.3rem;
@@ -1865,6 +1817,11 @@ html {
     font-size: 1.5rem;
     font-weight: 700;
   }
+  .body__payment .payment-container__form-item__radioOptions-option {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: black;
+  }
   .body__payment .payment-container__form-item .inputSelect {
     width: 100%;
     background-color: transparent;
@@ -1886,6 +1843,12 @@ html {
   .body__payment .payment-container__form-item select option {
     color: black;
     font-weight: 700;
+  }
+  .body__payment .payment-container__form .adressInput--hide {
+    display: none !important;
+  }
+  .body__payment .payment-container__form .adressInput--show {
+    display: flex !important;
   }
   .body__payment .payment-container__form button {
     border: solid black 0.3rem;

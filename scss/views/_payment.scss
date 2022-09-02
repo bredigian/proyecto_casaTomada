@@ -31,6 +31,13 @@
                             font-size: 1.5rem;
                             font-weight: 700;
                         }
+                        &__radioOptions{
+                            &-option{
+                                font-size: 1.5rem;
+                                font-weight: 700;
+                                color: black;
+                            }
+                        }
                         .inputSelect{
                             width: 100%;
                             background-color: transparent;
@@ -53,6 +60,12 @@
                                 font-weight: 700;
                             }
                         }
+                    }
+                    .adressInput--hide{
+                        display: none !important;
+                    }
+                    .adressInput--show{
+                        display: flex !important;
                     }
                     button{
                         border: solid black .3rem;
@@ -116,6 +129,13 @@
                             font-size: 1.5rem;
                             font-weight: 700;
                         }
+                        &__radioOptions{
+                            &-option{
+                                font-size: 1.5rem;
+                                font-weight: 700;
+                                color: black;
+                            }
+                        }
                         .inputSelect{
                             width: 100%;
                             background-color: transparent;
@@ -138,6 +158,12 @@
                                 font-weight: 700;
                             }
                         }
+                    }
+                    .adressInput--hide{
+                        display: none !important;
+                    }
+                    .adressInput--show{
+                        display: flex !important;
                     }
                     button{
                         border: solid black .3rem;

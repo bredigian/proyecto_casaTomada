@@ -43,7 +43,20 @@
                     <span class="payment-container__form-item__title">Número de Teléfono</span>
                     <input id="phoneNumber" class="inputSelect" type="tel" placeholder="Ingrese su número">
                 </div>
-                <div class="payment-container__form-item d-flex flex-column align-items-start gap-2 w-100">
+                <div class="payment-container__form-item d-flex align-items-center justify-content-between w-100">
+                    <span class="payment-container__form-item__title">Método de entrega</span>
+                    <div class="payment-container__form-item__radioOptions d-flex align-items-center justify-content-center gap-3">
+                        <div class="payment-container__form-item__radioOptions-option d-flex align-items-center gap-3">
+                            <input type="radio" name="deliveryMethod" id="takeAway" value="Take Away">
+                            <label for="takeAway">Take Away</label>
+                        </div>
+                        <div class="payment-container__form-item__radioOptions-option d-flex align-items-center gap-3">
+                            <input type="radio" name="deliveryMethod" id="delivery" value="Delivery">
+                            <label for="delivery">Delivery</label>
+                        </div>
+                    </div>
+                </div>
+                <div id="adressInput" class="payment-container__form-item d-none flex-column align-items-start gap-2 w-100 adressInput">
                     <span class="payment-container__form-item__title">Dirección</span>
                     <input class="inputSelect" type="text" placeholder="Ingrese su direccion">
                 </div>

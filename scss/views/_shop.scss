@@ -557,69 +557,6 @@
             }
         }
     }
-    .payment{
-        &-title{
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: black;
-        }
-        &-container{
-            border-radius: 1rem;
-            max-width: 600px;
-            margin: auto;
-            &__form{
-                &-item{
-                    &__title{
-                        color: black;
-                        font-size: 1.5rem;
-                        font-weight: 700;
-                    }
-                    .inputSelect{
-                        width: 100%;
-                        background-color: transparent;
-                        color: black;
-                        border: none;
-                        border-bottom: solid black .2rem;
-                        font-size: 1.5rem;
-                        outline: none;
-                        padding: .5rem 0rem;
-                    }
-                    .inputSelect::placeholder{
-                        color: #252525;
-                        padding-left: 4px;
-                    }
-                    select{
-                        border: none !important;
-                        color: #252525!important;
-                        option{
-                            color: black;
-                            font-weight: 700;
-                        }
-                    }
-                }
-                .button-back{
-                    background-color: transparent;
-                    border: solid black .3rem;
-                    font-size: 1.5rem;
-                    font-weight: 700;
-                    border-radius: 1rem;
-                }
-                .button-pay{
-                    border: solid black .3rem;
-                    background-color: $colorWhatsapp;
-                    border-radius: 1rem;
-                    p{
-                        margin: 0;
-                        font-size: 1.5rem;
-                        font-weight: 700;
-                    }
-                    img{
-                        width: 1.75rem;
-                    }
-                }
-            }
-        }
-    }
     .footer{
         @include styleFooter
     }
